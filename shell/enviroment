@@ -1,0 +1,12 @@
+#!/bin/bash
+
+if [ -n "$DISPLAY" ]; then
+	export BROWSER=google-chrome
+fi
+
+export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
+export MOZILLA_FIVE_HOME="/usr/lib/firefox"
+
+export PATH=$PATH:/opt/eclipse:/home/daniele/.gem/ruby/2.0.0/bin:/home/daniele/.dropbox-dist/
+export TERMINAL=/usr/bin/gnome-terminal
+export XDG_CONFIG_HOME=/home/daniele/.config

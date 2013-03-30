@@ -1,0 +1,44 @@
+#!/bin/bash
+# Aliases
+alias ls='ls --color=auto'
+alias ll='ls -l'
+alias la='ls -a'
+alias lla='ls -la'
+alias poweroff='sudo poweroff'
+alias reboot='sudo reboot'
+alias hibernate='systemctl hibernate'
+alias suspend='systemctl suspend'
+alias wifi-menu='sudo wifi-menu'
+alias netcfg='sudo netcfg'
+alias netcfg-menu='sudo netcfg-menu'
+alias filemanager='pcmanfm'
+alias sounddef='ponymix set-default'
+alias runonce='/home/daniele/.myscripts/run_once.sh'
+alias nvidiaoff='sudo /home/daniele/.myscripts/nvidiaoff.sh'
+#alias lsize="ls -lR | grep -e "^-" | awk '{sum+=\$5} END {if [ $A ] ; then if [ $A = \"K\" ] ; then print sum/1024 ; elif [ $A = \"M\" ] ; then print sum/1024/1024 ; elif [ $A = \"G\" ] ; then print sum/1024/1024/1024 ; else ; print sum ; fi ; else ; print sum ; fi'}"
+alias fixjava='wmname LG3D'
+
+alias uni='cd ~/Dropbox/University'
+alias prj='cd ~/Dropbox/Project'
+alias shared='cd ~/Documents/Virtual\ Machines/Shared'
+alias sec='cd ~/Dropbox/IT/Security'
+alias drp='cd ~/Dropbox'
+alias iss='cd Dropbox/University/Ingegneria\ dei\ Sistemi\ Software\ LM/Laboratory/'
+
+alias irc='(sleep 10 && bash ~/.myscripts/run_once.sh notify-listener.py ~/.myscripts/scripts/notify-listener.py > /dev/null 2>&1) & irssi'
+alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+alias mkd='/home/daniele/.myscripts/mkd.sh'
+
+# Systemctl
+alias ssres='sudo systemctl restart'
+alias sssta='sudo systemctl start'
+alias sssto='sudo systemctl stop'
+
+# Git
+alias gc='git commit -m'
+alias gcheck='git checkout'
+alias ga='git add'
+alias gp='git push origin'
+alias gst='git status'
+alias gsa='git stash apply'
+alias gss='git stash save'
