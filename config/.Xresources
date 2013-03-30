@@ -1,0 +1,53 @@
+! Using xft
+URxvt*font:	xft:Inconsolata:size=11
+URxvt.scrollBar:	false
+URxvt.print-pipe: "cat > /dev/null"
+
+Xft*dpi:	96
+Xft*antialiasing:	True
+Xtf*hinting:	Full
+
+! Perl extensions
+URxvt.perl-ext-common: default,clipboard,matcher,keyboard-select
+
+!! URLs
+URxvt.keysym.C-U: perl:url-select:select_next
+URxvt.url-launcher: /usr/bin/google-chrome
+URxvt.underlineURLs: True
+URxvt.matcher.button: 1
+!! Copy-Paste
+URxvt.clipboard.autocopy: true
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.C-C: perl:clipboard:copy
+URxvt.keysym.C-V: perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+URxvt.copyCommand: xsel -ib
+URxvt.pasteCommand: xsel -ob
+
+! Colors
+*background: #251f1f
+*foreground: #efefef
+
+*color0: #251f1f
+*color8: #5e5e5e
+
+*color1: #eb4509
+*color9: #eb4509
+
+*color2: #94e76b
+*color10: #95e76b
+
+*color3: #ffac18
+*color11: #ffac18
+
+*color4: #46aede
+*color12: #46aede
+
+*color5: #e32c57
+*color13: #e32c57
+
+*color6: #d6dbac
+*color14: #d6dbac
+
+*color7: #efefef
+*color15: #efefef
