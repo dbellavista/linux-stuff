@@ -4,7 +4,8 @@ BPATH=/mnt/data/Documents/Dropbox/Various/Backup/
 
 HPATH=/home/daniele/
 
-HDIRS=(linux .ssh/)
+HFILES=()
+HDIRS=(linux)
 
 #### Linux Backup
 
