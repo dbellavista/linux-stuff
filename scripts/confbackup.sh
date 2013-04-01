@@ -4,8 +4,7 @@ BPATH=/mnt/data/Documents/Dropbox/Various/Backup/
 
 HPATH=/home/daniele/
 
-HFILES=(.bashrc .bash_profile .zshrc .xinitrc .zprofile .xinitrc .vimrc)
-HDIRS=(.myscripts/ .vim/ .config/awesome/ .irssi/ .ssh/)
+HDIRS=(linux .ssh/)
 
 #### Linux Backup
 

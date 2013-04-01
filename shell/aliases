@@ -13,8 +13,8 @@ alias netcfg='sudo netcfg'
 alias netcfg-menu='sudo netcfg-menu'
 alias filemanager='pcmanfm'
 alias sounddef='ponymix set-default'
-alias runonce='/home/daniele/.myscripts/run_once.sh'
-alias nvidiaoff='sudo /home/daniele/.myscripts/nvidiaoff.sh'
+alias runonce='/home/daniele/linux/scripts/run_once.sh'
+alias nvidiaoff='sudo /home/daniele/linux/scripts/nvidiaoff.sh'
 #alias lsize="ls -lR | grep -e "^-" | awk '{sum+=\$5} END {if [ $A ] ; then if [ $A = \"K\" ] ; then print sum/1024 ; elif [ $A = \"M\" ] ; then print sum/1024/1024 ; elif [ $A = \"G\" ] ; then print sum/1024/1024/1024 ; else ; print sum ; fi ; else ; print sum ; fi'}"
 alias fixjava='wmname LG3D'
 
@@ -25,9 +25,9 @@ alias sec='cd ~/Dropbox/IT/Security'
 alias drp='cd ~/Dropbox'
 alias iss='cd Dropbox/University/Ingegneria\ dei\ Sistemi\ Software\ LM/Laboratory/'
 
-alias irc='(sleep 10 && bash ~/.myscripts/run_once.sh notify-listener.py ~/.myscripts/scripts/notify-listener.py > /dev/null 2>&1) & irssi'
+alias irc='(sleep 10 && bash ~/linux/scripts/run_once.sh notify-listener.py ~/linux/scripts/scripts/notify-listener.py > /dev/null 2>&1) & irssi'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
-alias mkd='/home/daniele/.myscripts/mkd.sh'
+alias mkd='/home/daniele/linux/scripts/mkd.sh'
 
 # Systemctl
 alias ssres='sudo systemctl restart'

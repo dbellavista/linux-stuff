@@ -41,33 +41,51 @@ do
 end
 -- }}}
 
+-- {{{ Global variables
+theme_dir = "/home/daniele/.config/awesome/themes/"
+script_dir = "/home/daniele/linux/scripts/"
+function script(name)
+	return script_dir .. "/" .. name
+end
+
+terminal = "urxvt"
+mixer = 'pavucontrol'
+filemanager = "pcmanfm"
+browser2 = "firefox"
+browser1 = "google-chrome"
+
+editor = os.getenv("EDITOR") or "vim"
+editor_cmd = terminal .. " -e " .. editor
+
+power_c =	{
+	poweroff="halt", reboot= "reboot",
+	suspend= "suspend", hibernate, "hibernate",
+	lock= "slock", blank= script("blank.sh") }
+
+applications = {
+	e=filemanager, E="/opt/eclipse/eclipse",
+	v="virtualbox", V="wireshark",
+	g=browser1, G=browser2, x=power_c["blank"]
+}
+
+media_c = {
+	mute= script("mute_toggle"), up= script("vol_up"),
+	down=	script("vol_down"), play= script("media.sh play"),
+	nexts= script("media.sh next"), prevs= script("media.sh prev"),
+	screenshot= "scrot  -e 'mv $f /home/daniele/Pictures/'",
+	touchpad = script("toggle_touchpad.sh")}
+
+-- Default modkey.
+modkey = "Mod4"
+
+-- }}}
 -- {{{ Startup
-awful.util.spawn_with_shell("/home/daniele/.myscripts/autostart.sh")
+awful.util.spawn_with_shell(script("autostart.sh"))
 -- }}}
 
 -- {{{ Variable definitions
 -- Themes define colours, icons, and wallpapers
-beautiful.init("/home/daniele/.config/awesome/themes/default/theme.lua")
-
--- This is used later as the default terminal and editor to run.
-terminal = "urxvt"
-blank_command = "/home/daniele/.myscripts/blank.sh"
-filemanager = "pcmanfm"
-browser2 = "firefox"
-browser1 = "google-chrome"
-app_E = "eclipse"
-app_e = filemanager
-app_v = "virtualbox"
-app_V = "wireshark"
-editor = os.getenv("EDITOR") or "vim"
-editor_cmd = terminal .. " -e " .. editor
-
--- Default modkey.
--- Usually, Mod4 is the key with a logo between Control and Alt.
--- If you do not like this or do not have such a key,
--- I suggest you to remap Mod4 to another key using xmodmap or other tools.
--- However, you can use another modifier like Mod1, but it may interact with others.
-modkey = "Mod4"
+beautiful.init(theme_dir .. "default/theme.lua")
 
 -- Table of layouts to cover with awful.layout.inc, order matters.
 local layouts =
@@ -115,17 +133,17 @@ myawesomemenu = {
 
 
 myshutdownmenu = {
-	{ "Poweroff", "poweroff" },
-	{ "Reboot", "reboot" },
-	{ "Suspend", "systemctl suspend" },
-	{ "Hibernate", "systemctl hibernate" },
+	{ "Poweroff", power_c["poweroff"] },
+	{ "Reboot", power_c["reboot"] },
+	{ "Suspend", power_c["reboot"] },
+	{ "Hibernate", power_c["hibernate"] },
   { "Logout", awesome.quit },
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
 									{ "Shutdown", myshutdownmenu},
-									{ "Blank Screen", blank_command},
-									{ "Lock Screen", "slock" },
+									{ "Blank Screen", power_c["blank"]},
+									{ "Lock Screen", power_c["lock"] },
 									{ "File Manager", filemanager}
                                   }
                         })
@@ -146,7 +164,7 @@ install_delightful = {
 }
 delightful_config = {
     [delpa] = {
-        mixer_command = 'pavucontrol',
+        mixer_command = mixer,
     },
 }
 
@@ -340,14 +358,6 @@ globalkeys = awful.util.table.join(
 
     awful.key({ modkey, "Control" }, "n", awful.client.restore),
 
-    -- Custom program
-    awful.key({ modkey,           }, "g",     function () awful.util.spawn(browser1)    end),
-    awful.key({ modkey, "Shift"   }, "g",     function () awful.util.spawn(browser2)    end),
-		awful.key({ modkey, "Shift"	  }, "v",     function () awful.util.spawn(app_V)  		  end),
-		awful.key({ modkey, "Shift"	  }, "e",     function () awful.util.spawn(app_E)  		  end),
-    awful.key({ modkey, 					}, "v",     function () awful.util.spawn(app_v)  		  end),
-    awful.key({ modkey, 					}, "e",     function () awful.util.spawn(app_e)  		  end),
-		awful.key({ modkey,					  }, "x",	  	function() awful.util.spawn(blank_command) end),
 
     -- Prompt
     awful.key({ modkey },            "q",     function () mypromptbox[mouse.screen]:run() end),
@@ -363,18 +373,28 @@ globalkeys = awful.util.table.join(
     awful.key({ modkey }, "p", function() menubar.show() end),
 
     -- Volume control (pulseaudio_ctl)
-    awful.key({ }, "XF86TouchpadToggle", function () awful.util.spawn("/home/daniele/.myscripts/toggle_touchpad.sh") end),
-    awful.key({ }, "XF86AudioMute", function () awful.util.spawn("/usr/bin/mute_toggle") end),
-    awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn("/usr/bin/vol_up") end),
-    awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn("/usr/bin/vol_down") end),
+    awful.key({ }, "XF86AudioMute", function () awful.util.spawn(media_c["mute"]) end),
+    awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn(media_c["up"]) end),
+    awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn(media_c["down"]) end),
 
-    awful.key({ }, "XF86AudioPlay", function () awful.util.spawn("/home/daniele/.myscripts/media.sh play") end),
-    awful.key({ }, "XF86AudioNext", function () awful.util.spawn("/home/daniele/.myscripts/media.sh next") end),
-    awful.key({ }, "XF86AudioPrev", function () awful.util.spawn("/home/daniele/.myscripts/media.sh prev") end),
+    awful.key({ }, "XF86AudioPlay", function () awful.util.spawn(media_c["play"]) end),
+    awful.key({ }, "XF86AudioNext", function () awful.util.spawn(media_c["nexts"]) end),
+    awful.key({ }, "XF86AudioPrev", function () awful.util.spawn(media_c["prevs"]) end),
+
+    -- Touchpad
+    awful.key({ }, "XF86TouchpadToggle", function () awful.util.spawn(media_c["touchpad"]) end),
 
     -- Screenshot
-    awful.key({ }, "Print", function () awful.util.spawn("scrot  -e 'mv $f /home/daniele/Pictures/'") end)
+    awful.key({ }, "Print", function () awful.util.spawn(media_c["screenshot"]) end)
 )
+
+for k,v in pairs(applications) do
+	middle = (string.byte(k) < string.byte("a")) and "Shift" or ""
+	globalkeys = awful.util.table.join(
+			globalkeys,
+			awful.key({ modkey, middle   }, string.lower(k), function () awful.util.spawn(v) end)
+  )
+end
 
 clientkeys = awful.util.table.join(
     awful.key({ modkey,           }, "f",      function (c) c.fullscreen = not c.fullscreen  end),

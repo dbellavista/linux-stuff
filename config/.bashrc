@@ -17,4 +17,5 @@ fi
 
 # Put your fun stuff here.
 
-source ~/.myscripts/shell/aliases
+source ~/linux/shell/environment
+source ~/linux/shell/aliases

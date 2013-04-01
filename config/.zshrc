@@ -30,11 +30,12 @@ bindkey ';5C' emacs-forward-word
 bindkey "\e[3~" delete-char
 # }}}
 
-source ~/.myscripts/shell/aliases
+source ~/linux/shell/aliases
+source ~/linux/shell/environment
 
-#source ~/.myscripts/shell/asciiart
-source ~/.myscripts/zsh/history-substring-search.zsh
-source ~/.myscripts/zsh/git-prompt/zshprompt.sh
+#source ~/linux/shell/asciiart
+source ~/linux/zsh/history-substring-search.zsh
+source ~/linux/zsh/git-prompt/zshprompt.sh
 
 emacs-backward-word() {
   local WORDCHARS="${WORDCHARS:s@/@}"

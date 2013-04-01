@@ -3,6 +3,6 @@ Description=Adjust screen brightness
 Before=prefdm.service
 [Service]
 Type=oneshot
-ExecStart=/home/daniele/.myscripts/brightness.sh
+ExecStart=/home/daniele/linux/scripts/brightness.sh
 [Install]
 WantedBy=multi-user.target

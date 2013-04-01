@@ -3,6 +3,6 @@ Description=Dropbox Configuration: setting user max file watching
 Before=prefdm.service
 [Service]
 Type=oneshot
-ExecStart=/home/daniele/.myscripts/dropbox.sh
+ExecStart=/home/daniele/linux/scripts/dropbox.sh
 [Install]
 WantedBy=graphical.target
