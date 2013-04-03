@@ -1,0 +1,6 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =4
+let g:netrw_dirhist_1='/mnt/data/Documents/Dropbox/Projects/dndomator'
+let g:netrw_dirhist_2='/home/daniele/linux/.git'
+let g:netrw_dirhist_3='/usr/share/polkit-1/actions'
+let g:netrw_dirhist_4='/home/daniele/linux/.git/modules'

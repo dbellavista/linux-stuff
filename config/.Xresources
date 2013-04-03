@@ -1,4 +1,5 @@
 ! Using xft
+URxvt*termName: rxvt-unicode-256color
 URxvt*font:	xft:Inconsolata:size=11
 URxvt.scrollBar:	false
 URxvt.print-pipe: "cat > /dev/null"
@@ -24,30 +25,54 @@ URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
 URxvt.copyCommand: xsel -ib
 URxvt.pasteCommand: xsel -ob
 
+! Transparent
+URxvt*.transparent: true
+URxvt*.shading: 5
+
 ! Colors
-*background: #251f1f
-*foreground: #efefef
 
-*color0: #251f1f
-*color8: #5e5e5e
+URxvt*color0: #000000
+! Text when selecting
+URxvt*color8: #555753
 
-*color1: #eb4509
-*color9: #eb4509
+! Boh
+URxvt*color9: #0000FF
+!#CC0000
+! Boh
+URxvt*color1: #FF0000
+!#EF2929
 
-*color2: #94e76b
-*color10: #95e76b
+! ls Executable files
+URxvt*color10: #4E9A06
+! Zsh green folder
+URxvt*color2: #8AE234
 
-*color3: #ffac18
-*color11: #ffac18
+! vim yellow
+URxvt*color11: #C4A000
+! yellow
+URxvt*color3: #C4A000
+!#FCE94F
 
-*color4: #46aede
-*color12: #46aede
+! ls dirs, vim empty lines
+URxvt*color12: #3465A4
+! boh
+URxvt*color4: #729FCF
 
-*color5: #e32c57
-*color13: #e32c57
+! Strings
+URxvt*color13: #EF2929
+!#75507B
+URxvt*color5: #AD7FA8
 
-*color6: #d6dbac
-*color14: #d6dbac
+! ls links, vim comments
+URxvt*color14: #729FCF
+!#06989A
+! Vim braket higlight
+URxvt*color6: #555753
+!#34E2E2
 
-*color7: #efefef
-*color15: #efefef
+! Boh
+URxvt*color15: #D3D7CF
+URxvt*color7: #EEEEEC
+
+URxvt*background: #000000
+URxvt*foreground: #EEEEEC

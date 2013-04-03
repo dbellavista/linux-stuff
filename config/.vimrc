@@ -14,7 +14,10 @@ if has('gui_running')
 	set guioptions-=T  "remove toolbar
 	set guioptions-=r  "remove right-hand scroll bar
 else
-	colorscheme my_theme
+	"colorscheme my_theme
+	colorscheme wombat256mod
+	"colorscheme anotherdark
+	"colorscheme BusyBee
 endif
 
 " Add recently accessed projects menu (project plugin)
