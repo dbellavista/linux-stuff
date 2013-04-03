@@ -31,48 +31,47 @@ URxvt*.shading: 5
 
 ! Colors
 
-URxvt*color0: #000000
-! Text when selecting
-URxvt*color8: #555753
+urxvt*foreground: #f2f2f2
+urxvt*background: #101010
 
-! Boh
-URxvt*color9: #0000FF
-!#CC0000
-! Boh
-URxvt*color1: #FF0000
-!#EF2929
+! Normal
+! color0    black
+! color1    red
+! color2    green
+! color3    yellow
+! color4    blue
+! color5    purple
+! color6    cyan
+! color7    white
 
-! ls Executable files
-URxvt*color10: #4E9A06
-! Zsh green folder
-URxvt*color2: #8AE234
+urxvt*color0:    #030303
+urxvt*color1:    #e26250
+urxvt*color2:    #aae367
+urxvt*color3:    #d3a000
+urxvt*color4:    #3085ca
+urxvt*color5:    #a66be3
+urxvt*color6:    #7d80d2
+urxvt*color7:    #f2f2f2
 
-! vim yellow
-URxvt*color11: #C4A000
-! yellow
-URxvt*color3: #C4A000
-!#FCE94F
+! Light
+! color8    black
+! color9    red
+! color10    green
+! color11    yellow
+! color12    blue
+! color13    purple
+! color14    cyan
+! color15    white
 
-! ls dirs, vim empty lines
-URxvt*color12: #3465A4
-! boh
-URxvt*color4: #729FCF
+urxvt*color8:    #131313
+urxvt*color9:    #f76655
+urxvt*color10:   #abf456
+urxvt*color11:   #f5f154
+urxvt*color12:   #6ebdf8
+urxvt*color13:   #b570f9
+urxvt*color14:   #9095f6
+urxvt*color15:   #e2e2e2
 
-! Strings
-URxvt*color13: #EF2929
-!#75507B
-URxvt*color5: #AD7FA8
-
-! ls links, vim comments
-URxvt*color14: #729FCF
-!#06989A
-! Vim braket higlight
-URxvt*color6: #555753
-!#34E2E2
-
-! Boh
-URxvt*color15: #D3D7CF
-URxvt*color7: #EEEEEC
-
-URxvt*background: #000000
-URxvt*foreground: #EEEEEC
+URxvt.colorIT: #87af5f
+URxvt.colorBD: #d7d7d7
+URxvt.colorUL: #87afd7

@@ -64,7 +64,7 @@ power_c =	{
 
 applications = {
 	e=filemanager, E="/opt/eclipse/eclipse",
-	v="virtualbox", V="wireshark",
+	v="VirtualBox", V="wireshark",
 	g=browser1, G=browser2, x=power_c["blank"]
 }
 
