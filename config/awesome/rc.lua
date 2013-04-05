@@ -74,6 +74,17 @@ mixer = 'pavucontrol'
 browser2 = "firefox"
 browser1 = "google-chrome"
 
+if distro == gentoo then
+	terminal = "urxvt"
+	filemanager = "pcmanfm"
+elseif distro == arch then
+	terminal = "gnome-terminal"
+	filemanager = "nautilus"
+else
+	terminal = "urxvt"
+	filemanager = "pcmanfm"
+end
+
 power_c =	{
 	poweroff="poweroff", reboot= "reboot",
 	suspend= "suspend", hibernate, "hibernate",
@@ -85,23 +96,12 @@ applications = {
 	g=browser1, G=browser2, x=power_c["blank"]
 }
 
--- NOT so DRY :(
 if distro == gentoo then
 	terminal = "urxvt"
 	filemanager = "pcmanfm"
 
 	power_c["poweroff"] = halt
 	power_c["suspend"] = "/etc/acpi/lid.sh"
-
-	applications["v"] = "VirtualBox"
-
-elseif distro == arch then
-	terminal = "gnome-terminal"
-	filemanager = "nautilus"
-
-else
-	terminal = "urxvt"
-	filemanager = "pcmanfm"
 
 end
 
