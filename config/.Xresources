@@ -29,6 +29,10 @@ URxvt.pasteCommand: xsel -ob
 URxvt*.transparent: true
 URxvt*.shading: 5
 
+! Override arrows (rebinding in zsh)
+URxvt.keysym.C-Left: ;5D
+URxvt.keysym.C-Right: ;5C
+
 ! Colors
 
 urxvt*foreground: #f2f2f2

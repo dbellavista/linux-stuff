@@ -1,45 +1,61 @@
 #!/bin/bash
-# Aliases
+# ALIASES
+
+STUFF="$HOME/linux"
+
+## Distro dependent aliases
+
+grep --quiet Gentoo /proc/version
+GENTOO=$?
+
+if [ $GENTOO -eq 0 ]; then
+	alias ip='/sbin/ip'
+	alias halt='sudo halt'
+	alias poweroff='halt'
+	alias reboot='sudo reboot'
+	alias hibernate='systemctl hibernate'
+	alias suspend='sudo /etc/acpi/lid.sh'
+	alias update-grub='sudo grub-mkconfig -o /boot/grub2/grub.cfg'
+else
+	alias poweroff='sudo poweroff'
+	alias reboot='sudo reboot'
+	alias hibernate='systemctl hibernate'
+	alias suspend='systemctl suspend'
+	alias wifi-menu='sudo wifi-menu'
+	alias netcfg='sudo netcfg'
+	alias netcfg-menu='sudo netcfg-menu'
+	alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+fi
+
+## Linux commangs
+alias grep='grep --color=auto'
 alias ls='ls --color=auto'
 alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
-alias halt='sudo halt'
-alias poweroff='halt'
-alias reboot='sudo reboot'
-alias hibernate='systemctl hibernate'
-alias suspend='sudo /etc/acpi/lid.sh'
-alias wifi-menu='sudo wifi-menu'
-alias netcfg='sudo netcfg'
-alias netcfg-menu='sudo netcfg-menu'
-alias filemanager='pcmanfm'
-alias sounddef='ponymix set-default'
-alias runonce='/home/daniele/linux/scripts/run_once.sh'
-alias nvidiaoff='sudo /home/daniele/linux/scripts/nvidiaoff.sh'
-#alias lsize="ls -lR | grep -e "^-" | awk '{sum+=\$5} END {if [ $A ] ; then if [ $A = \"K\" ] ; then print sum/1024 ; elif [ $A = \"M\" ] ; then print sum/1024/1024 ; elif [ $A = \"G\" ] ; then print sum/1024/1024/1024 ; else ; print sum ; fi ; else ; print sum ; fi'}"
-alias fixjava='wmname LG3D'
 
+## Utilities
+alias runonce='$STUFF/scripts/run_once.sh'
+alias nvidiaoff='sudo $STUFF/scripts/nvidiaoff.sh'
+alias fixjava='wmname LG3D'
+alias irc='(sleep 10 && bash $STUFF/scripts/run_once.sh notify-listener.py $STUFF/scripts/notify-listener.py > /dev/null 2>&1) & irssi'
+alias mkd='/home/daniele/linux/scripts/mkd.sh'
+#alias lsize="ls -lR | grep -e "^-" | awk '{sum+=\$5} END {if [ $A ] ; then if [ $A = \"K\" ] ; then print sum/1024 ; elif [ $A = \"M\" ] ; then print sum/1024/1024 ; elif [ $A = \"G\" ] ; then print sum/1024/1024/1024 ; else ; print sum ; fi ; else ; print sum ; fi'}"
+
+## Folders
 alias uni='cd ~/Dropbox/University'
 alias prj='cd ~/Dropbox/Project'
 alias shared='cd ~/Documents/Virtual\ Machines/Shared'
 alias sec='cd ~/Dropbox/IT/Security'
 alias drp='cd ~/Dropbox'
-alias iss='cd Dropbox/University/Ingegneria\ dei\ Sistemi\ Software\ LM/Laboratory/'
+alias iss='cd ~/Dropbox/University/Ingegneria\ dei\ Sistemi\ Software\ LM/Laboratory/'
 
-alias irc='(sleep 10 && bash ~/linux/scripts/run_once.sh notify-listener.py ~/linux/scripts/notify-listener.py > /dev/null 2>&1) & irssi'
-alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
-alias mkd='/home/daniele/linux/scripts/mkd.sh'
-
-# Systemctl
-alias ssres='sudo systemctl restart'
-alias sssta='sudo systemctl start'
-alias sssto='sudo systemctl stop'
-
-# Git
+## Git
 alias gc='git commit -m'
 alias gcheck='git checkout'
 alias ga='git add'
-alias gp='git push origin'
+alias gp='git push'
+alias gpo='git push origin'
 alias gst='git status'
 alias gsa='git stash apply'
 alias gss='git stash save'

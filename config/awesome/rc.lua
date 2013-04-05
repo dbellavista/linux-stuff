@@ -42,41 +42,78 @@ end
 -- }}}
 
 -- {{{ Global variables
-theme_dir = "/home/daniele/.config/awesome/themes/"
-script_dir = "/home/daniele/linux/scripts/"
+home = os.getenv("HOME")
+
+function distro(name, val_ok, val_no)
+	val_ok = val_ok or string.lower(name)
+	val_no = val_no or nil
+	if awful.util.pread("grep "..name.." /proc/version") ~= "" then
+		return val_ok
+	else
+		return val_no
+	end
+end
+
+gentoo = distro("Gentoo")
+arch = distro("Arch")
+
+distro = gentoo or arch or "default"
+
+stuff_dir = home.."/linux/"
+theme_dir = home.."/.config/awesome/themes/"
+script_dir = stuff_dir .. "/scripts/"
 function script(name)
 	return script_dir .. "/" .. name
 end
 
-terminal = "urxvt"
+-- Default modkey.
+modkey = "Mod4"
+
+-- Default programs
 mixer = 'pavucontrol'
-filemanager = "pcmanfm"
 browser2 = "firefox"
 browser1 = "google-chrome"
 
-editor = os.getenv("EDITOR") or "vim"
-editor_cmd = terminal .. " -e " .. editor
-
 power_c =	{
-	poweroff="halt", reboot= "reboot",
+	poweroff="poweroff", reboot= "reboot",
 	suspend= "suspend", hibernate, "hibernate",
 	lock= "slock", blank= script("blank.sh") }
 
 applications = {
 	e=filemanager, E="/opt/eclipse/eclipse",
-	v="VirtualBox", V="wireshark",
+	v="virtualbox", V="wireshark",
 	g=browser1, G=browser2, x=power_c["blank"]
 }
+
+-- NOT so DRY :(
+if distro == gentoo then
+	terminal = "urxvt"
+	filemanager = "pcmanfm"
+
+	power_c["poweroff"] = halt
+	power_c["suspend"] = "/etc/acpi/lid.sh"
+
+	applications["v"] = "VirtualBox"
+
+elseif distro == arch then
+	terminal = "gnome-terminal"
+	filemanager = "nautilus"
+
+else
+	terminal = "urxvt"
+	filemanager = "pcmanfm"
+
+end
 
 media_c = {
 	mute= script("mute_toggle"), up= script("vol_up"),
 	down=	script("vol_down"), play= script("media.sh play"),
 	nexts= script("media.sh next"), prevs= script("media.sh prev"),
-	screenshot= "scrot  -e 'mv $f /home/daniele/Pictures/'",
+	screenshot= "scrot  -e 'mv $f " .. home .. "/Pictures/'",
 	touchpad = script("toggle_touchpad.sh")}
 
--- Default modkey.
-modkey = "Mod4"
+editor = os.getenv("EDITOR") or "vim"
+editor_cmd = terminal .. " -e " .. editor
 
 -- }}}
 -- {{{ Startup
@@ -84,6 +121,7 @@ awful.util.spawn_with_shell(script("autostart.sh"))
 -- }}}
 
 -- {{{ Variable definitions
+
 -- Themes define colours, icons, and wallpapers
 beautiful.init(theme_dir .. "default/theme.lua")
 
@@ -108,7 +146,7 @@ local layouts =
 -- {{{ Wallpaper
 if beautiful.wallpaper then
     for s = 1, screen.count() do
-        gears.wallpaper.maximized(beautiful.wallpaper, s, true)
+        gears.wallpaper.maximized(beautiful.wallpaper[distro], s, true)
     end
 end
 -- }}}
@@ -148,7 +186,7 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
                                   }
                         })
 
-mylauncher = awful.widget.launcher({ image = beautiful.distro_icon,
+mylauncher = awful.widget.launcher({ image = beautiful.distro_icon[distro],
                                      menu = mymainmenu })
 
 -- Menubar configuration

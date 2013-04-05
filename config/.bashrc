@@ -17,5 +17,7 @@ fi
 
 # Put your fun stuff here.
 
-source ~/linux/shell/environment
-source ~/linux/shell/aliases
+STUFF="$HOME/linux"
+
+source $STUFF/shell/environment
+source $STUFF/shell/aliases

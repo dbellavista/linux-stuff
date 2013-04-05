@@ -6,6 +6,8 @@ config/.moc/last_directory
 config/.moc/softmixer
 config/.moc/equalizer
 config/.moc/tags_cache
+config/.vim/.netrwhist
+config/.vim/.VimballRecord
 
 # Swaps
 *.swp

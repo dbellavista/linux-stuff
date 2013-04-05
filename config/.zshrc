@@ -21,6 +21,9 @@ compinit
 # }}} End of lines added by compinstall
 
 # My Own custom modification
+# SSH completion {{{
+zstyle -e ':completion::*:*:*:hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
+# }}}
 
 # {{{ Custom key binding
 # create a zkbd compatible hash;
@@ -61,22 +64,30 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
     zle -N zle-line-init
     zle -N zle-line-finish
 fi
-# }}}
-
-source ~/linux/shell/aliases
-source ~/linux/shell/environment
-
-#source ~/linux/shell/asciiart
-source ~/linux/zsh/history-substring-search.zsh
-source ~/linux/zsh/git-prompt/zshprompt.sh
 
 emacs-backward-word() {
   local WORDCHARS="${WORDCHARS:s@/@}"
   zle backward-word
 }
 zle -N emacs-backward-word
+bindkey ';5D' emacs-backward-word
+bindkey ';5C' emacs-forward-word
+# }}}
 
-zstyle -e ':completion::*:*:*:hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
+# SOURCES {{{
+
+STUFF=$HOME/linux
+
+source $STUFF/shell/aliases
+source $STUFF/shell/environment
+
+#source $STUFF/shell/asciiart
+source $STUFF/zsh/history-substring-search.zsh
+source $STUFF/zsh/git-prompt/zshprompt.sh
+
+# }}}
+
+# PROMT {{{
 
 autoload -U promptinit
 promptinit
@@ -93,3 +104,4 @@ case $TERM in xterm*)
 	}
 	;;
 esac
+#}}}
