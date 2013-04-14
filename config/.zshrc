@@ -82,6 +82,9 @@ source $STUFF/shell/aliases
 source $STUFF/shell/environment
 
 #source $STUFF/shell/asciiart
+
+export __GIT_PROMPT_DIR=$STUFF/zsh/git-prompt
+
 source $STUFF/zsh/history-substring-search.zsh
 source $STUFF/zsh/git-prompt/zshprompt.sh
 

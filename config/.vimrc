@@ -51,7 +51,10 @@ set history=1000         " remember more commands and search history
 set undolevels=1000      " use many muchos levels of undo
 set incsearch     " show search matches as you typei
 
+set hlsearch!
+
 set pastetoggle=<F2> " avoid auto-indent while pastings
+nnoremap <F3> :set hlsearch!<CR>
 
 set list listchars=tab:\ \ ,trail:~,extends:>,precedes:<
 

@@ -11,10 +11,10 @@ GENTOO=$?
 if [ $GENTOO -eq 0 ]; then
 	alias ip='/sbin/ip'
 	alias halt='sudo halt'
-	alias poweroff='halt'
+	alias poweroff='sudo poweroff'
 	alias reboot='sudo reboot'
-	alias hibernate='systemctl hibernate'
-	alias suspend='sudo /etc/acpi/lid.sh'
+	alias hibernate='sudo pm-hibernate'
+	alias suspend='sudo pm-suspend'
 	alias update-grub='sudo grub-mkconfig -o /boot/grub2/grub.cfg'
 	alias markdown='markdown_py'
 else

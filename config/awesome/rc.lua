@@ -86,7 +86,7 @@ else
 end
 
 power_c =	{
-	poweroff="poweroff", reboot= "reboot",
+	poweroff="poweroff", reboot= "sudo reboot",
 	suspend= "suspend", hibernate, "hibernate",
 	lock= "slock", blank= script("blank.sh") }
 
@@ -97,11 +97,10 @@ applications = {
 }
 
 if distro == gentoo then
-	terminal = "urxvt"
-	filemanager = "pcmanfm"
-
-	power_c["poweroff"] = halt
-	power_c["suspend"] = "/etc/acpi/lid.sh"
+	power_c["poweroff"] = "sudo /sbin/poweroff"
+	power_c["suspend"] = "sudo /usr/sbin/pm-suspend"
+	power_c["hibernate"] = "sudo /usr/sbin/pm-hibernate"
+	applications["v"] = "VirtualBox"
 
 end
 
