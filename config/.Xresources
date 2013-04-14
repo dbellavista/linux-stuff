@@ -1,6 +1,9 @@
+! Arch configuration
+URxvt.iso14755 : false
+
 ! Using xft
 URxvt*termName: rxvt-unicode-256color
-URxvt*font:	xft:Inconsolata:size=11
+URxvt*font:	xft:Monospace:size=11
 URxvt.scrollBar:	false
 URxvt.print-pipe: "cat > /dev/null"
 
