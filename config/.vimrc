@@ -31,6 +31,7 @@ set copyindent
 " Tab spacing
 set tabstop=2
 set shiftwidth=2
+set expandtab
 set shiftround
 " Coordinate bottom right
 set ruler
