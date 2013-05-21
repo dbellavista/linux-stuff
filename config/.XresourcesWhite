@@ -1,0 +1,84 @@
+! Arch configuration
+URxvt.iso14755 : false
+
+! Using xft
+URxvt*termName: rxvt-unicode-256color
+URxvt*font:	xft:Monospace:size=13
+URxvt.scrollBar:	false
+URxvt.print-pipe: "cat > /dev/null"
+
+Xft*dpi:	96
+Xft*antialiasing:	True
+Xtf*hinting:	Full
+
+! Perl extensions
+URxvt.perl-ext-common: default,clipboard,matcher,keyboard-select
+
+!! URLs
+URxvt.keysym.C-U: perl:url-select:select_next
+URxvt.url-launcher: /usr/bin/google-chrome
+URxvt.underlineURLs: True
+URxvt.matcher.button: 1
+!! Copy-Paste
+URxvt.clipboard.autocopy: true
+URxvt.keysym.M-Escape: perl:keyboard-select:activate
+URxvt.keysym.C-C: perl:clipboard:copy
+URxvt.keysym.C-V: perl:clipboard:paste
+URxvt.keysym.M-C-v: perl:clipboard:paste_escaped
+URxvt.copyCommand: xsel -ib
+URxvt.pasteCommand: xsel -ob
+
+! Transparent
+URxvt*.transparent: false
+URxvt*.shading: 0
+
+! Override arrows (rebinding in zsh)
+URxvt.keysym.C-Left: ;5D
+URxvt.keysym.C-Right: ;5C
+
+! Colors
+
+urxvt*foreground: #101010
+urxvt*background: #f2f2f2
+
+! Normal
+! color0    black
+! color1    red
+! color2    green
+! color3    yellow
+! color4    blue
+! color5    purple
+! color6    cyan
+! color7    white
+
+urxvt*color0:    #030303
+urxvt*color1:    #e26250
+urxvt*color2:    #aae367
+urxvt*color3:    #d3a000
+urxvt*color4:    #3085ca
+urxvt*color5:    #a66be3
+urxvt*color6:    #7d80d2
+urxvt*color7:    #f2f2f2
+
+! Light
+! color8    black
+! color9    red
+! color10    green
+! color11    yellow
+! color12    blue
+! color13    purple
+! color14    cyan
+! color15    white
+
+urxvt*color8:    #131313
+urxvt*color9:    #f76655
+urxvt*color10:   #abf456
+urxvt*color11:   #f5f154
+urxvt*color12:   #6ebdf8
+urxvt*color13:   #b570f9
+urxvt*color14:   #9095f6
+urxvt*color15:   #e2e2e2
+
+URxvt.colorIT: #87af5f
+URxvt.colorBD: #d7d7d7
+URxvt.colorUL: #87afd7
