@@ -97,8 +97,8 @@ promptinit
 prompt walters
 setopt PROMPT_SUBST
 #PROMPT='%(!.%F{red}.%F{yellow})%1~ %f%(!.%F{red}.%F{blue})%#%f '
-
-PROMPT='$(git_super_status) %f%(!.%F{red}.%F{yellow})∞%f '
+#PROMPT='$(git_super_status) %f%(!.%F{red}.%F{yellow})∞%f '
+PROMPT='$(git_super_status) %f%(!.%F{red}.%F{yellow})>%f '
 
 
 case $TERM in xterm*)
