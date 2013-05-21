@@ -9,7 +9,6 @@ grep --quiet Gentoo /proc/version
 GENTOO=$?
 
 if [ $GENTOO -eq 0 ]; then
-	alias ip='/sbin/ip'
 	alias halt='sudo halt'
 	alias poweroff='sudo poweroff'
 	alias reboot='sudo reboot'
@@ -17,6 +16,7 @@ if [ $GENTOO -eq 0 ]; then
 	alias suspend='sudo pm-suspend'
 	alias update-grub='sudo grub-mkconfig -o /boot/grub2/grub.cfg'
 	alias markdown='markdown_py'
+	alias sdc='sudo dispatch-conf'
 else
 	alias poweroff='sudo poweroff'
 	alias reboot='sudo reboot'
@@ -34,8 +34,10 @@ alias ls='ls --color=auto'
 alias ll='ls -l'
 alias la='ls -a'
 alias lla='ls -la'
+alias c='clear'
 
 ## Utilities
+alias ungcc="gcc -fno-stack-protector -fno-pie"
 alias runonce="$STUFF/scripts/run_once.sh"
 alias nvidiaoff="sudo $STUFF/scripts/nvidiaoff.sh"
 alias fixjava="wmname LG3D"
