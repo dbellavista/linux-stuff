@@ -16,6 +16,7 @@ if has('gui_running')
 else
 	"colorscheme my_theme
 	colorscheme wombat256mod
+	"colorscheme default
 	"colorscheme anotherdark
 	"colorscheme BusyBee
 endif
@@ -115,6 +116,8 @@ noremap <leader>E <Esc>:CommandTFlush<CR>
 noremap <leader>b <Esc>:CommandTBuffer<CR>
 
 let g:tagbar_usearrows = 1
+
+let g:tex_verbspell = 1
 
 nnoremap <leader>l :TagbarToggle<CR>
 
