@@ -23,4 +23,4 @@ else
 	PATH=$PATH:$HOME/.gem/ruby/2.0.0/bin
 fi
 
-export PATH=$PATH:/opt/eclipse
+export PATH=$PATH:/opt/eclipse:/opt/MATLAB/R2012a/bin
