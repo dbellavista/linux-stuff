@@ -1,0 +1,33 @@
+\documentclass[11pt]{article}
+
+\newcommand{\xauth}{Daniele Bellavista}
+\newcommand{\xtitle}{Title}
+
+\usepackage{float}
+\usepackage[utf8]{inputenc}
+\usepackage{url}
+\usepackage{hyperref}
+\hypersetup{unicode=true,          % non-Latin characters in Acrobat’s bookmarks
+    pdftitle={\xauth},    % title
+    pdfauthor={\xtitle},     % author
+}
+
+\usepackage{chngcntr}
+\counterwithin{figure}{subsection}
+\counterwithin{table}{subsection}
+
+\usepackage{listings}
+
+\begin{document}
+\title{\xtitle}
+\author{\xauth}
+
+\maketitle
+
+%\input{file.tex}
+
+\bibliographystyle{plain}
+\nocite{*}
+\bibliography{bib/bib,bib/implementation}{}
+
+\end{document}
