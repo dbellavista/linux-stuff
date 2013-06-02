@@ -124,6 +124,8 @@ nnoremap <leader>l :TagbarToggle<CR>
 noremap <leader>o <Esc>i<Enter><Esc>
 noremap <leader>O <Esc>i<Enter><Esc>-$
 
+noremap <Tab> <C-w><C-w>
+
 " Section: Compiling {{{
 let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_MultipleCompileFormats='pdf'
