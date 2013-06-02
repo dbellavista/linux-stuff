@@ -46,6 +46,7 @@ alias fixjava="wmname LG3D"
 alias irc="(sleep 10 && bash $STUFF/scripts/run_once.sh notify-listener.py $STUFF/scripts/notify-listener.py > /dev/null 2>&1) & irssi"
 alias mkd="$STUFF/scripts/mkd.sh"
 alias initlatex="mkdir tmp; mkdir bib; touch bib/bib.bib; cp $STUFF/templates/template.tex main.tex; touch main.tex.latexmain"
+alias initc="mkdir src; cp $STUFF/templates/Makefile.c ./Makefile"
 
 #alias lsize="ls -lR | grep -e "^-" | awk '{sum+=\$5} END {if [ $A ] ; then if [ $A = \"K\" ] ; then print sum/1024 ; elif [ $A = \"M\" ] ; then print sum/1024/1024 ; elif [ $A = \"G\" ] ; then print sum/1024/1024/1024 ; else ; print sum ; fi ; else ; print sum ; fi'}"
 
