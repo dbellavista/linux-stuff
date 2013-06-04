@@ -31,3 +31,6 @@
 [submodule "config/.vim/bundle/vim-latex"]
 	path = config/.vim/bundle/vim-latex
 	url = git://github.com/jcf/vim-latex.git
+[submodule "config/.vim/bundle/vim-template"]
+	path = config/.vim/bundle/vim-template
+	url = https://github.com/thinca/vim-template
