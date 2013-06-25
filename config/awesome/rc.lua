@@ -76,7 +76,7 @@ browser1 = "google-chrome"
 
 if distro == gentoo then
   terminal = "urxvt"
-  filemanager = "pcmanfm"
+  filemanager = "spacefm"
 elseif distro == arch then
   terminal = "gnome-terminal"
   filemanager = "nautilus"
@@ -510,11 +510,13 @@ awful.rules.rules = {
   focus = awful.client.focus.filter,
   keys = clientkeys,
   buttons = clientbuttons } },
-  --{ rule = { class = "MPlayer" },
-  --  properties = { floating = true } },
+  { rule = { class = "MPlayer" },
+    properties = { floating = true } },
   { rule = { class = "pinentry" },
   properties = { floating = true } },
   { rule = { class = "Wicd-client.py" },
+  properties = { floating = true } },
+  { rule = { class = "Spacefm", name = "Errors" },
   properties = { floating = true } },
   --{ rule = { class = "gimp" },
   --  properties = { floating = true } },
