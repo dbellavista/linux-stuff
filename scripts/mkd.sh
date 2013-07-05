@@ -1,3 +1,3 @@
 #!/bin/bash
 
-markdown $1 | lynx -stdin
+markdown_py $1 | lynx -stdin
