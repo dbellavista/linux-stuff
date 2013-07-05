@@ -57,7 +57,7 @@ alias prj='cd ~/Dropbox/Project'
 alias shared='cd ~/Documents/Virtual\ Machines/Shared'
 alias sec='cd ~/Dropbox/IT/Security'
 alias drp='cd ~/Dropbox'
-alias iss='cd ~/Dropbox/University/Ingegneria\ dei\ Sistemi\ Software\ LM/Laboratory/'
+alias iss='cd ~/Dropbox/University/Ingegneria\ dei\ Sistemi\ Software\ LM/Git'
 
 ## Git
 alias gc='git commit -m'
@@ -69,3 +69,4 @@ alias gst='git status'
 alias gsa='git stash apply'
 alias gss='git stash save'
 alias gd='git diff'
+alias grm='git status | grep -oe "deleted.*" | awk '{ print $2 }' | xargs git rm'
