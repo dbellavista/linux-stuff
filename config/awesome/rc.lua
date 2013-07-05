@@ -520,6 +520,8 @@ awful.rules.rules = {
   properties = { floating = true } },
   { rule = { class = "Skype" },
   properties = { floating = true } },
+  { rule = { instance = "sun-awt-X11-XFramePeer" },
+  properties = { floating = true, ontop = true, coords={x=1000, y=100} } },
   --{ rule = { class = "gimp" },
   --  properties = { floating = true } },
   -- Set Firefox to always map on tags number 2 of screen 1.
