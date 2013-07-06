@@ -29,8 +29,10 @@ URxvt.copyCommand: xsel -ib
 URxvt.pasteCommand: xsel -ob
 
 ! Transparent
-URxvt*.transparent: true
-URxvt*.shading: 15
+URxvt*depth: 32
+urxvt*background:rgba:0000/0000/0000/dddd
+!URxvt*.transparent: false
+!URxvt*.shading: 0
 
 ! Override arrows (rebinding in zsh)
 URxvt.keysym.C-Left: ;5D
@@ -39,7 +41,7 @@ URxvt.keysym.C-Right: ;5C
 ! Colors
 
 urxvt*foreground: #f2f2f2
-urxvt*background: #101010
+!urxvt*background: #101010
 
 ! Normal
 ! color0    black
