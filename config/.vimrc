@@ -19,6 +19,8 @@ else
 	"colorscheme default
 	"colorscheme anotherdark
 	"colorscheme BusyBee
+	hi clear SpellBad
+	hi SpellBad cterm=underline ctermfg=red
 endif
 
 " Add recently accessed projects menu (project plugin)
