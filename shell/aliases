@@ -57,7 +57,7 @@ alias prj='cd ~/Dropbox/Project'
 alias shared='cd ~/Documents/Virtual\ Machines/Shared'
 alias sec='cd ~/Dropbox/IT/Security'
 alias drp='cd ~/Dropbox'
-alias iss='cd ~/Dropbox/University/Ingegneria\ dei\ Sistemi\ Software\ LM/Git'
+alias iss='cd ~/Dropbox/University/Ingegneria\ dei\ Sistemi\ Software\ LM/Git/group14work/'
 
 ## Git
 alias gc='git commit -m'
