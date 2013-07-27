@@ -11,7 +11,7 @@ theme.delightful_vol_zero = "/usr/share/icons/Faenza/status/22/audio-volume-off.
 theme.delightful_vol_mute = "/usr/share/icons/Faenza/status/22/audio-volume-muted.png"
 theme.delightful_error = "/usr/share/icons/Faenza/status/22/audio-volume-muted-blocked-panel.png"
 
-theme.font          = "Cantarell 10"
+theme.font          = "Droid Sans Thai 9"
 
 theme.bg_normal     = "#222222"
 theme.bg_focus      = "#535d6c"
