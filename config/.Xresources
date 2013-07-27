@@ -3,7 +3,7 @@ URxvt.iso14755 : false
 
 ! Using xft
 URxvt*termName: rxvt-unicode-256color
-URxvt*font:	xft:Monospace:size=11
+URxvt*font:	xft:Droid Sans Mono:size=10.5
 URxvt.scrollBar:	false
 URxvt.print-pipe: "cat > /dev/null"
 
@@ -18,7 +18,7 @@ URxvt.perl-ext-common: default,clipboard,matcher,keyboard-select
 URxvt.keysym.C-U: perl:url-select:select_next
 URxvt.url-launcher: /usr/bin/google-chrome
 URxvt.underlineURLs: True
-URxvt.matcher.button: 1
+URxvt.matcher.button: 2
 !! Copy-Paste
 URxvt.clipboard.autocopy: true
 URxvt.keysym.M-Escape: perl:keyboard-select:activate
