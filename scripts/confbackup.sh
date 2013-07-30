@@ -2,7 +2,7 @@
 
 BPATH=/mnt/data/Documents/Dropbox/Various/Backup/
 
-HPATH=/home/daniele/
+HPATH=$HOME
 
 HFILES=()
 HDIRS=(linux)

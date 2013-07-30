@@ -14,7 +14,7 @@ fi
 
 export GTK2_RC_FILES="$HOME/.gtkrc-2.0"
 export MOZILLA_FIVE_HOME="/usr/lib/firefox"
-export XDG_CONFIG_HOME=/home/daniele/.config
+export XDG_CONFIG_HOME="$HOME/.config"
 
 
 if [ $GENTOO -eq 0 ]; then

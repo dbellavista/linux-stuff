@@ -1,3 +1,3 @@
 #!/bin/bash
 
-xautolock -time 5 -locker "/home/daniele/linux/scripts/blank.sh"
+xautolock -time 5 -locker "$HOME/$STUFF/scripts/blank.sh"
