@@ -1,36 +1,36 @@
-[submodule "config/.vim/bundle/fugitive"]
-	path = config/.vim/bundle/fugitive
+[submodule "vim/.vim/bundle/fugitive"]
+	path = vim/.vim/bundle/fugitive
 	url = git://github.com/tpope/vim-fugitive.git
-[submodule "config/.vim/bundle/command-t"]
-	path = config/.vim/bundle/command-t
+[submodule "vim/.vim/bundle/command-t"]
+	path = vim/.vim/bundle/command-t
 	url = git://git.wincent.com/command-t.git
-[submodule "config/.vim/bundle/closetag"]
-	path = config/.vim/bundle/closetag
+[submodule "vim/.vim/bundle/closetag"]
+	path = vim/.vim/bundle/closetag
 	url = git://github.com/docunext/closetag.vim.git
-[submodule "config/.vim/bundle/nerdcommenter"]
-	path = config/.vim/bundle/nerdcommenter
+[submodule "vim/.vim/bundle/nerdcommenter"]
+	path = vim/.vim/bundle/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
-[submodule "config/.vim/bundle/tagbar"]
-	path = config/.vim/bundle/tagbar
+[submodule "vim/.vim/bundle/tagbar"]
+	path = vim/.vim/bundle/tagbar
 	url = git://github.com/majutsushi/tagbar.git
-[submodule "config/.vim/bundle/surround"]
-	path = config/.vim/bundle/surround
+[submodule "vim/.vim/bundle/surround"]
+	path = vim/.vim/bundle/surround
 	url = git://github.com/tpope/vim-surround.git
-[submodule "config/.vim/bundle/NrrwRgn"]
-	path = config/.vim/bundle/NrrwRgn
+[submodule "vim/.vim/bundle/NrrwRgn"]
+	path = vim/.vim/bundle/NrrwRgn
 	url = http://github.com/chrisbra/NrrwRgn
-[submodule "config/.vim/bundle/youCompleteMe"]
-	path = config/.vim/bundle/youCompleteMe
+[submodule "vim/.vim/bundle/youCompleteMe"]
+	path = vim/.vim/bundle/youCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe
-[submodule "config/.vim/bundle/CamelCaseMotion"]
-	path = config/.vim/bundle/CamelCaseMotion
+[submodule "vim/.vim/bundle/CamelCaseMotion"]
+	path = vim/.vim/bundle/CamelCaseMotion
 	url = https://github.com/bkad/CamelCaseMotion
-[submodule "config/.vim/bundle/vim-ruby"]
-	path = config/.vim/bundle/vim-ruby
+[submodule "vim/.vim/bundle/vim-ruby"]
+	path = vim/.vim/bundle/vim-ruby
 	url = https://github.com/vim-ruby/vim-ruby/
-[submodule "config/.vim/bundle/vim-latex"]
-	path = config/.vim/bundle/vim-latex
+[submodule "vim/.vim/bundle/vim-latex"]
+	path = vim/.vim/bundle/vim-latex
 	url = git://github.com/jcf/vim-latex.git
-[submodule "config/.vim/bundle/vim-template"]
-	path = config/.vim/bundle/vim-template
+[submodule "vim/.vim/bundle/vim-template"]
+	path = vim/.vim/bundle/vim-template
 	url = https://github.com/thinca/vim-template
