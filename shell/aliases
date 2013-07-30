@@ -1,8 +1,6 @@
 #!/bin/bash
 # ALIASES
 
-STUFF="$HOME/linux"
-
 ## Distro dependent aliases
 
 grep --quiet Gentoo /proc/version
