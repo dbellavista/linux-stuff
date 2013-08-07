@@ -29,7 +29,9 @@ fi
 
 if [ -z "$1" ]
 then
-	exec $PARAMS awesome
+  WM=awesome
 else
-	exec $PARAMS $1
+  WM=$1
 fi
+
+exec $PARAMS $WM
