@@ -362,7 +362,7 @@ settings_table = {
     },
     {
         name='exec',
-        arg='acpi -b | acpi -b | awk \'BEGIN { FS = " " } ; { print $4 }\' | sed \'s/%,//\'',
+        arg='acpi -b | acpi -b | awk \'BEGIN { FS = " " } ; { print $4 }\' | sed \'s/%.*//\'',
         max=100,
         bg_colour=0xffffff,
         bg_alpha=0.2,
