@@ -58,7 +58,7 @@ BASH_FILES=($HOME/'.bash_profile' $HOME/'.bashrc' $HOME/'.asd');
 ZSH_FILES=($HOME/'.zprofile' $HOME/'.zshrc');
 VIM_FILES=($HOME/'.vim' $HOME/'.vimrc');
 MOC_FILES=($HOME/'.moc');
-X_FILES=($HOME/'.xinitrc' $HOME/'.xprofile' $HOME/'.Xresources' $HOME/'.XresourcesWhire');
+X_FILES=($HOME/'.xinitrc' $HOME/'.xprofile' $HOME/'.Xresources' $HOME/'.XresourcesWhite');
 AWESOME_FILES=($HOME/'.config/awesome');
 
 echo Installing bash configuration
