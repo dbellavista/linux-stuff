@@ -4,3 +4,4 @@
 #bash ~/linux/scripts/run_once.sh "nm-applet" "nm-applet"
 bash ~/linux/scripts/run_once.sh "wicd-client.py" "wicd-gtk -t"
 bash ~/linux/scripts/run_once.sh "dropbox" "$HOME/linux/scripts/start_dropbox.sh"
+bash ~/linux/scripts/run_once.sh "conky" "conky -c $HOME/.conky/conkyrc"

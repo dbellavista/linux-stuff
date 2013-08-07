@@ -58,6 +58,7 @@ BASH_FILES=($HOME/'.bash_profile' $HOME/'.bashrc' $HOME/'.asd');
 ZSH_FILES=($HOME/'.zprofile' $HOME/'.zshrc');
 VIM_FILES=($HOME/'.vim' $HOME/'.vimrc');
 MOC_FILES=($HOME/'.moc');
+CONKY_FILES=($HOME/'.conky');
 X_FILES=($HOME/'.xinitrc' $HOME/'.xprofile' $HOME/'.Xresources' $HOME/'.XresourcesWhite');
 AWESOME_FILES=($HOME/'.config/awesome');
 
@@ -72,6 +73,9 @@ install_files $STUFF_DIR/"vim" ${VIM_FILES[@]}
 
 echo Installing MoC configuration
 install_files $STUFF_DIR/"config" ${MOC_FILES[@]}
+
+echo Installing Conky configuration
+install_files $STUFF_DIR/"config" ${CONKY_FILES[@]}
 
 echo Installing X configuration
 install_files $STUFF_DIR/"X" ${X_FILES[@]}

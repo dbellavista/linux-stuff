@@ -188,6 +188,48 @@ power_c =	{
 mylauncher = awful.widget.launcher({ image = beautiful.distro_icon[distro],
 menu = mymainmenu })
 
+-- Conky configuration
+function get_conky()
+    local clients = client.get()
+    local conky = nil
+    local i = 1
+    while clients[i]
+    do
+        if clients[i].class == "Conky"
+        then
+            conky = clients[i]
+        end
+        i = i + 1
+    end
+    return conky
+end
+function raise_conky()
+    local conky = get_conky()
+    if conky
+    then
+        conky.ontop = true
+    end
+end
+function lower_conky()
+    local conky = get_conky()
+    if conky
+    then
+        conky.ontop = false
+    end
+end
+function toggle_conky()
+    local conky = get_conky()
+    if conky
+    then
+        if conky.ontop
+        then
+            conky.ontop = false
+        else
+            conky.ontop = true
+        end
+    end
+end
+
 -- Menubar configuration
 menubar.utils.terminal = terminal -- Set the terminal for applications that require it
 -- }}}
@@ -413,6 +455,7 @@ awful.key({ modkey }, "p", function() menubar.show() end),
 awful.key({ }, "XF86AudioMute", function () awful.util.spawn(media_c["mute"]) end),
 awful.key({ }, "XF86AudioRaiseVolume", function () awful.util.spawn(media_c["up"]) end),
 awful.key({ }, "XF86AudioLowerVolume", function () awful.util.spawn(media_c["down"]) end),
+awful.key({ }, "F10", toggle_conky),
 
 awful.key({ }, "XF86AudioPlay", function () awful.util.spawn(media_c["play"]) end),
 awful.key({ }, "XF86AudioNext", function () awful.util.spawn(media_c["nexts"]) end),
@@ -524,6 +567,15 @@ awful.rules.rules = {
   properties = { floating = true, ontop = true, coords={x=1000, y=100} } },
   { rule = { class = "Vidalia" },
   properties = { floating = true } },
+  { rule = { class = "Conky" },
+  properties = {
+      floating = true,
+      sticky = true,
+      ontop = false,
+      focusable = false,
+      border_width = 0,
+      size_hints = {"program_position", "program_size"}
+  } }
   --{ rule = { class = "gimp" },
   --  properties = { floating = true } },
   -- Set Firefox to always map on tags number 2 of screen 1.
