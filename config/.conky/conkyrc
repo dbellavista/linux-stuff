@@ -109,4 +109,4 @@ ${offset 2}${color FFFFFF} ${top name 4}${goto 70}${top cpu 4}${goto 110}${top_m
 
 ${color 0066FF}${font Droid Sans:size=10}
 ${alignr 10}${exec  mocp -i 2>/dev/null | grep -e "^SongTitle:" | sed "s/^SongTitle: //"}   ${exec mocp -i 2>/dev/null| grep -e "^Artist:" | sed "s/^Artist: \(.*\)/[\1]/"}
-${alignr 10}${exec mocp -i 2>/dev/null| grep "CurrentTime" | sed "s/CurrentTime: //"}${exec mocp -i 2>/dev/null| grep "TotalTime" | sed "s/TotalTime: /\//"}
+${alignr 10}${exec mocp -i 2>/dev/null| grep "State" | sed "s/State: //" | sed "s/PAUSE/||/" | sed "s/PLAY/ >/"} ${exec mocp -i 2>/dev/null| grep "CurrentTime" | sed "s/CurrentTime: //"}${exec mocp -i 2>/dev/null| grep "TotalTime" | sed "s/TotalTime: /\//"}
