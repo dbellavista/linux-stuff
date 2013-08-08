@@ -20,8 +20,8 @@ Changelog:
 
 settings_table = {
     {
-        name='time',
-        arg='%H.%M',
+        name='lua',
+        arg='conky_compute_24_hours',
         max=24,
         bg_colour=0xffffff,
         bg_alpha=0.1,
@@ -41,8 +41,8 @@ settings_table = {
         end_angle=360
     },
     {
-        name='time',
-        arg='%I.%M',
+        name='lua',
+        arg='conky_compute_hours',
         max=12,
         bg_colour=0xffffff,
         bg_alpha=0.1,
@@ -57,8 +57,8 @@ settings_table = {
         end_angle=360
     },
     {
-        name='time',
-        arg='%M.%S',
+        name='lua',
+        arg='conky_compute_minutes',
         max=60,
         bg_colour=0xffffff,
         bg_alpha=0.1,
@@ -86,6 +86,7 @@ settings_table = {
         --end_angle=360
     --},
     {
+        id = 'days',
         name='time',
         arg='%d',
         max=31,
@@ -100,6 +101,7 @@ settings_table = {
         end_angle=90
     },
     {
+        id = 'year',
         name='time',
         arg='%j',
         max=365,
@@ -436,24 +438,58 @@ function get_days(cyear, cmonth, cday)
   return os.date("%j", os.time{year=cyear, month=cmonth, day=cday})
 end
 
-function conky_clock_setup()
-for i,n in pairs(settings_table) do
-  if n['name'] == 'time' and n['arg'] == '%j' then
-    cyear = os.date("*t").year
-    max = get_days(cyear, 12, 31)
-    n.max = max
-
-    n.fg[0] = {['val'] = 0.00, ['col'] = 0x6082B6 }
-    n.fg[1] = {['val'] = get_days(cyear, 3, 21)/max, ['col'] = 0xFFBF00 }
-    n.fg[2] = {['val'] = get_days(cyear, 6, 21)/max, ['col'] = 0x228B22 }
-    n.fg[3] = {['val'] = get_days(cyear, 9, 23)/max, ['col'] = 0xCC5500 }
-    n.fg[4] = {['val'] = get_days(cyear, 12, 21)/max, ['col'] = 0x6082B6 }
-  end
-
-  if n['fg'] ~= nil then
-    table.sort(n['fg'], function(lhs, rhs) return lhs['val'] < rhs['val'] end)
-  end
+function get_days_in_month(cyear, cmonth)
+  return os.date('%d',os.time{year=cyear, month=cmonth + 1, day=0})
 end
+
+function conky_compute_24_hours()
+  date = os.date("*t")
+  return date.hour + date.min/60
+end
+
+function conky_compute_minutes()
+  date = os.date("*t")
+  return date.min + date.sec/60
+end
+
+function conky_compute_hours()
+  date = os.date("*t")
+  min = date.min
+  hours = date.hour
+
+  if hours == 12 and min == 00 then
+    return 12
+  end
+
+  if hours >= 12 then
+    hours = hours - 12
+  end
+
+  return hours + min/60
+end
+
+function conky_clock_setup()
+  date = os.date("*t")
+  cyear = date.year
+  cmonth = date.month
+  for i,n in pairs(settings_table) do
+    if n.id == 'days' then
+      n.max = get_days_in_month(cyear, cmonth)
+    elseif n.id == 'year' then
+      max = get_days(cyear, 12, 31)
+      n.max = max
+
+      n.fg[0] = {['val'] = 0.00, ['col'] = 0x6082B6 }
+      n.fg[1] = {['val'] = get_days(cyear, 3, 21)/max, ['col'] = 0xFFBF00 }
+      n.fg[2] = {['val'] = get_days(cyear, 6, 21)/max, ['col'] = 0x228B22 }
+      n.fg[3] = {['val'] = get_days(cyear, 9, 23)/max, ['col'] = 0xCC5500 }
+      n.fg[4] = {['val'] = get_days(cyear, 12, 21)/max, ['col'] = 0x6082B6 }
+    end
+
+    if n['fg'] ~= nil then
+      table.sort(n['fg'], function(lhs, rhs) return lhs['val'] < rhs['val'] end)
+    end
+  end
 end
 
 -- Settings for date
@@ -502,31 +538,32 @@ end
 function draw_clock_hands(cr,xc,yc)
     local secs,mins,hours,secs_arc,mins_arc,hours_arc
     local xh,yh,xm,ym,xs,ys
-    
-    secs=os.date("%S")    
-    mins=os.date("%M")
-    hours=os.date("%I")
-        
-    secs_arc=(2*math.pi/60)*secs
-    mins_arc=(2*math.pi/60)*mins+secs_arc/60
-    hours_arc=(2*math.pi/12)*(hours+mins/60.0) -- mins_arc/12
+
+    --secs=os.date("%S")
+    --mins=os.date("%M")
+    --hours=os.date("%I")
+
+    --secs_arc=(2*math.pi/60)*secs
+    secs_arc = 0
+    mins_arc=(2*math.pi/60)*conky_compute_minutes()
+    hours_arc=(2*math.pi/12)*conky_compute_hours()
 
     -- Draw hour hand
-    
+
     xh=xc+0.7*clock_r*math.sin(hours_arc)
     yh=yc-0.7*clock_r*math.cos(hours_arc)
     cairo_move_to(cr,xc,yc)
     cairo_line_to(cr,xh,yh)
-    
+
     cairo_set_line_cap(cr,CAIRO_LINE_CAP_ROUND)
     cairo_set_line_width(cr,5)
     cairo_set_source_rgba(cr,1.0,1.0,1.0,1.0)
     cairo_stroke(cr)
-    
+
     -- Draw minute hand
-    
-    xm=xc+clock_r*math.sin(mins_arc)
-    ym=yc-clock_r*math.cos(mins_arc)
+
+    xm=xc+0.9*clock_r*math.sin(mins_arc)
+    ym=yc-0.9*clock_r*math.cos(mins_arc)
     cairo_move_to(cr,xc,yc)
     cairo_line_to(cr,xm,ym)
     
