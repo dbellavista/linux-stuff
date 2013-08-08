@@ -21,13 +21,36 @@ Changelog:
 settings_table = {
     {
         name='time',
+        arg='%H.%M',
+        max=24,
+        bg_colour=0xffffff,
+        bg_alpha=0.1,
+        fg_colour=0x0066FF,
+        fg_alpha=0.4,
+        fg = {
+          {['val'] = 0.00, ['col'] = 0x191970 },
+          {['val'] = 0.25, ['col'] = 0x0070BB },
+          {['val'] = 0.5, ['col'] = 0xFFD700 },
+          {['val'] = 0.75, ['col'] = 0xFF7F00 },
+          {['val'] = 0.875, ['col'] = 0x191970 },
+        },
+        x=100, y=150,
+        radius=35,
+        thickness=20,
+        start_angle=0,
+        end_angle=360
+    },
+    {
+        name='time',
         arg='%I.%M',
         max=12,
         bg_colour=0xffffff,
         bg_alpha=0.1,
         fg_colour=0x0066FF,
-        fg_alpha=0.2,
+        --fg_alpha=0.2,
+        fg_alpha=0.4,
         x=100, y=150,
+        --radius=50,
         radius=50,
         thickness=5,
         start_angle=0,
@@ -42,25 +65,26 @@ settings_table = {
         fg_colour=0x0066FF,
         fg_alpha=0.4,
         x=100, y=150,
-        radius=56,
-        thickness=5,
-        start_angle=0,
-        end_angle=360
-    },
-    {
-        name='time',
-        arg='%S',
-        max=60,
-        bg_colour=0xffffff,
-        bg_alpha=0.1,
-        fg_colour=0x0066FF,
-        fg_alpha=0.6,
-        x=100, y=150,
+        --radius=56,
         radius=62,
         thickness=5,
         start_angle=0,
         end_angle=360
     },
+    --{
+        --name='time',
+        --arg='%S',
+        --max=60,
+        --bg_colour=0xffffff,
+        --bg_alpha=0.1,
+        --fg_colour=0x0066FF,
+        --fg_alpha=0.6,
+        --x=100, y=150,
+        --radius=62,
+        --thickness=5,
+        --start_angle=0,
+        --end_angle=360
+    --},
     {
         name='time',
         arg='%d',
@@ -405,7 +429,7 @@ clock_r=65
 clock_x=100
 clock_y=150
 
-show_seconds=true
+show_seconds=false
 
 for i,n in pairs(settings_table) do
   if n['fg'] ~= nil then
@@ -463,8 +487,8 @@ function draw_clock_hands(cr,xc,yc)
         
     secs_arc=(2*math.pi/60)*secs
     mins_arc=(2*math.pi/60)*mins+secs_arc/60
-    hours_arc=(2*math.pi/12)*hours+mins_arc/12
-        
+    hours_arc=(2*math.pi/12)*(hours+mins/60.0) -- mins_arc/12
+
     -- Draw hour hand
     
     xh=xc+0.7*clock_r*math.sin(hours_arc)

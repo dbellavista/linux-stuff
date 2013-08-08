@@ -1,7 +1,7 @@
 # Conky settings #
 background no
 out_to_console no
-update_interval 1.0
+update_interval 3.0
 total_run_times 0
 
 
@@ -43,14 +43,14 @@ gap_x 1
 gap_y 20
 
 ## Graphics settings
-draw_shades no
+draw_shades yes
 draw_outline no
 draw_borders no
 draw_graph_borders no
 
 default_color FFFFFF
-#default_shade_color black
-#default_outline_color white
+default_shade_color black
+default_outline_color black
 
 
 ## Text settings
@@ -107,5 +107,5 @@ ${offset 2}${color FFFFFF} ${top name 3}${goto 70}${top cpu 3}${goto 110}${top_m
 ${offset 2}${color FFFFFF} ${top name 4}${goto 70}${top cpu 4}${goto 110}${top_mem name 4}${goto 170}${top_mem mem 4}
 
 ${color 0066FF}${font Droid Sans:size=10}
-${alignr 10}${exec  mocp -i | grep -e "^SongTitle:" | sed "s/^SongTitle: //"}   ${exec mocp -i | grep -e "^Artist:" | sed "s/^Artist: \(.*\)/[\1]/"}
-${alignr 10}${exec mocp -i | grep "CurrentTime" | sed "s/CurrentTime: //"}${exec mocp -i | grep "TotalTime" | sed "s/TotalTime: /\//"}
+${alignr 10}${exec  mocp -i 2>/dev/null | grep -e "^SongTitle:" | sed "s/^SongTitle: //"}   ${exec mocp -i 2>/dev/null| grep -e "^Artist:" | sed "s/^Artist: \(.*\)/[\1]/"}
+${alignr 10}${exec mocp -i 2>/dev/null| grep "CurrentTime" | sed "s/CurrentTime: //"}${exec mocp -i 2>/dev/null| grep "TotalTime" | sed "s/TotalTime: /\//"}
