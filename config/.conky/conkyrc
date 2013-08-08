@@ -10,7 +10,7 @@ total_run_times 0
 no_buffers yes
 uppercase no
 cpu_avg_samples 2
-net_avg_samples 10
+net_avg_samples 2
 override_utf8_locale yes
 use_spacer right
 
