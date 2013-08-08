@@ -101,12 +101,13 @@ settings_table = {
     },
     {
         name='time',
-        arg='%m',
-        max=12,
+        arg='%j',
+        max=365,
         bg_colour=0xffffff,
         bg_alpha=0.1,
         fg_colour=0x0066FF,
         fg_alpha=1,
+        fg = { },
         x=100, y=150,
         radius=76,
         thickness=5,
@@ -431,11 +432,32 @@ clock_y=150
 
 show_seconds=false
 
+function get_days(cyear, cmonth, cday)
+  return os.date("%j", os.time{year=cyear, month=cmonth, day=cday})
+end
+
+function conky_clock_setup()
 for i,n in pairs(settings_table) do
+  if n['name'] == 'time' and n['arg'] == '%j' then
+    cyear = os.date("*t").year
+    max = get_days(cyear, 12, 31)
+    n.max = max
+
+    n.fg[0] = {['val'] = 0.00, ['col'] = 0x6082B6 }
+    n.fg[1] = {['val'] = get_days(cyear, 3, 21)/max, ['col'] = 0xFFBF00 }
+    n.fg[2] = {['val'] = get_days(cyear, 6, 21)/max, ['col'] = 0x228B22 }
+    n.fg[3] = {['val'] = get_days(cyear, 9, 23)/max, ['col'] = 0xCC5500 }
+    n.fg[4] = {['val'] = get_days(cyear, 12, 21)/max, ['col'] = 0x6082B6 }
+  end
+
   if n['fg'] ~= nil then
     table.sort(n['fg'], function(lhs, rhs) return lhs['val'] < rhs['val'] end)
   end
 end
+end
+
+-- Settings for date
+
 
 require 'cairo'
 

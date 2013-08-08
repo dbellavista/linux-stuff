@@ -64,6 +64,7 @@ temperature_unit celsius
 
 ## Lua
 lua_load ~/.conky/clock_rings.lua
+lua_startup_hook conky_clock_setup
 lua_draw_hook_pre clock_rings
 
 #${image ~/.conky/fedora-logo.png -p 58,115 -s 80x35}
