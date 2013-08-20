@@ -567,6 +567,10 @@ awful.rules.rules = {
   properties = { floating = true, ontop = true, coords={x=1000, y=100} } },
   { rule = { class = "Vidalia" },
   properties = { floating = true } },
+  { rule = { class = "DBHw" },
+  properties = { floating = true } },
+  { rule = { class = "Steam" },
+  properties = { floating = true } },
   { rule = { class = "Conky" },
   properties = {
       floating = true,

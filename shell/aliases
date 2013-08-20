@@ -34,6 +34,7 @@ alias la='ls -a'
 alias lla='ls -la'
 alias c='clear'
 alias cp='cp -i'
+alias mv='mv -i'
 
 ## Utilities
 alias ungcc="gcc -z execstack -fno-stack-protector -fno-pie"

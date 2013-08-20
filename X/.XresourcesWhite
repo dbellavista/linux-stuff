@@ -11,6 +11,11 @@ Xft*dpi:	96
 Xft*antialiasing:	True
 Xtf*hinting:	Full
 
+! Data
+URxvt*scrollTtyOutput: false
+URxvt*scrollWithBuffer: true
+URxvt*scrollTtyKeypress: true
+
 ! Perl extensions
 URxvt.perl-ext-common: default,clipboard,matcher,keyboard-select
 
