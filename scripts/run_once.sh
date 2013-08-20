@@ -3,7 +3,7 @@
 
 USER=`whoami`
 
-if ! ps aux | grep $1 | grep $USER | grep -v grep | grep -v $0  > /dev/null
+if ! ps -u $USER | grep $1 | grep -v grep | grep -v $0  > /dev/null
 then
 	${@:2} &
 fi
