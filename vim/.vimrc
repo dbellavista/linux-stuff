@@ -64,6 +64,11 @@ set list listchars=tab:\ \ ,trail:~,extends:>,precedes:<
 
 inoremap <C-h> <C-w>
 
+noremap <left> <C-W><
+noremap <right> <C-W>>
+noremap <up> <C-W>+
+noremap <down> <C-W>-
+
 nnoremap <up> gk
 nnoremap <down> gj
 nnoremap Y y$
