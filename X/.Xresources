@@ -5,6 +5,7 @@ URxvt.iso14755 : false
 URxvt*termName: rxvt-unicode-256color
 URxvt*font:	xft:Droid Sans Mono:size=10.5
 URxvt.scrollBar:	false
+URxvt.saveLines:	1000000
 URxvt.print-pipe: "cat > /dev/null"
 
 Xft*dpi:	96
