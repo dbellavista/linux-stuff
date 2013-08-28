@@ -31,3 +31,6 @@
 [submodule "vim/.vim/bundle/vim-template"]
 	path = vim/.vim/bundle/vim-template
 	url = https://github.com/aperezdc/vim-template
+[submodule "vim/.vim/bundle/vim-cmake"]
+	path = vim/.vim/bundle/vim-cmake
+	url = https://github.com/vhdirk/vim-cmake
