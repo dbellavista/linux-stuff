@@ -142,11 +142,6 @@ let g:Tex_BibtexFlavor = "bibtex"
 let g:Tex_CompileRule_bib = g:Tex_BibtexFlavor . ' tmp/$*'
 " }}}
 
-" Section: VimOrganizer {{{
-au! BufRead,BufWrite,BufWritePost,BufNewFile *.org
-au BufEnter *.org 	call org#SetOrgFileType()
-" }}}
-"
 " Section: VimTemplate {{{
 let g:license = 'GNU GPL 3.0'
 let g:username = 'Daniele Bellavista'
