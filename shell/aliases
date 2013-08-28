@@ -37,6 +37,9 @@ alias cp='cp -i'
 alias mv='mv -i'
 alias cdl=cd_last_dir
 alias 'cd ...'='cd ../../'
+
+## Typo aliases
+alias s=ls
 alias cd..='cd ../'
 alias cd...='cd ...'
 
