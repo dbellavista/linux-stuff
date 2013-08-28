@@ -1,0 +1,9 @@
+#!/bin/bash
+
+save_dir() {
+	pwd > ~/.lastdir	
+}
+
+cd_last_dir() {
+	cd `cat ~/.lastdir`
+}

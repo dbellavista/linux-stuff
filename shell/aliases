@@ -35,6 +35,10 @@ alias lla='ls -la'
 alias c='clear'
 alias cp='cp -i'
 alias mv='mv -i'
+alias cdl=cd_last_dir
+alias 'cd ...'='cd ../../'
+alias cd..='cd ../'
+alias cd...='cd ...'
 
 ## Utilities
 alias ungcc="gcc -z execstack -fno-stack-protector -fno-pie"

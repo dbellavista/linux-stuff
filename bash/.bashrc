@@ -19,5 +19,6 @@ fi
 
 STUFF="$HOME/linux"
 
+source $STUFF/shell/functions
 source $STUFF/shell/environment
 source $STUFF/shell/aliases

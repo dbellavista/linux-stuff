@@ -78,8 +78,9 @@ bindkey ';5C' emacs-forward-word
 
 STUFF=$HOME/linux
 
-source $STUFF/shell/aliases
 source $STUFF/shell/environment
+source $STUFF/shell/functions
+source $STUFF/shell/aliases
 
 #source $STUFF/shell/asciiart
 
@@ -108,3 +109,7 @@ case $TERM in xterm*)
 	;;
 esac
 #}}}
+
+# CD HOOK {{{
+chpwd_functions=(save_dir)
+# }}}
