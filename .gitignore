@@ -9,8 +9,8 @@ config/.moc/tags_cache
 config/.moc/playlist.m3u
 
 # Vim files
-config/.vim/.netrwhist
-config/.vim/.VimballRecord
+vim/.vim/.netrwhist
+vim/.vim/.VimballRecord
 
 # Swaps
 *.swp

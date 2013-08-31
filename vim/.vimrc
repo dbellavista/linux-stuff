@@ -64,10 +64,10 @@ set list listchars=tab:\ \ ,trail:~,extends:>,precedes:<
 
 inoremap <C-h> <C-w>
 
-noremap <left> <C-W><
-noremap <right> <C-W>>
-noremap <up> <C-W>+
-noremap <down> <C-W>-
+noremap <C-left> <C-W><
+noremap <C-right> <C-W>>
+noremap <C-up> <C-W>+
+noremap <C-down> <C-W>-
 
 nnoremap <up> gk
 nnoremap <down> gj
@@ -90,19 +90,12 @@ nnoremap <LocalLeader>dd "*dd
 " ---------------------------------
 
 " CREATE A NEW TAB {{{3
-map <LocalLeader>tc :tabnew %<CR>
-
-" LAST TAB {{{3
-map <LocalLeader>t<Space> :tablast<CR>
-
-" CLOSE A TAB {{{3
-map <LocalLeader>tk :tabclose<CR>
-
-" NEXT TAB {{{3
-map <LocalLeader>tn :tabnext<CR>
-
-" PREVIOUS TAB {{{3
-map <LocalLeader>tp :tabprev<CR>
+noremap <left> :tabprev<CR>
+noremap <right> :tabnext<CR>
+noremap <up> :tabfirst<CR>
+noremap <down> :tablast<CR>
+noremap c :tabclose<CR>
+noremap t :tabnew %<CR>
 
 filetype plugin indent on
 set grepprg=grep\ -nH\ $*
@@ -117,10 +110,6 @@ autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=
 autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
 
 let g:SuperTabDefaultCompletionType = "context"
-
-noremap <leader>e <Esc>:CommandT<CR>
-noremap <leader>E <Esc>:CommandTFlush<CR>
-noremap <leader>b <Esc>:CommandTBuffer<CR>
 
 let g:tagbar_usearrows = 1
 
@@ -146,4 +135,7 @@ let g:Tex_CompileRule_bib = g:Tex_BibtexFlavor . ' tmp/$*'
 let g:license = 'GNU GPL 3.0'
 let g:username = 'Daniele Bellavista'
 let g:email = 'my_email@email.it'
+" }}}
+" Section: YCM {{{
+let g:ycm_extra_conf_globlist = ['~/blackops/*','!~/*']
 " }}}
