@@ -11,6 +11,7 @@ config/.moc/playlist.m3u
 # Vim files
 vim/.vim/.netrwhist
 vim/.vim/.VimballRecord
+vim/.vim/backups
 
 # Swaps
 *.swp

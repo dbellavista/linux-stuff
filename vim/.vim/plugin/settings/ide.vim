@@ -1,0 +1,36 @@
+"
+" Title: Configuration for "vim as IDE"
+" Author: Daniele Bellavista
+"
+"
+
+" Section: latexsuite {{{
+let g:tex_flavor = "latex"
+
+let g:Tex_DefaultTargetFormat='pdf'
+let g:Tex_MultipleCompileFormats='pdf'
+let g:Tex_CompileRule_pdf='pdflatex -shell-escape -output-directory tmp/ $*.tex && mv ./tmp/*.pdf ./'
+" let g:Tex_BIBINPUTS="bib"
+let g:Tex_BibtexFlavor = "bibtex"
+let g:Tex_CompileRule_bib = g:Tex_BibtexFlavor . ' tmp/$*'
+let g:tex_verbspell = 1
+" }}}
+
+" Section: VimTemplate {{{
+let g:templates_no_autocmd = 0
+let g:template_dir = split(&runtimepath, ",")[0] . "/templates"
+" }}}
+
+" Section: NERDTree {{{
+nnoremap <leader>t :NERDTreeToggle<CR>
+" }}}
+
+" Section: TagBar {{{
+nnoremap <leader>l :TagbarToggle<CR>
+let g:tagbar_usearrows = 1
+" }}}
+
+" Section: Closetag {{{
+autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
+autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
+" }}}
