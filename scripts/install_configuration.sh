@@ -58,27 +58,31 @@ BASH_FILES=($HOME/'.bash_profile' $HOME/'.bashrc' $HOME/'.asd');
 ZSH_FILES=($HOME/'.zprofile' $HOME/'.zshrc');
 VIM_FILES=($HOME/'.vim' $HOME/'.vimrc');
 MOC_FILES=($HOME/'.moc');
+GDB_FILES=($HOME/'.gdbinit');
 CONKY_FILES=($HOME/'.conky');
 X_FILES=($HOME/'.xinitrc' $HOME/'.xprofile' $HOME/'.Xresources' $HOME/'.XresourcesWhite');
 AWESOME_FILES=($HOME/'.config/awesome');
 
-echo Installing bash configuration
+echo -e "\nInstalling bash configuration"
 install_files $STUFF_DIR/"bash" ${BASH_FILES[@]}
 
-echo Installing zsh configuration
+echo -e "\nInstalling zsh configuration"
 install_files $STUFF_DIR/"zsh" ${ZSH_FILES[@]}
 
-echo Installing vim configuration
+echo -e "\nInstalling vim configuration"
 install_files $STUFF_DIR/"vim" ${VIM_FILES[@]}
 
-echo Installing MoC configuration
+echo -e "\nInstalling MoC configuration"
 install_files $STUFF_DIR/"config" ${MOC_FILES[@]}
 
-echo Installing Conky configuration
+echo -e "\nInstalling GDB configuration"
+install_files $STUFF_DIR/"config" ${GDB_FILES[@]}
+
+echo -e "\nInstalling Conky configuration"
 install_files $STUFF_DIR/"config" ${CONKY_FILES[@]}
 
-echo Installing X configuration
+echo -e "\nInstalling X configuration"
 install_files $STUFF_DIR/"X" ${X_FILES[@]}
 
-echo Installing Awesome WM configuration
+echo -e "\nInstalling Awesome WM configuration"
 install_files $STUFF_DIR/"X" ${AWESOME_FILES[@]}
