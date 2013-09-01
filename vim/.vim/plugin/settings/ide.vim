@@ -3,6 +3,7 @@
 " Author: Daniele Bellavista
 "
 "
+let rtpath = split(&runtimepath, ",")[0]
 
 " Section: latexsuite {{{
 let g:tex_flavor = "latex"
@@ -16,9 +17,16 @@ let g:Tex_CompileRule_bib = g:Tex_BibtexFlavor . ' tmp/$*'
 let g:tex_verbspell = 1
 " }}}
 
+" Section: c-support {{{
+
+let g:C_LocalTemplateFile = rtpath . "/templates/csupport/Templates"
+"let g:C_CodeSnippets =  rtpath . "/templates/codesnippets"
+
+" }}}
+
 " Section: VimTemplate {{{
 let g:templates_no_autocmd = 0
-let g:template_dir = split(&runtimepath, ",")[0] . "/templates"
+let g:template_dir = rtpath . "/templates"
 " }}}
 
 " Section: NERDTree {{{
