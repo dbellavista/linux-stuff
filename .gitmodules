@@ -40,3 +40,6 @@
 [submodule "vim/.vim/bundle/c.vim"]
 	path = vim/.vim/bundle/c.vim
 	url = https://github.com/vim-scripts/c.vim
+[submodule "vim/.vim/bundle/nerdtree"]
+	path = vim/.vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree
