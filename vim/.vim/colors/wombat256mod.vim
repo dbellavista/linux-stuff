@@ -35,6 +35,8 @@ hi SpecialKey	ctermfg=241		ctermbg=none	cterm=none		guifg=#626262	guibg=#2b2b2b	
 hi WarningMsg	ctermfg=203										guifg=#ff5f55
 hi ErrorMsg		ctermfg=196		ctermbg=236		cterm=bold		guifg=#ff2026	guibg=#3a3a3a	gui=bold
 
+hi Underlined	ctermfg=252		ctermbg=234		cterm=underline	guifg=#e3e0d7	guibg=#242424	gui=underline
+
 hi TabLineFill	ctermfg=241		ctermbg=232		cterm=none		guifg=#857b6f	guibg=#080808	gui=none
 hi TabLine		ctermfg=241		ctermbg=232		cterm=none		guifg=#857b6f	guibg=#080808	gui=none
 hi TabLineSel	ctermfg=230		ctermbg=238		cterm=none		guifg=#ffffd7	guibg=#444444	gui=italic
