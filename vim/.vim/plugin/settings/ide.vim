@@ -42,3 +42,15 @@ let g:tagbar_usearrows = 1
 autocmd FileType html,htmldjango,jinjahtml,eruby,mako let b:closetag_html_style=1
 autocmd FileType html,xhtml,xml,htmldjango,jinjahtml,eruby,mako source ~/.vim/bundle/closetag/plugin/closetag.vim
 " }}}
+
+" Section: Syntastic {{{
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_mode_map = { 'mode': 'active',
+														\ 'active_filetypes': [],
+                            \ 'passive_filetypes': [] }
+let g:syntastic_c_checkers = ['ycm']
+let g:syntastic_python_checkers = ['pyflakes']
+let g:syntastic_html_checkers = ['tidy']
+" }}}
