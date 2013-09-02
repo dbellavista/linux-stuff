@@ -1,7 +1,17 @@
-# Daniele Bellavista's Linux stuffs
+# Daniele Bellavista's Linux stuff
 
-1. __config__: various configuration (awesome WM, moc, zsh, xinit)
+## Directories
+1. __bash__: configuration for bash (bashrc, bash_profile and so on...)
+1. __config__: various configuration and templates, such as MoC and cmake.
 2. __scripts__: utility scripts
 3. __services__: custom systemd services
-3. __shell__: common file for shells
-3. __zsh__: zsh additional plugins
+3. __shell__: common configuration for shells (aliases, environment and functions).
+3. __templates__: various template (tex, YouCompleteMe, Makefiles)
+3. __vim__: vim configuration
+3. __X__: X windows manager and desktop environment configuration
+3. __zsh__: configuration for zsh
+
+## How to install
+
+The bash executable `scripts/install_configuration.sh` provides a quick way to install
+the configuration by means of symlinks.
