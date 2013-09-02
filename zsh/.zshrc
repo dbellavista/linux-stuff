@@ -4,7 +4,6 @@ HISTSIZE=1000
 SAVEHIST=1000
 zstyle ':completion::complete:*' use-cache 1
 
-setopt RM_STAR_WAIT
 setopt SHARE_HISTORY HIST_IGNORE_ALL_DUPS HIST_IGNORE_SPACE
 setopt NUMERIC_GLOB_SORT
 setopt autocd extendedglob notify correct
