@@ -8,7 +8,7 @@ setopt SHARE_HISTORY HIST_IGNORE_ALL_DUPS HIST_IGNORE_SPACE
 setopt NUMERIC_GLOB_SORT
 setopt autocd extendedglob notify correct
 
-bindkey -e
+bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
 
