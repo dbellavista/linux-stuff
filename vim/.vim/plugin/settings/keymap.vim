@@ -52,6 +52,15 @@ nnoremap <down> gj
 nnoremap Q gqq
 " }}}
 
+" Section: Compiling {{{
+inoremap <F7> <Esc>:w<CR>:silent make \|redraw!\|cw<CR>
+nnoremap <F7> :silent make \|redraw!\|cw<CR>
+inoremap <F5> <Esc>:w<CR>:silent make -- install\|redraw!\|cw<CR>
+nnoremap <F5> :silent make -- install\|redraw!\|cw<CR>
+inoremap <F6> <Esc>:w<CR>:CMake<CR>i
+nnoremap <F6> :CMake<CR>
+" }}}
+
 " Section: Tabs {{{
 noremap <left> :tabprev<CR>
 noremap <right> :tabnext<CR>
