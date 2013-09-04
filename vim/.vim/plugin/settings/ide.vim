@@ -19,7 +19,7 @@ let g:tex_verbspell = 1
 
 " Section: c-support {{{
 
-let g:C_LocalTemplateFile = rtpath . "/templates/csupport/Templates"
+"let g:C_LocalTemplateFile = rtpath . "/templates/csupport/Templates"
 "let g:C_CodeSnippets =  rtpath . "/templates/codesnippets"
 
 " }}}
