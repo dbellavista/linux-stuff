@@ -24,6 +24,10 @@ compinit
 zstyle -e ':completion::*:*:*:hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
 # }}}
 
+# FPATH {{{
+fpath=($STUFF/zsh/zsh-completions/src $fpath)
+# }}}
+
 # {{{ Custom key binding
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
