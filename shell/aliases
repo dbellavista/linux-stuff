@@ -69,6 +69,7 @@ alias iss='cd ~/Dropbox/University/Ingegneria\ dei\ Sistemi\ Software\ LM/Git/gr
 alias gc='git commit -m'
 alias gcheck='git checkout'
 alias ga='git add'
+alias gpa='git_push_all'
 alias gp='git push'
 alias gpo='git push origin'
 alias gpom='git push origin master'

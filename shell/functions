@@ -1,5 +1,16 @@
 #!/bin/bash
 
+git_push_all() {
+  if [ $# -gt 0 ] ; then
+    BRANCH=$1
+  else
+    BRANCH=master
+  fi
+  for r in `git remote` ; do
+    git push $r $BRANCH
+  done
+}
+
 save_dir() {
 	pwd > ~/.lastdir	
 }
