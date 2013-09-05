@@ -25,7 +25,7 @@ zstyle -e ':completion::*:*:*:hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~
 # }}}
 
 # FPATH {{{
-fpath=($STUFF/zsh/zsh-completions/src $fpath)
+#fpath=($STUFF/zsh/zsh-completions/src $fpath)
 # }}}
 
 # {{{ Custom key binding
