@@ -16,5 +16,5 @@ save_dir() {
 }
 
 cd_last_dir() {
-	cd `cat ~/.lastdir`
+	cd "`cat ~/.lastdir`"
 }
