@@ -31,3 +31,9 @@
 [submodule "vim/.vim/bundle/vim-fugitive"]
 	path = vim/.vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
+[submodule "vim/.vim/bundle/calendar-vim"]
+	path = vim/.vim/bundle/calendar-vim
+	url = https://github.com/mattn/calendar-vim
+[submodule "vim/.vim/bundle/viske"]
+	path = vim/.vim/bundle/viske
+	url = https://github.com/vimyum/viske

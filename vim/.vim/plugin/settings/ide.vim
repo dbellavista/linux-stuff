@@ -55,3 +55,7 @@ let g:syntastic_c_checkers = ['ycm']
 let g:syntastic_python_checkers = ['pyflakes']
 let g:syntastic_html_checkers = ['tidy']
 " }}}
+
+" Section: Viske {{{
+let g:ViskeDir="/mnt/shared/Schedule/"
+" }}}

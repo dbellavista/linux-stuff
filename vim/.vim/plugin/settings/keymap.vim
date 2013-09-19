@@ -5,8 +5,9 @@
 "
 
 " Section: Editing {{{
-noremap <leader>o <Esc>i<Enter><Esc>
-noremap <leader>O <Esc>i<Enter><Esc>-$
+noremap <leader>o <Esc>i<CR><Esc>
+noremap <leader>O <Esc>i<CR><Esc>-$
+inoremap <leader>r <Esc>:s/;/\r{\r\t<+type+> ret;\r\t<+body+>\r\treturn ret;\r}i<CR>
 " }}}
 
 " Section: Search settings {{{
