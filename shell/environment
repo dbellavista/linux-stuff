@@ -17,6 +17,9 @@ export MOZILLA_FIVE_HOME="/usr/lib/firefox"
 export XDG_CONFIG_HOME="$HOME/.config"
 export STUFF="$HOME/linux"
 
+if [ $TERM = "linux" ]; then
+  export TERM="fbterm"
+fi
 
 
 if [ $GENTOO -eq 0 ]; then

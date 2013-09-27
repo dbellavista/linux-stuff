@@ -111,7 +111,8 @@ power_c =	{
     mute= script("mute_toggle"), up= script("vol_up"),
     down=	script("vol_down"), play= script("media.sh play"),
     nexts= script("media.sh next"), prevs= script("media.sh prev"),
-    screenshot= "scrot  -e 'mv $f " .. home .. "/Pictures/'",
+    screenshot= "scrot -e 'mv $f " .. home .. "/Pictures/'",
+    screenshot_selective= "scrot -s -e 'mv $f " .. home .. "/Pictures/'",
     touchpad = script("toggle_touchpad.sh")}
 
     editor = os.getenv("EDITOR") or "vim"
@@ -468,7 +469,9 @@ awful.key({ }, "XF86AudioPrev", function () awful.util.spawn(media_c["prevs"]) e
 awful.key({ }, "XF86TouchpadToggle", function () awful.util.spawn(media_c["touchpad"]) end),
 
 -- Screenshot
-awful.key({ }, "Print", function () awful.util.spawn(media_c["screenshot"]) end)
+awful.key({ }, "Print", function () awful.util.spawn(media_c["screenshot"]) end),
+-- Screenshot
+awful.key({ "Shift" }, "Print", function () awful.util.spawn(media_c["screenshot_selective"]) end)
 )
 
 for k,v in pairs(applications) do
