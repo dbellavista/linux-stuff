@@ -95,7 +95,8 @@ power_c =	{
   applications = {
     e=filemanager, E="/opt/eclipse/eclipse",
     v="virtualbox", V="wireshark",
-    g=browser1, G=browser2, x=power_c["blank"]
+    g=browser1, G=browser2, x=power_c["blank"],
+    X=power_c["lock"]
   }
 
   if distro == gentoo then
