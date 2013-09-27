@@ -24,7 +24,9 @@ GENTOO=$?
 
 PARAMS=""
 if [ $GENTOO -eq 0 ]; then
-	PARAMS="ck-launch-session dbus-launch --sh-syntax --exit-with-session"
+#	PARAMS="ck-launch-session dbus-launch --sh-syntax --exit-with-session"
+PARAMS="dbus-launch --sh-syntax --exit-with-session"
+
 fi
 
 if [ -z "$1" ]
@@ -34,4 +36,5 @@ else
   WM=$1
 fi
 
+source ~/.zshrc
 exec $PARAMS $WM
