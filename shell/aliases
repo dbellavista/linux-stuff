@@ -10,8 +10,8 @@ if [ $GENTOO -eq 0 ]; then
 	alias halt='sudo halt'
 	alias poweroff='sudo poweroff'
 	alias reboot='sudo reboot'
-	alias hibernate='sudo pm-hibernate'
-	alias suspend='sudo pm-suspend'
+	alias hibernate='dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Hibernate'
+	alias suspend='dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Suspend'
 	alias update-grub='sudo grub-mkconfig -o /boot/grub2/grub.cfg'
 	alias markdown='markdown_py'
 	alias sdc='sudo dispatch-conf'
@@ -53,22 +53,24 @@ alias irc="(sleep 10 && bash $STUFF/scripts/run_once.sh notify-listener.py $STUF
 alias mkd="$STUFF/scripts/mkd.sh"
 alias initlatex="mkdir tmp; mkdir bib; touch bib/bib.bib; cp $STUFF/templates/template.tex main.tex; touch main.tex.latexmain"
 alias initc="mkdir src; cp $STUFF/templates/Makefile.c ./Makefile"
+alias pass="/bin/true"
 
 #alias lsize="ls -lR | grep -e "^-" | awk '{sum+=\$5} END {if [ $A ] ; then if [ $A = \"K\" ] ; then print sum/1024 ; elif [ $A = \"M\" ] ; then print sum/1024/1024 ; elif [ $A = \"G\" ] ; then print sum/1024/1024/1024 ; else ; print sum ; fi ; else ; print sum ; fi'}"
 
 ## Mount
-alias udlist="udisks --enumerate-device-files"
-alias udmount="udisksctl mount -b"
-alias udumount="udisksctl unmount -b"
+alias dlist="udisks --enumerate-device-files"
+alias dmount="udisksctl mount -b"
+alias dumount="udisksctl unmount -b"
 
 ## Folders
 alias psim='cd ~/Dropbox/University/Progetto\ di\ Reti\ di\ Telecomunicazioni\ LM/Simulator/'
 alias uni='cd ~/Dropbox/University'
-alias prj='cd ~/Dropbox/Project'
+alias prj='cd ~/Dropbox/Projects'
 alias shared='cd ~/Documents/Virtual\ Machines/Shared'
 alias sec='cd ~/Dropbox/IT/Security'
 alias drp='cd ~/Dropbox'
 alias iss='cd ~/Dropbox/University/Ingegneria\ dei\ Sistemi\ Software\ LM/Git/group14work/'
+alias hwe='cd ~/Dropbox/University/Elaborazione\ delle\ Immagini\ LM/HomeworksGit/BellavistaHomeworks'
 
 ## Git
 alias gc='git commit -m'
