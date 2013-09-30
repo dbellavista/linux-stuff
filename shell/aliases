@@ -71,6 +71,7 @@ alias sec='cd ~/Dropbox/IT/Security'
 alias drp='cd ~/Dropbox'
 alias iss='cd ~/Dropbox/University/Ingegneria\ dei\ Sistemi\ Software\ LM/Git/group14work/'
 alias hwe='cd ~/Dropbox/University/Elaborazione\ delle\ Immagini\ LM/HomeworksGit/BellavistaHomeworks'
+alias gtd='cd /mnt/shared/gtd/'
 
 ## Git
 alias gc='git commit -m'
