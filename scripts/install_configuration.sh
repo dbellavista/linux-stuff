@@ -54,6 +54,7 @@ fi
 
 cd $HOME
 
+SHELL_FILES=($HOME/'.dir_colors');
 BASH_FILES=($HOME/'.bash_profile' $HOME/'.bashrc' $HOME/'.asd');
 ZSH_FILES=($HOME/'.zprofile' $HOME/'.zshrc');
 VIM_FILES=($HOME/'.vim' $HOME/'.vimrc');
@@ -62,6 +63,9 @@ GDB_FILES=($HOME/'.gdbinit');
 CONKY_FILES=($HOME/'.conky');
 X_FILES=($HOME/'.xinitrc' $HOME/'.xprofile' $HOME/'.Xresources' $HOME/'.XresourcesWhite');
 AWESOME_FILES=($HOME/'.config/awesome');
+
+echo -e "\nInstalling generic shell configuration"
+install_files $STUFF_DIR/"shell" ${SHELL_FILES[@]}
 
 echo -e "\nInstalling bash configuration"
 install_files $STUFF_DIR/"bash" ${BASH_FILES[@]}
