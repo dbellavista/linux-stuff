@@ -5,13 +5,21 @@
 
 \usepackage{placeins}
 \usepackage{float}
+\usepackage{ifpdf,ifluatex}
+\ifluatex
+\usepackage{fontspec}
+\else
 \usepackage[utf8x]{inputenc}
+\fi
+
 \usepackage{url}
+\ifpdf
 \usepackage{hyperref}
 \hypersetup{unicode=true,
     pdftitle={\xtitle},
     pdfauthor={\xauth},
 }
+\fi
 
 \usepackage{chngcntr}
 \counterwithin{figure}{subsection}
@@ -22,7 +30,7 @@
 \usepackage{graphicx}
 
 \usepackage{listings}
-\lstset{ %
+\lstset{%
   breakatwhitespace=false,
   breaklines=true,
   captionpos=t,

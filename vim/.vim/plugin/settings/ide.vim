@@ -6,11 +6,11 @@
 let rtpath = split(&runtimepath, ",")[0]
 
 " Section: latexsuite {{{
-let g:tex_flavor = "latex"
+let g:tex_flavor = "luatex"
 
 let g:Tex_DefaultTargetFormat='pdf'
 let g:Tex_MultipleCompileFormats='pdf'
-let g:Tex_CompileRule_pdf='pdflatex -shell-escape -output-directory tmp/ $*.tex && mv ./tmp/*.pdf ./'
+let g:Tex_CompileRule_pdf='lualatex -shell-escape -output-directory tmp/ $*.tex && mv ./tmp/*.pdf ./'
 " let g:Tex_BIBINPUTS="bib"
 let g:Tex_BibtexFlavor = "bibtex"
 let g:Tex_CompileRule_bib = g:Tex_BibtexFlavor . ' tmp/$*'
