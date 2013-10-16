@@ -74,7 +74,7 @@ mixer = 'pavucontrol'
 browser1 = "google-chrome"
 
 if distro == gentoo then
-	browser2 = "firefox-bin"
+	browser2 = "firefox"
   terminal = "urxvt"
   filemanager = "spacefm"
 elseif distro == arch then
