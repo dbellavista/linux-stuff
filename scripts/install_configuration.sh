@@ -60,7 +60,7 @@ ZSH_FILES=($HOME/'.zprofile' $HOME/'.zshrc');
 VIM_FILES=($HOME/'.vim' $HOME/'.vimrc');
 MOC_FILES=($HOME/'.moc');
 GDB_FILES=($HOME/'.gdbinit');
-CONKY_FILES=($HOME/'.conky');
+CONFIG_FILES=($HOME/'.config/redshift.conf');
 X_FILES=($HOME/'.xinitrc' $HOME/'.xprofile' $HOME/'.Xresources' $HOME/'.XresourcesWhite');
 AWESOME_FILES=($HOME/'.config/awesome');
 
@@ -82,8 +82,8 @@ install_files $STUFF_DIR/"config" ${MOC_FILES[@]}
 echo -e "\nInstalling GDB configuration"
 install_files $STUFF_DIR/"config" ${GDB_FILES[@]}
 
-echo -e "\nInstalling Conky configuration"
-install_files $STUFF_DIR/"config" ${CONKY_FILES[@]}
+echo -e "\nInstalling Config configuration"
+install_files $STUFF_DIR/"config" ${CONFIG_FILES[@]}
 
 echo -e "\nInstalling X configuration"
 install_files $STUFF_DIR/"X" ${X_FILES[@]}
