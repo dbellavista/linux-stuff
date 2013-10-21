@@ -7,11 +7,12 @@
 " Section: Editing {{{
 noremap <leader>o <Esc>i<CR><Esc>
 noremap <leader>O <Esc>i<CR><Esc>-$
-inoremap <leader>r <Esc>:s/;/\r{\r\t<+type+> ret;\r\t<+body+>\r\treturn ret;\r}i<CR>
+noremap <leader>r :s/;/\r{\r\t<+type+> ret;\r\t<+body+>\r\treturn ret;\r}/<CR>4k
 " }}}
 
 " Section: Search settings {{{
 nnoremap <F3> :set hlsearch!<CR>
+map <F4> :call ToggleHighlight(1)<CR>
 " }}}
 
 " Section: Copy&Paste configuration {{{
@@ -63,6 +64,11 @@ nnoremap <F6> :CMake<CR>
 " }}}
 
 " Section: Tabs {{{
+noremap h :tabprev<CR>
+noremap l :tabnext<CR>
+noremap H :tabfirst<CR>
+noremap L :tablast<CR>
+
 noremap <left> :tabprev<CR>
 noremap <right> :tabnext<CR>
 noremap <up> :tabfirst<CR>

@@ -29,7 +29,6 @@ let g:C_IndentArguments = "-nbad -bap -nbc -bbo -hnl -br -brs -c33 -cd33 -ncdb -
 let g:templates_no_autocmd = 0
 let g:template_dir = rtpath . "/templates"
 " }}}
-
 " Section: NERDTree {{{
 nnoremap <leader>t :NERDTreeToggle<CR>
 " }}}
@@ -58,4 +57,25 @@ let g:syntastic_html_checkers = ['tidy']
 
 " Section: Viske {{{
 let g:ViskeDir="/mnt/shared/Schedule/"
+" }}}
+
+" Section: Underline section {{{
+
+function! ToggleHighlight(...)
+  if a:0 == 1 "toggle behaviour
+    let g:toggleHighlight = 1 - g:toggleHighlight
+  endif
+
+  if g:toggleHighlight == 1 "normal action, do the hi
+    silent! exe printf('match Underlined /\<%s\>/', expand('<cword>'))
+  else
+    "do whatever you need to clear the matches
+    "or nothing at all, since you are not printing the matches
+    call clearmatches()
+  endif
+endfunction
+
+let g:toggleHighlight = 0
+autocmd CursorMoved * call ToggleHighlight()
+
 " }}}
