@@ -66,6 +66,11 @@ hi DiffChange					ctermbg=237										guibg=#382a37
 "hi Question
 "hi Scrollbar
 "hi SignColumn
+"hi clear SpellBad
+hi SpellBad 	ctermfg=167		ctermbg=234		cterm=underline guifg=#d75f5f	guibg=#242424	gui=none
+hi SpellCap 	ctermfg=32		ctermbg=234		cterm=underline guifg=#0087d7	guibg=#242424	gui=none
+hi SpellLocal 	ctermfg=58		ctermbg=234		cterm=underline guifg=#5f00ff	guibg=#242424	gui=none
+hi SpellRare 	ctermfg=154		ctermbg=234		cterm=underline guifg=#afff00	guibg=#242424	gui=none
 "hi SpellBad
 "hi SpellCap
 "hi SpellLocal

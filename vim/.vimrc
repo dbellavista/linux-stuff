@@ -26,8 +26,6 @@ else
 	"colorscheme default
 	"colorscheme anotherdark
 	"colorscheme BusyBee
-	hi clear SpellBad
-	hi SpellBad cterm=underline ctermfg=red
 endif
 " }}}
 
@@ -38,10 +36,6 @@ set title               " change the terminal's title
 set ruler " Coordinate bottom right
 set mouse -=a " Mouse managment
 set list listchars=tab:\ \ ,trail:~,extends:>,precedes:<
-" }}}
-
-" Section: movement {{{
-set iskeyword-=_
 " }}}
 
 " Section: Indentation {{{
