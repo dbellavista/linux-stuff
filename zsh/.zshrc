@@ -104,15 +104,16 @@ setopt PROMPT_SUBST
 #PROMPT='$(git_super_status) %f%(!.%F{red}.%F{yellow})∞%f '
 PROMPT='$(git_super_status) %f%(!.%F{red}.%F{yellow})>%f '
 
-
-case $TERM in xterm*)
-	precmd () {
-		print -Pn "\e]0;%n@%m: %~\a"
-	}
-	;;
-esac
-#}}}
-
 # CD HOOK {{{
 chpwd_functions=(save_dir)
 # }}}
+
+case $TERM in 
+xterm*)
+  precmd () {
+    print -Pn "\e]0;%n@%m: %~\a"
+  }
+  ;;
+esac
+#}}}
+
