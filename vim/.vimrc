@@ -40,6 +40,10 @@ set mouse -=a " Mouse managment
 set list listchars=tab:\ \ ,trail:~,extends:>,precedes:<
 " }}}
 
+" Section: movement {{{
+set iskeyword-=_
+" }}}
+
 " Section: Indentation {{{
 set autoindent
 set copyindent
