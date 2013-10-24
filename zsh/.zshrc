@@ -91,6 +91,7 @@ export __GIT_PROMPT_DIR=$STUFF/zsh/git-prompt
 
 source $STUFF/zsh/history-substring-search.zsh
 source $STUFF/zsh/git-prompt/zshprompt.sh
+source $STUFF/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # }}}
 
