@@ -72,7 +72,7 @@ alias sec='cd ~/Dropbox/IT/Security'
 alias drp='cd ~/Dropbox'
 alias iss='cd ~/Dropbox/University/Ingegneria\ dei\ Sistemi\ Software\ LM/Git/group14work/'
 alias hwe='cd ~/Dropbox/University/Elaborazione\ delle\ Immagini\ LM/HomeworksGit/BellavistaHomeworks'
-alias mmsd='cd ~/Dropbox/University/Metodi\ e\ Modelli\ per\ il\ Supporto\ alle\ Decisioni\ LM/Project2/knapsackkbest/'
+alias mmsd='cd ~/Dropbox/University/Metodi\ e\ Modelli\ per\ il\ Supporto\ alle\ Decisioni\ LM/Project/knapsackkbest/'
 alias gtd='cd /mnt/shared/gtd/'
 
 ## Git
