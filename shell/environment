@@ -30,3 +30,4 @@ fi
 
 export PATH=$PATH:/opt/eclipse:/opt/MATLAB/R2012a/bin
 eval `dircolors $STUFF/shell/.dir_colors`
+stty -ixon
