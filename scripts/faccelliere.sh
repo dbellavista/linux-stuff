@@ -3,7 +3,12 @@ if [[ $# -ne 1 ]] ; then
   exit 1
 fi
 
-FIND_DIR=$(pwd)/$1
+if [[ "$1" = /* ]]
+then
+  FIND_DIR=$1
+else
+  FIND_DIR=$(pwd)/$1
+fi
 
 if [[ ! -e $FIND_DIR ]] ; then
   echo "Sorry $FIND_DIR doesn't exists!"
