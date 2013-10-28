@@ -1,33 +1,42 @@
 # Compiler
-CC=gcc
+CC=/usr/bin/env gcc
+STRIP=/usr/bin/env strip -s
+INSTALL=/usr/bin/env install -C
 # Arguments
 CFLAGS=-c -Wall -Wextra
 LSFLAGS=-lm
+# Quiet
+Q=@
+# Dirs
+ODIR=build
+BDIR=bin
+INSTALL_PREFIX=/path/to/install/
 
 vpath %.c src/
 SOURCES=source.c
+
 OBJECTS=$(patsubst %.c, build/%.o, $(SOURCES))
-TEST_OBJS=$(patsubst %.c, build/%.o, $(TESTS))
-EXECUTABLE=bin/out
+EXECUTABLE=$(ODIR)/out
 
-all: $(SOURCES) $(EXECUTABLE)
+all: $(EXECUTABLE)
 
-$(EXECUTABLE): bin $(OBJECTS)
-	@$(CC) $(LSFLAGS) $(OBJECTS) -o $@
+debug: CC += -DDEBUG -ggdb
+debug: $(EXECUTABLE)
 
-$(OBJECTS) : | build
+install:
+	$(Q) $(INSTALL) $(EXECUTABLE) $(INSTALL_PREFIX)/
 
-build:
-	@mkdir -p $@
+$(EXECUTABLE): $(OBJECTS) | dirs
+	$(Q)$(CC) $(LSFLAGS) $(OBJECTS) -o $@
 
-bin:
-	@mkdir -p $@
+$(OBJECTS) : | dirs
 
-build/%.o : %.c
-	@echo $<
-	@$(CC) $(CFLAGS) -c $< -o $@
+dirs:
+	$(Q)mkdir -p $(ODIR) ; mkdir -p $(BDIR)
+
+$(ODIR)/%.o : %.c
+	$(Q)echo $<
+	$(Q)$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-		rm -f $(EXECUTABLE)
-		rm -rf bin
-		rm -rf build
+	$(Q)rm -f $(ODIR)/*.o $(BDIR)/*
