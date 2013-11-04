@@ -52,6 +52,7 @@ nnoremap <down> gj
 
 " Section: Formatting {{{
 nnoremap Q gqq
+nmap <F1> mz:call TabToggle()<CR>'z
 " }}}
 
 " Section: Compiling {{{

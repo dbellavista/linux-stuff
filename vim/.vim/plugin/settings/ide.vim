@@ -5,6 +5,21 @@
 "
 let rtpath = split(&runtimepath, ",")[0]
 
+" Section: compiling {{{
+"function GuessCompiler(...)
+  "let g:makeprg = "echo no make program setted"
+  "let s:res = execute "CMake"
+  "if (s:res == 1)
+    "echo "CMake detected!"
+  "elseif (&ft == 'cpp')
+    "g:makeprg = "make"
+  "elseif (&ft == 'c')
+    "g:makeprg = "make"
+  "endif
+"endfunction
+
+" }}}
+
 " Section: latexsuite {{{
 let g:tex_flavor = "luatex"
 
@@ -78,4 +93,14 @@ endfunction
 let g:toggleHighlight = 0
 autocmd CursorMoved * call ToggleHighlight()
 
+" }}}
+
+" Section: Tabs {{{
+function TabToggle()
+  if &expandtab
+    set noexpandtab
+  else
+    set expandtab
+  endif
+endfunction
 " }}}
