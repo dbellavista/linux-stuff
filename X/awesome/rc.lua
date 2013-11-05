@@ -90,7 +90,7 @@ end
 power_c =	{
   poweroff="poweroff", reboot= "sudo reboot",
   suspend= "suspend", hibernate, "hibernate",
-  lock= "slock", blank= script("blank.sh") }
+  lock= "i3lock -c 000000 -d", blank= script("blank.sh") }
 
   applications = {
     e=filemanager, E="/opt/eclipse/eclipse",
