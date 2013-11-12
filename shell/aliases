@@ -94,4 +94,4 @@ alias gst='git status'
 alias gsa='git stash apply'
 alias gss='git stash save'
 alias gd='git diff'
-alias grm="git status | grep -oe 'deleted.*' | awk '{ print \$2 }' | xargs git rm"
+alias grm="git ls-files -deleted | xargs git rm"
