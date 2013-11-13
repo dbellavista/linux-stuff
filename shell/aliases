@@ -36,6 +36,7 @@ alias c='clear'
 alias cp='cp -i'
 alias mv='mv -i'
 alias cdl=cd_last_dir
+alias cd=cd_and_ls
 
 ## Typo aliases
 alias s=ls

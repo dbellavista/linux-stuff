@@ -18,3 +18,8 @@ save_dir() {
 cd_last_dir() {
 	cd "`cat ~/.lastdir`"
 }
+
+cd_and_ls() {
+  cd $@
+  ls --color=auto -X
+}
