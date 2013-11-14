@@ -27,6 +27,7 @@ if [[\
   ]] ; then
   echo "Sorry $DIR doesn't exists or isn't a valid location for chroot!"
   echo "Have you mounted the filesystem in $DIR?"
+  echo "You must have directories: etc, dev, dev/pts, proc, sys and tmp"
   exit 1
 fi;
 
@@ -35,6 +36,8 @@ mount -o bind /dev/pts $1/dev/pts
 mount -t proc none $1/proc
 mount -o bind /sys $1/sys
 mount -o bind /tmp $1/tmp
+
+cp /etc/resolv.conf $1/etc
 
 cd $1
 
