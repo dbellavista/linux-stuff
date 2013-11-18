@@ -193,8 +193,7 @@ power_c =	{
   }
 })
 
-mylauncher = awful.widget.launcher({ image = beautiful.distro_icon[distro],
-menu = mymainmenu })
+mylauncher = awful.widget.launcher({ image = beautiful.distro_icon[distro], menu = mymainmenu })
 
 -- Conky configuration
 function get_conky()
