@@ -15,7 +15,7 @@ theme.delightful_error = "/usr/share/icons/Faenza/status/22/audio-volume-muted-b
 
 theme.font          = "Droid Sans Thai 9"
 
-theme.bg_normal     = "#222222"
+theme.bg_normal     = "#22222200"
 theme.bg_focus      = "#535d6c"
 theme.bg_urgent     = "#ff0000"
 theme.bg_minimize   = "#444444"
@@ -40,6 +40,10 @@ theme.border_marked = "#91231c"
 -- mouse_finder_[color|timeout|animate_timeout|radius|factor]
 -- Example:
 --theme.taglist_bg_focus = "#ff0000"
+
+theme.tooltip_bg_color = "#222222FF"
+theme.tasklist_bg_focus = "#535d6c90"
+theme.taglist_bg_focus = "#535d6c90"
 
 -- Display the taglist squares
 theme.taglist_squares_sel   = "/usr/share/awesome/themes/default/taglist/squarefw.png"
