@@ -10,7 +10,7 @@ ReadTags		= yes
 # Directory in which you store music files, if you specify it, you will be able
 # to quickly go to this directory with the '-m' parameter or the 'm' command.
 # This can also point to a playlist.
-MusicDir		= "/mnt/d/Music"
+MusicDir		= "/mnt/media/Music"
 
 # How to sort? FileName is the only option for now.
 Sort			= FileName
@@ -24,7 +24,7 @@ ShowStreamErrors	= no
 Mp3IgnoreCRCErrors	= yes
 
 # Turn on repeat.
-Repeat			= no
+Repeat			= yes
 
 # Turn on shuffle.
 Shuffle			= no
