@@ -148,13 +148,13 @@ power_c =	{
 
     -- {{{ Wallpaper
     if beautiful.wallpaper then
-      if screen.count() == 2 then
-        gears.wallpaper.centered(beautiful.wallpaper[distro], nil, nil)
-      else
+      --if screen.count() == 2 then
+        --gears.wallpaper.centered(beautiful.wallpaper[distro], nil, nil)
+      --else
         for s = 1, screen.count() do
           gears.wallpaper.maximized(beautiful.wallpaper[distro], s, true)
         end
-      end
+      --end
     end
     -- }}}
 
