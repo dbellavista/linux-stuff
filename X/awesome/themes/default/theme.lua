@@ -44,6 +44,8 @@ theme.border_marked = "#91231c"
 theme.tooltip_bg_color = "#222222FF"
 theme.tasklist_bg_focus = "#535d6c90"
 theme.taglist_bg_focus = "#535d6c90"
+theme.bg_widget = "#000000"
+theme.fg_widget = "#ffffff90"
 
 -- Display the taglist squares
 theme.taglist_squares_sel   = "/usr/share/awesome/themes/default/taglist/squarefw.png"

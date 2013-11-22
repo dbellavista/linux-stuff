@@ -185,7 +185,7 @@ power_c =	{
       { "Logout", awesome.quit },
     }
 
-    mymainmenu = awful.menu.new({ bg_normal = "#000000", items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
+    mymainmenu = awful.menu.new({ theme = {bg_normal = "#00000090"}, items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
     { "Shutdown", myshutdownmenu},
     { "Blank Screen", power_c["blank"]},
     { "Lock Screen", power_c["lock"] },
