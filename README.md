@@ -1,7 +1,7 @@
 # Daniele Bellavista's Linux stuff
 
 ## Directories
-1. __bash__: configuration for bash (bashrc, bash_profile and so on...)
+1. __bash__: configuration for bash (bashrc, bash\_profile and so on...)
 1. __config__: various configuration and templates, such as MoC and cmake.
 2. __scripts__: utility scripts
 3. __services__: custom systemd services
@@ -13,10 +13,10 @@
 
 ## How to install
 
-The bash executable `scripts/install_configuration.sh` provides a quick way to install
+The python script `install_configuration.py` provides a quick way to install
 the configuration by means of symlinks.
 
-The VIM plugins (in `vim/.vim/bundle`) are all submodule! Remember to launch
+The VIM plugins (in `vim/vim/bundle`) are all submodule! Remember to launch
 
 ```
 git submodule init && git submodule update --init --recursive && git submodule foreach --recursive git pull origin master
