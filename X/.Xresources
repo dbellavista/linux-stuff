@@ -41,8 +41,9 @@ urxvt*background:rgba:0000/0000/0000/dddd
 !URxvt*.shading: 0
 
 ! Override arrows (rebinding in zsh)
-URxvt.keysym.C-Left: ;5D
-URxvt.keysym.C-Right: ;5C
+!URxvt.keysym.C-Left: ;5D
+!URxvt.keysym.C-Right: ;5C
+!URxvt.meta8: true
 
 ! Colors
 

@@ -72,9 +72,9 @@ emacs-backward-word() {
   local WORDCHARS="${WORDCHARS:s@/@}"
   zle backward-word
 }
-zle -N emacs-backward-word
-bindkey ';5D' emacs-backward-word
-bindkey ';5C' emacs-forward-word
+#zle -N emacs-backward-word
+#bindkey ';5D' emacs-backward-word
+#bindkey ';5C' emacs-forward-word
 # }}}
 
 # SOURCES {{{
