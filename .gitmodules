@@ -49,3 +49,6 @@
 [submodule "vim/.vim/bundle/vim-jade"]
 	path = vim/.vim/bundle/vim-jade
 	url = https://github.com/digitaltoad/vim-jade
+[submodule "config/gdbinit"]
+	path = config/gdbinit
+	url = https://github.com/gdbinit/Gdbinit
