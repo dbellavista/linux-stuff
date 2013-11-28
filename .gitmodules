@@ -1,53 +1,53 @@
-[submodule "vim/.vim/bundle/closetag"]
-	path = vim/.vim/bundle/closetag
-	url = git://github.com/docunext/closetag.vim.git
-[submodule "vim/.vim/bundle/nerdcommenter"]
-	path = vim/.vim/bundle/nerdcommenter
+[submodule "vim/vim/bundle/closetag"]
+	path = vim/vim/bundle/closetag
+	url = git://github.com/docunext/closetagvim.git
+[submodule "vim/vim/bundle/nerdcommenter"]
+	path = vim/vim/bundle/nerdcommenter
 	url = git://github.com/scrooloose/nerdcommenter.git
-[submodule "vim/.vim/bundle/tagbar"]
-	path = vim/.vim/bundle/tagbar
+[submodule "vim/vim/bundle/tagbar"]
+	path = vim/vim/bundle/tagbar
 	url = git://github.com/majutsushi/tagbar.git
-[submodule "vim/.vim/bundle/youCompleteMe"]
-	path = vim/.vim/bundle/youCompleteMe
+[submodule "vim/vim/bundle/youCompleteMe"]
+	path = vim/vim/bundle/youCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe
-[submodule "vim/.vim/bundle/vim-latex"]
-	path = vim/.vim/bundle/vim-latex
+[submodule "vim/vim/bundle/vim-latex"]
+	path = vim/vim/bundle/vim-latex
 	url = git://github.com/jcf/vim-latex.git
-[submodule "vim/.vim/bundle/vim-template"]
-	path = vim/.vim/bundle/vim-template
+[submodule "vim/vim/bundle/vim-template"]
+	path = vim/vim/bundle/vim-template
 	url = https://github.com/aperezdc/vim-template
-[submodule "vim/.vim/bundle/vim-cmake"]
-	path = vim/.vim/bundle/vim-cmake
+[submodule "vim/vim/bundle/vim-cmake"]
+	path = vim/vim/bundle/vim-cmake
 	url = https://github.com/vhdirk/vim-cmake
-[submodule "vim/.vim/bundle/syntastic"]
-	path = vim/.vim/bundle/syntastic
+[submodule "vim/vim/bundle/syntastic"]
+	path = vim/vim/bundle/syntastic
 	url = https://github.com/scrooloose/syntastic
-[submodule "vim/.vim/bundle/nerdtree"]
-	path = vim/.vim/bundle/nerdtree
+[submodule "vim/vim/bundle/nerdtree"]
+	path = vim/vim/bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree
-[submodule "vim/.vim/bundle/c-vim"]
-	path = vim/.vim/bundle/c-vim
+[submodule "vim/vim/bundle/c-vim"]
+	path = vim/vim/bundle/c-vim
 	url = https://github.com/dbellavista/c-vim
-[submodule "vim/.vim/bundle/calendar-vim"]
-	path = vim/.vim/bundle/calendar-vim
+[submodule "vim/vim/bundle/calendar-vim"]
+	path = vim/vim/bundle/calendar-vim
 	url = https://github.com/mattn/calendar-vim
-[submodule "vim/.vim/bundle/viske"]
-	path = vim/.vim/bundle/viske
+[submodule "vim/vim/bundle/viske"]
+	path = vim/vim/bundle/viske
 	url = https://github.com/vimyum/viske
-[submodule "vim/.vim/bundle/screen"]
-	path = vim/.vim/bundle/screen
+[submodule "vim/vim/bundle/screen"]
+	path = vim/vim/bundle/screen
 	url = https://github.com/ervandew/screen
 [submodule "zsh/zsh-syntax-highlighting"]
 	path = zsh/zsh-syntax-highlighting
 	url = https://github.com/nakamuray/zsh-syntax-highlighting
-[submodule "vim/.vim/bundle/vim-fugitive"]
-	path = vim/.vim/bundle/vim-fugitive
+[submodule "vim/vim/bundle/vim-fugitive"]
+	path = vim/vim/bundle/vim-fugitive
 	url = https://github.com/tpope/vim-fugitive
-[submodule "vim/.vim/bundle/YouCompleteMe"]
-	path = vim/.vim/bundle/YouCompleteMe
+[submodule "vim/vim/bundle/YouCompleteMe"]
+	path = vim/vim/bundle/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe
-[submodule "vim/.vim/bundle/vim-jade"]
-	path = vim/.vim/bundle/vim-jade
+[submodule "vim/vim/bundle/vim-jade"]
+	path = vim/vim/bundle/vim-jade
 	url = https://github.com/digitaltoad/vim-jade
 [submodule "config/gdbinit"]
 	path = config/gdbinit
