@@ -120,7 +120,7 @@ chpwd_functions=(save_dir)
 termtitle() {
   local prompt_host="${(%):-%m}"
   local prompt_user="${(%):-%n}"
-  local prompt_char="${(%):-% >}"
+  local prompt_char="${(%):-%  ҉}"
   case "$1" in
     precmd)
       local str="${prompt_user[1,2]} $prompt_char"
