@@ -4,7 +4,6 @@
 1. __bash__: configuration for bash (bashrc, bash\_profile and so on...)
 1. __config__: various configuration and templates, such as MoC and cmake.
 2. __scripts__: utility scripts
-3. __services__: custom systemd services
 3. __shell__: common configuration for shells (aliases, environment and functions).
 3. __templates__: various template (tex, YouCompleteMe, Makefiles)
 3. __vim__: vim configuration
