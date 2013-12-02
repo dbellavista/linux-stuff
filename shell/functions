@@ -16,11 +16,11 @@ save_dir() {
 }
 
 cd_last_dir() {
-	cd "`cat ~/.lastdir`"
+	\cd "`cat ~/.lastdir`"
 }
 
 cd_and_ls() {
-  cd $@
+  \cd $@
   if [[ $(ls -C | wc -l) -lt 30 ]] ; then
     ls --color=auto -X
   else
