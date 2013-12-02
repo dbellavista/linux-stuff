@@ -109,12 +109,50 @@ PROMPT='$(git_super_status) %f%(!.%F{red}.%F{yellow})>%f '
 chpwd_functions=(save_dir)
 # }}}
 
-case $TERM in 
-xterm*)
-  precmd () {
-    print -Pn "\e]0;%n@%m: %~\a"
-  }
-  ;;
-esac
-#}}}
+#case $TERM in 
+  #rxvt*)
+    #precmd () {
+      #print -Pn "\e]0;%n@%m: %~\a"
+    #}
+    #;;
+#esac
 
+termtitle() {
+  local prompt_host="${(%):-%m}"
+  local prompt_user="${(%):-%n}"
+  local prompt_char="${(%):-% >}"
+  case "$1" in
+    precmd)
+      local str="${prompt_user[1,2]} $prompt_char"
+      ;;
+    preexec)
+      local str="${prompt_user[1,2]} $prompt_char $2"
+      ;;
+  esac
+  case "$TERM" in
+    rxvt*|xterm|nxterm|gnome)
+      #print -Pn "\ek%-3 $str\e\\" # set screen title.  Fix vim: ".
+      print -Pn "\e]2;%-3 $str\a" # set xterm title, via screen "Operating System Command"
+      ;;
+    screen.*|screen|screen-*)
+      print -Pn "\e]2;%m:%-3 $str\a"
+      ;;
+  esac
+}
+
+precmd() {
+  #case "$TERM" in
+    #screen|screen.rxvt)
+      #print -Pn "\ek%-3~\e\\" # set screen title
+      #print -Pn "\e]2;%-3~\a" # must (re)set xterm title
+      #;;
+  #esac
+  # Set terminal title.
+  termtitle precmd
+}
+
+preexec() {
+  # Set terminal title along with current executed command pass as second argument
+  termtitle preexec "${(V)1}"
+}
+#}}}
