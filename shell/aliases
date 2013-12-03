@@ -93,3 +93,7 @@ alias gsa='git stash apply'
 alias gss='git stash save'
 alias gd='git diff'
 alias grm="git ls-files -deleted | xargs git rm"
+
+## Shell dependent
+
+[[ $SHELL =~ ".*zsh.*" ]] && alias gdb='SHELL=/bin/bash gdb'
