@@ -1,7 +1,7 @@
 # {{{ Lines configured by zsh-newuser-install
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=1000000
+SAVEHIST=1000000
 zstyle ':completion::complete:*' use-cache 1
 
 setopt SHARE_HISTORY HIST_IGNORE_ALL_DUPS HIST_IGNORE_SPACE
@@ -19,7 +19,8 @@ autoload -Uz compinit
 compinit
 # }}} End of lines added by compinstall
 
-# My Own custom modification
+### My Own custom modification
+
 # SSH completion {{{
 zstyle -e ':completion::*:*:*:hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
 # }}}
@@ -32,10 +33,6 @@ source $STUFF/shell/environment
 source $STUFF/shell/functions
 source $STUFF/shell/aliases
 
-#source $STUFF/shell/asciiart
-
-export __GIT_PROMPT_DIR=$STUFF/zsh/git-prompt
-
 source $STUFF/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $STUFF/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
 source $STUFF/zsh/git-prompt/zshprompt.sh
@@ -46,13 +43,13 @@ source $STUFF/zsh/git-prompt/zshprompt.sh
 #fpath=($STUFF/zsh/zsh-completions/src $fpath)
 # }}}
 
-# {{{ Custom key binding
+# KEYBINDING {{{
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
+zmodload zsh/terminfo
 typeset -A key
 
 key[Home]=${terminfo[khome]}
-
 key[End]=${terminfo[kend]}
 key[Insert]=${terminfo[kich1]}
 key[Delete]=${terminfo[kdch1]}
@@ -68,27 +65,10 @@ key[PageDown]=${terminfo[knp]}
 [[ -n "${key[End]}"     ]]  && bindkey  "${key[End]}"     end-of-line
 [[ -n "${key[Insert]}"  ]]  && bindkey  "${key[Insert]}"  overwrite-mode
 [[ -n "${key[Delete]}"  ]]  && bindkey  "${key[Delete]}"  delete-char
-[[ -n "${key[Up]}"      ]]  && bindkey  "${key[Up]}"      up-line-or-history
-[[ -n "${key[Down]}"    ]]  && bindkey  "${key[Down]}"    down-line-or-history
+[[ -n "${key[Up]}"      ]]  && bindkey  "${key[Up]}"      history-substring-search-up
+[[ -n "${key[Down]}"    ]]  && bindkey  "${key[Down]}"    history-substring-search-down
 [[ -n "${key[Left]}"    ]]  && bindkey  "${key[Left]}"    backward-char
 [[ -n "${key[Right]}"   ]]  && bindkey  "${key[Right]}"   forward-char
-
-# bind UP and DOWN arrow keys
-zmodload zsh/terminfo
-bindkey "$terminfo[kcuu1]" history-substring-search-up
-bindkey "$terminfo[kcud1]" history-substring-search-down
-
-# bind P and N for EMACS mode
-bindkey -M emacs '^P' history-substring-search-up
-bindkey -M emacs '^N' history-substring-search-down
-
-# bind k and j for VI mode
-bindkey -M vicmd 'k' history-substring-search-up
-bindkey -M vicmd 'j' history-substring-search-down
-
-# Upper K and J for normal history search
-bindkey -a 'K' up-line-or-history
-bindkey -a 'J' down-line-or-history
 
 # Finally, make sure the terminal is in application mode, when zle is
 # active. Only then are the values from $terminfo valid.
@@ -103,16 +83,23 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
     zle -N zle-line-finish
 fi
 
-emacs-backward-word() {
-  local WORDCHARS="${WORDCHARS:s@/@}"
-  zle backward-word
-}
-#zle -N emacs-backward-word
-#bindkey ';5D' emacs-backward-word
-#bindkey ';5C' emacs-forward-word
+# bind P and N for EMACS mode
+bindkey -M emacs '^P' history-substring-search-up
+bindkey -M emacs '^N' history-substring-search-down
+
+# bind k and j for VI mode
+bindkey -M vicmd 'k' history-substring-search-up
+bindkey -M vicmd 'j' history-substring-search-down
+
+# Upper K and J for normal history search
+bindkey -a 'K' up-line-or-history
+bindkey -a 'J' down-line-or-history
+
 # }}}
 
 # PROMT {{{
+
+export __GIT_PROMPT_DIR=$STUFF/zsh/git-prompt
 
 autoload -U promptinit
 promptinit
@@ -126,13 +113,8 @@ PROMPT='$(git_super_status) %f%(!.%F{red}.%F{yellow})Ӄ%f '
 chpwd_functions=(save_dir)
 # }}}
 
-#case $TERM in 
-  #rxvt*)
-    #precmd () {
-      #print -Pn "\e]0;%n@%m: %~\a"
-    #}
-    #;;
-#esac
+
+# TERMINAL TITLE {{{
 
 termtitle() {
   local prompt_host="${(%):-%m}"
@@ -158,12 +140,6 @@ termtitle() {
 }
 
 precmd() {
-  #case "$TERM" in
-    #screen|screen.rxvt)
-      #print -Pn "\ek%-3~\e\\" # set screen title
-      #print -Pn "\e]2;%-3~\a" # must (re)set xterm title
-      #;;
-  #esac
   # Set terminal title.
   termtitle precmd
 }
