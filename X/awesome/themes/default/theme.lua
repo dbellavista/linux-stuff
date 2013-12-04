@@ -15,7 +15,7 @@ theme.delightful_error = "/usr/share/icons/Faenza/status/22/audio-volume-muted-b
 
 theme.font          = "Droid Sans Thai 9"
 
-theme.bg_normal     = "#22222200"
+theme.bg_normal     = "#00000000"
 theme.bg_focus      = "#535d6c"
 theme.bg_urgent     = "#ff0000"
 theme.bg_minimize   = "#444444"
