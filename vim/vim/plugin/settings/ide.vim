@@ -40,6 +40,10 @@ let g:C_IndentArguments = "-nbad -bap -nbc -bbo -hnl -br -brs -c33 -cd33 -ncdb -
 
 " }}}
 
+" Section: cpp11 {{{
+au BufNewFile,BufRead *.cpp set syntax=cpp11
+" }}}
+
 " Section: VimTemplate {{{
 let g:templates_no_autocmd = 0
 let g:template_dir = rtpath . "/templates"
