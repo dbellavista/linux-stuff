@@ -70,6 +70,8 @@ let g:syntastic_mode_map = { 'mode': 'active',
 														\ 'active_filetypes': [],
                             \ 'passive_filetypes': [] }
 let g:syntastic_c_checkers = ['ycm']
+let g:syntastic_cpp_checkers = ['ycm']
+let g:syntastic_cpp_check_header = 1
 let g:syntastic_python_checkers = ['pyflakes']
 let g:syntastic_html_checkers = ['tidy']
 " }}}
