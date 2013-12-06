@@ -58,3 +58,6 @@
 [submodule "zsh/zsh-completions"]
 	path = zsh/zsh-completions
 	url = git://github.com/zsh-users/zsh-completions.git
+[submodule "vim/vim/bundle/vim-autoclose"]
+	path = vim/vim/bundle/vim-autoclose
+	url = https://github.com/Townk/vim-autoclose
