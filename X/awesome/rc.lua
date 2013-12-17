@@ -71,13 +71,14 @@ modkey = "Mod4"
 
 -- Default programs
 mixer = 'pavucontrol'
-browser1 = "google-chrome"
 
 if distro == gentoo then
+browser1 = "google-chrome-stable"
 	browser2 = "firefox"
   terminal = "urxvt"
   filemanager = "spacefm"
 elseif distro == arch then
+browser1 = "google-chrome"
 	browser2 = "firefox"
   terminal = "gnome-terminal"
   filemanager = "nautilus"
