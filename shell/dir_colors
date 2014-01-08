@@ -214,6 +214,7 @@ EXEC 01;32
 .c 00;36
 .cpp 00;36
 .h 00;31
+.tex 00;31
 
 # audio formats
 .aac 00;36
