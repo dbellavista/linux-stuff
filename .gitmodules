@@ -64,3 +64,6 @@
 [submodule "vim/vim/bundle/vim-javascript"]
 	path = vim/vim/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript
+[submodule "vim/vim/bundle/argtextobj.vim"]
+	path = vim/vim/bundle/argtextobj.vim
+	url = https://github.com/vim-scripts/argtextobj.vim
