@@ -4,7 +4,7 @@ Description=Lock X session using slock
 [Service]
 User=daniele
 Enviroment=DISPLAY=:0
-ExecStart=/usr/bin/slock
+ExecStart=/usr/bin/i3lock -c 000000 -d
 
 [Install]
 WantedBy=sleep.target

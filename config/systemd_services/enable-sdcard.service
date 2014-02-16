@@ -1,0 +1,8 @@
+[Unit]
+Description=Enable SD card rescan
+Before=prefdm.service
+[Service]
+Type=oneshot
+ExecStart=/etc/scripts/enable-sdcard.sh
+[Install]
+WantedBy=multi-user.target

@@ -2,12 +2,12 @@
 
 git_push_all() {
   if [ $# -gt 0 ] ; then
-    BRANCH=$1
+    ARGS="$@"
   else
-    BRANCH=master
+    ARGS=$(git branch | cut -c 3-)
   fi
   for r in `git remote` ; do
-    git push $r $BRANCH
+    git push $r $ARGS
   done
 }
 

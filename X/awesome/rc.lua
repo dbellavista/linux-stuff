@@ -89,7 +89,7 @@ else
 end
 
 power_c =	{
-  poweroff="poweroff", reboot= "sudo reboot",
+  poweroff="poweroff", reboot= "reboot",
   suspend= "suspend", hibernate, "hibernate",
   lock= "i3lock -c 000000 -d", blank= script("blank.sh") }
 
@@ -101,9 +101,6 @@ power_c =	{
   }
 
   if distro == gentoo then
-    power_c["poweroff"] = "sudo /sbin/poweroff"
-    power_c["suspend"] = "sudo /usr/sbin/pm-suspend"
-    power_c["hibernate"] = "sudo /usr/sbin/pm-hibernate"
     applications["v"] = "VirtualBox"
 
   end

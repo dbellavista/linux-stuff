@@ -6,24 +6,20 @@
 grep --quiet Gentoo /proc/version
 GENTOO=$?
 
+# Power commands
+alias poweroff='sudo poweroff'
+alias reboot='sudo reboot'
+alias hibernate='systemctl hibernate'
+alias suspend='systemctl suspend'
+alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
+
 if [ $GENTOO -eq 0 ]; then
-	alias halt='sudo halt'
-	alias poweroff='sudo poweroff'
-	alias reboot='sudo reboot'
-	alias hibernate='dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Hibernate'
-	alias suspend='dbus-send --system --print-reply --dest="org.freedesktop.UPower" /org/freedesktop/UPower org.freedesktop.UPower.Suspend'
-	alias update-grub='sudo grub-mkconfig -o /boot/grub2/grub.cfg'
 	alias markdown='markdown_py'
 	alias sdc='sudo dispatch-conf'
 else
-	alias poweroff='sudo poweroff'
-	alias reboot='sudo reboot'
-	alias hibernate='systemctl hibernate'
-	alias suspend='systemctl suspend'
 	alias wifi-menu='sudo wifi-menu'
 	alias netcfg='sudo netcfg'
 	alias netcfg-menu='sudo netcfg-menu'
-	alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 fi
 
 ## Linux commangs
@@ -67,7 +63,7 @@ alias uni='\cd ~/Dropbox/University'
 alias prj='\cd ~/Dropbox/Projects'
 alias sec='\cd ~/Dropbox/IT/Security'
 alias drp='\cd ~/Dropbox'
-alias iss='\cd ~/Dropbox/University/Ingegneria\ dei\ Sistemi\ Software\ LM/Git/group14work/'
+alias ths='\cd ~/Dropbox/University/Thesis/thesis'
 alias hwe='\cd ~/Dropbox/University/Elaborazione\ delle\ Immagini\ LM/HomeworksGit/BellavistaHomeworks'
 alias emo='\cd ~/Dropbox/University/Elaborazione\ delle\ Immagini\ LM/emotime/'
 alias gtd='\cd /mnt/shared/gtd/'

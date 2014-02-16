@@ -23,11 +23,11 @@ grep --quiet Gentoo /proc/version
 GENTOO=$?
 
 PARAMS=""
-if [ $GENTOO -eq 0 ]; then
-#	PARAMS="ck-launch-session dbus-launch --sh-syntax --exit-with-session"
-PARAMS="dbus-launch --sh-syntax --exit-with-session"
+#if [ $GENTOO -eq 0 ]; then
+##	PARAMS="ck-launch-session dbus-launch --sh-syntax --exit-with-session"
+##PARAMS="dbus-launch --sh-syntax --exit-with-session"
 
-fi
+#fi
 
 if [ -z "$1" ]
 then
