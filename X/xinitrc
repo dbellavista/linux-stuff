@@ -31,7 +31,7 @@ PARAMS=""
 
 if [ -z "$1" ]
 then
-  WM=awesome
+  WM=xmonad
 else
   WM=$1
 fi

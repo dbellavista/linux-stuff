@@ -19,3 +19,9 @@ vim/vim/backups
 # Personal files
 vim/vim/plugin/settings/user_specific_configuration.vim
 vim/vim/plugin/settings/cmake_specific_settings.vim
+
+# Xmonad compilation file
+X/xmonad/xmonad-x86_64-linux
+X/xmonad/xmonad.errors
+X/xmonad/xmonad.hi
+X/xmonad/xmonad.o
