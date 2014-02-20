@@ -8,6 +8,10 @@ import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Util.Run
 import Graphics.X11.ExtraTypes.XF86
+import XMonad.Layout.NoBorders
+import XMonad.Hooks.ManageHelpers
+import XMonad.Hooks.EwmhDesktops
+import XMonad.Layout.Maximize
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
@@ -17,13 +21,15 @@ import qualified Data.Map        as M
 --
 myTerminal      = "urxvt"
 
+background = "~/Pictures/wallpaper_gentoo"
+
 -- Whether focus follows the mouse pointer.
 myFocusFollowsMouse :: Bool
 myFocusFollowsMouse = False
 
 -- Whether clicking on a window to focus also passes the click to the window
 myClickJustFocuses :: Bool
-myClickJustFocuses = True
+myClickJustFocuses = False
 
 -- Width of the window border in pixels.
 --
@@ -99,6 +105,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Swap the focused window with the previous window
     , ((modm .|. shiftMask, xK_k     ), windows W.swapUp    )
 
+    , ((modm, xK_backslash), withFocused (sendMessage . maximizeRestore))
+
     -- Shrink the master area
     , ((modm,               xK_h     ), sendMessage Shrink)
 
@@ -118,7 +126,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Use this binding with avoidStruts from Hooks.ManageDocks.
     -- See also the statusBar function from Hooks.DynamicLog.
     --
-    -- , ((modm              , xK_b     ), sendMessage ToggleStruts)
+    , ((modm              , xK_b     ), sendMessage ToggleStruts)
 
     -- Quit xmonad
     , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
@@ -133,6 +141,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm .|. shiftMask, xK_g     ), spawn "firefox")
     -- VirtualBox
     , ((modm              , xK_v     ), spawn "VirtualBox")
+    , ((modm .|. shiftMask, xK_v     ), spawn "wireshark")
+    , ((modm              , xK_y     ), spawn "spacefm")
     , ((modm              , xK_x     ), spawn "~/linux/scripts/blank.sh")
     , ((modm .|. shiftMask, xK_x     ), spawn "i3lock -c 000000 -d")
 
@@ -203,7 +213,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 myLayout = tiled ||| Mirror tiled ||| Full
   where
      -- default tiling algorithm partitions the screen into two panes
-     tiled   = Tall nmaster delta ratio
+     tiled   = maximize $ Tall nmaster delta ratio
 
      -- The default number of windows in the master pane
      nmaster = 1
@@ -232,7 +242,9 @@ myLayout = tiled ||| Mirror tiled ||| Full
 myManageHook = composeAll
     [ className =? "MPlayer"        --> doFloat
     , resource  =? "desktop_window" --> doIgnore
-    , resource  =? "kdesktop"       --> doIgnore ]
+    , resource  =? "kdesktop"       --> doIgnore
+    , isFullscreen --> doFullFloat
+    ]
 
 ------------------------------------------------------------------------
 -- Event handling
@@ -243,7 +255,8 @@ myManageHook = composeAll
 -- return (All True) if the default handler is to be run afterwards. To
 -- combine event hooks use mappend or mconcat from Data.Monoid.
 --
-myEventHook = mempty
+myEventHook = fullscreenEventHook
+--mempty
 
 ------------------------------------------------------------------------
 -- Status bars and logging
@@ -251,10 +264,6 @@ myEventHook = mempty
 -- Perform an arbitrary action on each internal state change or X event.
 -- See the 'XMonad.Hooks.DynamicLog' extension for examples.
 --
-{-myLogHook xmproc = return (dynamicLogWithPP xmobarPP-}
-    {-{ ppOutput = hPutStrLn xmproc-}
-    {-, ppTitle = xmobarColor "green" "" . shorten 50-}
-    {-})-}
 myLogHook xmproc = do
 
   dynamicLogWithPP xmobarPP
@@ -280,6 +289,7 @@ myStartupHook = return ()
 main = do
   xmproc <- spawnPipe "xmobar ~/.xmonad/xmobarrc"
   spawn "~/linux/scripts/autostart.sh"
+  spawn $ "feh --bg-fill " ++ background
   xmonad $ defaultConfig
     {
       -- simple stuff
@@ -297,7 +307,7 @@ main = do
         mouseBindings      = myMouseBindings,
 
       -- hooks, layouts
-        layoutHook         = avoidStruts $ myLayout,
+        layoutHook         = smartBorders . avoidStruts $ myLayout,
         manageHook         = myManageHook <+> manageDocks,
         handleEventHook    = myEventHook,
         logHook            = myLogHook $ xmproc,
