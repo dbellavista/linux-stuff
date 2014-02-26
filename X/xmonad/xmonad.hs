@@ -1,7 +1,7 @@
 --
 --
 
-import XMonad
+import XMonad hiding ( (|||) )
 import Data.Monoid
 import System.Exit
 import XMonad.Hooks.DynamicLog
@@ -12,6 +12,10 @@ import XMonad.Layout.NoBorders
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.EwmhDesktops
 import XMonad.Layout.Maximize
+import XMonad.Layout.WindowNavigation
+import XMonad.Layout.LayoutCombinators
+import XMonad.Layout.ComboP
+import XMonad.Actions.CopyWindow
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
@@ -105,6 +109,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     -- Swap the focused window with the previous window
     , ((modm .|. shiftMask, xK_k     ), windows W.swapUp    )
 
+    , ((modm              , xK_f), sendMessage $ JumpToLayout "Full")
+
     , ((modm, xK_backslash), withFocused (sendMessage . maximizeRestore))
 
     -- Shrink the master area
@@ -133,6 +139,12 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- Restart xmonad
     , ((modm              , xK_q     ), spawn "xmonad --recompile; xmonad --restart")
+
+    , ((modm .|. controlMask .|. shiftMask, xK_Right), sendMessage $ Move R)
+    , ((modm .|. controlMask .|. shiftMask, xK_Left ), sendMessage $ Move L)
+    , ((modm .|. controlMask .|. shiftMask, xK_Up   ), sendMessage $ Move U)
+    , ((modm .|. controlMask .|. shiftMask, xK_Down ), sendMessage $ Move D)
+    , ((modm .|. controlMask .|. shiftMask, xK_s    ), sendMessage $ SwapWindow)
 
     ----- Applications
     -- Google Chrome
@@ -168,7 +180,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     --
     [((m .|. modm, k), windows $ f i)
         | (i, k) <- zip (XMonad.workspaces conf) [xK_1 .. xK_9]
-        , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask)]]
+        , (f, m) <- [(W.greedyView, 0), (W.shift, shiftMask), (copy, shiftMask .|. controlMask) ]]
     ++
 
     --
@@ -210,7 +222,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = tiled ||| Mirror tiled ||| Full
+myLayout = tiled ||| (Full *||* tiled) ||| Mirror tiled ||| Full
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = maximize $ Tall nmaster delta ratio
