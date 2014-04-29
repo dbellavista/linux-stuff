@@ -78,3 +78,7 @@ noremap c :tabclose<CR>
 noremap t :tabnew %<CR>
 noremap <Tab> <C-w><C-w>
 " }}}
+
+" Section: italian {{{
+" This is a trick for latexvim
+inoremap <LocalLeader>d é
