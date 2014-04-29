@@ -63,9 +63,6 @@ alias uni='\cd ~/Dropbox/University'
 alias prj='\cd ~/Dropbox/Projects'
 alias sec='\cd ~/Dropbox/IT/Security'
 alias drp='\cd ~/Dropbox'
-alias ths='\cd ~/Dropbox/University/Thesis/thesis'
-alias hwe='\cd ~/Dropbox/University/Elaborazione\ delle\ Immagini\ LM/HomeworksGit/BellavistaHomeworks'
-alias emo='\cd ~/Dropbox/University/Elaborazione\ delle\ Immagini\ LM/emotime/'
 alias gtd='\cd /mnt/shared/gtd/'
 
 ## Git
