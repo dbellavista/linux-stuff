@@ -5,7 +5,7 @@ Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
     , lowerOnStart = True
     , commands = [ 
         Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
-      , Run Com "~/linux/scripts/getcoretemp.sh" [] "coreTemp" 10
+      , Run Com "/home/daniele/linux/scripts/getcoretemp.sh" [] "coreTemp" 10
       , Run BatteryP ["BAT0"] [] 60
       , Run Memory ["-t","Mem: <usedratio>%"] 10
       , Run Swap [] 10
