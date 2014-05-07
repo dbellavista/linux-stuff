@@ -67,6 +67,16 @@ myWorkspaces    = ["1","2","3","4","5","6","7","8","9"]
 myNormalBorderColor  = "#000000"
 myFocusedBorderColor = "#535d6c"
 
+-- Some functions
+--
+
+exitFunc :: X ()
+exitFunc = do
+  runProcessWithInput "/bin/bash" [] ((linuxStuff ++ "/scripts/logout.sh"))
+  broadcastMessage ReleaseResources
+  io (exitWith ExitSuccess)
+  return ()
+
 ------------------------------------------------------------------------
 -- Key bindings. Add, modify or remove key bindings here.
 --
@@ -140,7 +150,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm              , xK_b     ), sendMessage ToggleStruts)
 
     -- Quit xmonad
-    , ((modm .|. shiftMask, xK_q     ), io (exitWith ExitSuccess))
+    , ((modm .|. shiftMask, xK_q     ), exitFunc)
 
     -- Restart xmonad
     , ((modm              , xK_q     ), spawn "xmonad --recompile; xmonad --restart")
@@ -272,7 +282,7 @@ myManageHook = composeAll
 -- return (All True) if the default handler is to be run afterwards. To
 -- combine event hooks use mappend or mconcat from Data.Monoid.
 --
-myEventHook = fullscreenEventHook
+myEventHook = ewmhDesktopsEventHook <+> fullscreenEventHook
 --mempty
 
 ------------------------------------------------------------------------
@@ -295,7 +305,7 @@ myLogHook xmproc = do
 -- per-workspace layout choices.
 --
 -- By default, do nothing.
-myStartupHook = return ()
+myStartupHook = ewmhDesktopsStartup
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
@@ -326,6 +336,6 @@ main = do
         layoutHook         = smartBorders . avoidStruts $ myLayout,
         manageHook         = myManageHook <+> manageDocks,
         handleEventHook    = myEventHook,
-        logHook            = myLogHook $ xmproc,
+        logHook            = ewmhDesktopsLogHook <+> myLogHook(xmproc),
         startupHook        = myStartupHook
       }
