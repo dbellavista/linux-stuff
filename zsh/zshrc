@@ -23,7 +23,8 @@ compinit
 
 # SOURCES {{{
 
-STUFF=$HOME/linux
+#STUFF=$HOME/linux
+source ~/.linux_stuff
 
 source $STUFF/shell/environment
 source $STUFF/shell/functions
@@ -31,7 +32,7 @@ source $STUFF/shell/aliases
 
 source $STUFF/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source $STUFF/zsh/zsh-history-substring-search/zsh-history-substring-search.zsh
-source $STUFF/zsh/git-prompt/zshprompt.sh
+source $STUFF/zsh/git-prompt/zshrc.sh
 
 # }}}
 

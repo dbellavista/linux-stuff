@@ -16,9 +16,14 @@ import XMonad.Layout.WindowNavigation
 import XMonad.Layout.LayoutCombinators
 import XMonad.Layout.ComboP
 import XMonad.Actions.CopyWindow
+import System.Environment (getEnv)
+import System.IO.Unsafe
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
+
+-- Stuff path
+linuxStuff = unsafePerformIO $ getEnv "STUFF"
 
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
@@ -155,19 +160,19 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm              , xK_v     ), spawn "VirtualBox")
     , ((modm .|. shiftMask, xK_v     ), spawn "wireshark")
     , ((modm              , xK_y     ), spawn "spacefm")
-    , ((modm              , xK_x     ), spawn "~/linux/scripts/blank.sh")
+    , ((modm              , xK_x     ), spawn (linuxStuff ++ "/scripts/blank.sh"))
     , ((modm .|. shiftMask, xK_x     ), spawn "i3lock -c 000000 -d")
 
     ----- Multimedia
-    , ((0, xF86XK_AudioMute), spawn "~/linux/scripts/mute_toggle")
-    , ((0, xF86XK_AudioRaiseVolume), spawn "~/linux/scripts/vol_up")
-    , ((0, xF86XK_AudioLowerVolume), spawn "~/linux/scripts/vol_down")
-    , ((0, xF86XK_AudioPlay), spawn "~/linux/scripts/media.sh play")
-    , ((0, xF86XK_AudioNext), spawn "~/linux/scripts/media.sh next")
-    , ((0, xF86XK_AudioPrev), spawn "~/linux/scripts/media.sh prev")
+    , ((0, xF86XK_AudioMute), spawn (linuxStuff ++ "/scripts/mute_toggle"))
+    , ((0, xF86XK_AudioRaiseVolume), spawn (linuxStuff ++ "/scripts/vol_up"))
+    , ((0, xF86XK_AudioLowerVolume), spawn (linuxStuff ++ "/scripts/vol_down"))
+    , ((0, xF86XK_AudioPlay), spawn (linuxStuff ++ "/scripts/media.sh play"))
+    , ((0, xF86XK_AudioNext), spawn (linuxStuff ++ "/scripts/media.sh next"))
+    , ((0, xF86XK_AudioPrev), spawn (linuxStuff ++ "/scripts/media.sh prev"))
     , ((0, xK_Print), spawn "scrot -e 'mv $f ~/Pictures/'")
     , ((controlMask, xK_Print), spawn "scrot -s -e 'mv $f ~/Pictures/'")
-    , ((0, 0x1008ffa9), spawn "~/linux/scripts/toggle_touchpad.sh")
+    , ((0, 0x1008ffa9), spawn (linuxStuff ++ "/scripts/toggle_touchpad.sh"))
 
     -- Run xmessage with a summary of the default keybindings (useful for beginners)
     -- , ((modMask .|. shiftMask, xK_slash ), spawn ("echo \"" ++ help ++ "\" | xmessage -file -"))
@@ -277,7 +282,6 @@ myEventHook = fullscreenEventHook
 -- See the 'XMonad.Hooks.DynamicLog' extension for examples.
 --
 myLogHook xmproc = do
-
   dynamicLogWithPP xmobarPP
         { ppOutput = hPutStrLn xmproc
         , ppTitle = xmobarColor "green" "" . shorten 50
@@ -300,7 +304,7 @@ myStartupHook = return ()
 --
 main = do
   xmproc <- spawnPipe "xmobar ~/.xmonad/xmobarrc"
-  spawn "~/linux/scripts/autostart.sh"
+  spawn (linuxStuff ++ "/scripts/autostart.sh")
   spawn $ "feh --bg-fill " ++ background
   xmonad $ defaultConfig
     {

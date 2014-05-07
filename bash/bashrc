@@ -17,7 +17,7 @@ fi
 
 # Put your fun stuff here.
 
-STUFF="$HOME/linux"
+source $HOME/.linux_stuff
 
 source $STUFF/shell/functions
 source $STUFF/shell/environment

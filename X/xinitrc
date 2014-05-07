@@ -36,5 +36,5 @@ else
   WM=$1
 fi
 
-source ~/.zshrc
+source ~/.linux_stuff
 exec $PARAMS $WM
