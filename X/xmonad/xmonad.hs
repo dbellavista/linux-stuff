@@ -268,8 +268,11 @@ myLayout = tiled ||| (Full *||* tiled) ||| Mirror tiled ||| Full
 --
 myManageHook = composeAll
     [ className =? "MPlayer"        --> doFloat
+    , className =? "mpv"            --> doFloat
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore
+    , resource  =? "Dialog"         --> doFloat
+    , title     =? "Firefox Preferences" --> doFloat
     , isFullscreen --> doFullFloat
     ]
 
