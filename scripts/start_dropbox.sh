@@ -1,3 +1,3 @@
 #!/bin/bash
 
-ionice -c 3 $HOME/.dropbox-dist/dropbox&
+ionice -c 3 dropbox&

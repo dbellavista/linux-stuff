@@ -137,6 +137,16 @@ termtitle() {
   esac
 }
 
+# Launching TMUX fi console
+if [ -n "$IM_CONSOLE" ] ; then
+
+  # Launching tmux
+  if [ -z "$TMUX" ]; then
+    tmux
+  fi
+
+fi
+
 precmd() {
   # Set terminal title.
   termtitle precmd
