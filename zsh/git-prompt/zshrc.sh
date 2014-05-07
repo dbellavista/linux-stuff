@@ -1,7 +1,7 @@
 # To install source this file from your .zshrc file
 
 # Change this to reflect your installation directory
-#export __GIT_PROMPT_DIR=~/linux/zsh/git-prompt
+export __GIT_PROMPT_DIR=$STUFF/zsh/git-prompt
 # Initialize colors.
 autoload -U colors
 colors
@@ -18,7 +18,7 @@ add-zsh-hook precmd precmd_update_git_vars
 ## Function definitions
 function preexec_update_git_vars() {
     case "$2" in
-        git*)
+        git*|hub*|gh*|stg*)
         __EXECUTED_GIT_COMMAND=1
         ;;
     esac
@@ -54,7 +54,6 @@ function update_current_git_vars() {
 git_super_status() {
 	precmd_update_git_vars
     if [ -n "$__CURRENT_GIT_STATUS" ]; then
-	  STATUS="$GIT_BRANCH"
 	  STATUS="$ZSH_THEME_GIT_PROMPT_PREFIX$ZSH_THEME_GIT_PROMPT_BRANCH$GIT_BRANCH%{${reset_color}%}"
 	  if [ -n "$GIT_REMOTE" ]; then
 		  STATUS="$STATUS$ZSH_THEME_GIT_PROMPT_REMOTE$GIT_REMOTE%{${reset_color}%}"

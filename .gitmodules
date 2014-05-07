@@ -61,3 +61,6 @@
 [submodule "vim/vim/bundle/argtextobj.vim"]
 	path = vim/vim/bundle/argtextobj.vim
 	url = https://github.com/vim-scripts/argtextobj.vim
+[submodule "zsh/git-prompt"]
+	path = zsh/git-prompt
+	url = https://github.com/olivierverdier/zsh-git-prompt
