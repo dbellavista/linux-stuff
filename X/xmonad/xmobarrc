@@ -9,10 +9,11 @@ Config { font = "-*-Fixed-Bold-R-Normal-*-13-*-*-*-*-*-*-*"
       , Run BatteryP ["BAT0"] [] 60
       , Run Memory ["-t","Mem: <usedratio>%"] 10
       , Run Swap [] 10
+      , Run DiskIO [("/", "<read> <write>"), ("sda7", "<total>")] [] 10
       , Run Date "%a %b %_d %l:%M" "date" 10
       , Run StdinReader
     ]
     , sepChar = "%"
     , alignSep = "}{"
-    , template = "%StdinReader% }{ %cpu% * %coreTemp% | %memory% * %swap% | %battery%  <fc=#ee9a00>%date%</fc>"
+    , template = "%StdinReader% }{ %cpu% * %coreTemp% | %memory% * %swap% * %diskio% | %battery%  <fc=#ee9a00>%date%</fc>"
 }
