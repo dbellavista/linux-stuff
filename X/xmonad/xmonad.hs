@@ -270,6 +270,7 @@ myLayout = tiled ||| (Full *||* tiled) ||| Mirror tiled ||| Full
 myManageHook = composeAll
     [ className =? "MPlayer"        --> doFloat
     , className =? "mpv"            --> doFloat
+    , className =? "Xmessage"       --> doFloat
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore
     , resource  =? "Dialog"         --> doFloat
