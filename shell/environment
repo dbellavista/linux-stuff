@@ -26,6 +26,6 @@ if [ $TERM = "xterm" ]; then
   export TERM="xterm-256color"
 fi
 
-export PATH=$PATH:/opt/eclipse:/opt/MATLAB/R2012a/bin
+export PATH="$PATH:$STUFF/bin"
 eval `dircolors $HOME/.dir_colors`
 stty -ixon
