@@ -1,2 +1,2 @@
 #!/bin/bash
-export STUFF=${HOME}linux/
+export STUFF=${HOME}/linux
