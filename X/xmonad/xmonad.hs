@@ -18,6 +18,7 @@ import XMonad.Layout.ComboP
 import XMonad.Actions.CopyWindow
 import System.Environment (getEnv)
 import System.IO.Unsafe
+import XMonad.Layout.IndependentScreens
 
 import qualified XMonad.StackSet as W
 import qualified Data.Map        as M
@@ -294,11 +295,28 @@ myEventHook = ewmhDesktopsEventHook <+> fullscreenEventHook
 -- Perform an arbitrary action on each internal state change or X event.
 -- See the 'XMonad.Hooks.DynamicLog' extension for examples.
 --
-myLogHook xmproc = do
+myLogHook xmproc =
   dynamicLogWithPP xmobarPP
         { ppOutput = hPutStrLn xmproc
         , ppTitle = xmobarColor "green" "" . shorten 50
+        , ppVisible = xmobarColor "red" "" . wrap "(" ")"
+        , ppHiddenNoWindows = xmobarColor "#999999" ""
+        , ppUrgent = xmobarColor "" "#eaa932"
         }
+
+xmobarScreen1 xmproc =
+  dynamicLogWithPP xmobarPP
+        { ppOutput = hPutStrLn xmproc
+        , ppTitle = xmobarColor "green" ""
+        , ppVisible = xmobarColor "yellow" "" . wrap "(" ")"
+        , ppCurrent = xmobarColor "red" "" . wrap "[" "]"
+        , ppOrder = \(ws:_:t:_) -> [ws, t]
+        , ppHiddenNoWindows = xmobarColor "#999999" ""
+        , ppUrgent = xmobarColor "" "#eaa932"
+        }
+
+{-nullEventHook = mempty-}
+{-coolEventHook = xmobarScreen1(spawnPipe "xmobar -x 1 ~/.xmonad/xmobarrc_x1")-}
 
 ------------------------------------------------------------------------
 -- Startup hook
@@ -313,10 +331,21 @@ myStartupHook = ewmhDesktopsStartup
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
 
+secondScreenAdjusting = do
+  screencount <- countScreens
+  if screencount == 1
+    then do
+      spawn "xrandr --output DP1 --off"
+      spawnPipe "/bin/true"
+  else do
+    spawn "xrandr --output DP1 --auto --right-of LVDS1"
+    spawnPipe "/usr/bin/xmobar ~/.xmonad/xmobarrc"
+
 -- Run xmonad with the settings you specify. No need to modify this.
 --
 main = do
-  xmproc <- spawnPipe "xmobar ~/.xmonad/xmobarrc"
+  xmproc <- spawnPipe "/usr/bin/xmobar ~/.xmonad/xmobarrc"
+  xmprocS1 <- secondScreenAdjusting
   spawn (linuxStuff ++ "/scripts/autostart.sh")
   spawn $ "feh --bg-fill " ++ background
   xmonad $ defaultConfig
@@ -339,6 +368,6 @@ main = do
         layoutHook         = smartBorders . avoidStruts $ myLayout,
         manageHook         = myManageHook <+> manageDocks,
         handleEventHook    = myEventHook,
-        logHook            = ewmhDesktopsLogHook <+> myLogHook(xmproc),
+        logHook            = ewmhDesktopsLogHook <+> myLogHook(xmproc) <+> xmobarScreen1(xmprocS1),
         startupHook        = myStartupHook
       }
