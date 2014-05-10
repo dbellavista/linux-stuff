@@ -29,7 +29,7 @@ linuxStuff = unsafePerformIO $ getEnv "STUFF"
 -- The preferred terminal program, which is used in a binding below and by
 -- certain contrib modules.
 --
-myTerminal      = "urxvt"
+myTerminal      = "/usr/bin/terminator"
 
 background = "~/Pictures/wallpaper_gentoo"
 
@@ -274,6 +274,7 @@ myManageHook = composeAll
     , resource  =? "kdesktop"       --> doIgnore
     , resource  =? "Dialog"         --> doFloat
     , title     =? "Firefox Preferences" --> doFloat
+    , title     =? "Terminator Preferences" --> doFloat
     , isFullscreen --> doFullFloat
     ]
 
