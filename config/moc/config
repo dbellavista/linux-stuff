@@ -10,7 +10,7 @@ ReadTags		= yes
 # Directory in which you store music files, if you specify it, you will be able
 # to quickly go to this directory with the '-m' parameter or the 'm' command.
 # This can also point to a playlist.
-MusicDir		= "/mnt/media/Music"
+MusicDir		= "/home/daniele/Music"
 
 # How to sort? FileName is the only option for now.
 Sort			= FileName
@@ -145,16 +145,16 @@ ASCIILines		= no
 
 # FastDirs, these allow you jump directly to a directory, the key bindings are
 # in the keymap file.
-#Fastdir1 = /mp3/rock
-#Fastdir2 = /mp3/electronic
-#Fastdir3 = /mp3/rap
-#Fastdir4 = /mp3/etc
-#Fastdir5 = 
-#Fastdir6 = 
-#Fastdir7 = 
-#Fastdir8 = 
-#Fastdir9 = 
-#Fastdir10 =
+Fastdir1 = "/home/daniele/Music/Ramin Djawadi/"
+Fastdir2 = "/home/daniele/Music/Blizzard Entertainment/"
+Fastdir3 = "/home/daniele/Music/Spite Extreme Wing/Non Dvcor, Dvco/"
+Fastdir4 = "/home/daniele/Music/Howard Shore/"
+Fastdir5 = "/home/daniele/Music/Malukah/Malukah Covers/"
+Fastdir6 = "/home/daniele/Music/Lyfthrasyr/"
+Fastdir7 = "/home/daniele/Music/Sunn O)))/"
+Fastdir8 = "/home/daniele/Music/Adrian von Ziegler/"
+Fastdir9 = "/home/daniele/Music/Epic Music"
+Fastdir10 = "/home/daniele/Music/Gorgoroth/"
 
 # How fast to seek? Number of seconds per key stroke.
 #SeekTime		= 1

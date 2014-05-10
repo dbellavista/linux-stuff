@@ -40,22 +40,17 @@ quit                  = Q
 # Menu and interface control keys:
 go                    = ENTER ;
 
-menu_down             = DOWN
-menu_up               = UP
+menu_down             = j DOWN
+menu_up               = k UP
 
-menu_down             = j
-menu_up               = k
+menu_page_down        = ^d PAGE_DOWN
+menu_page_up          = ^u PAGE_UP
 
-menu_page_down        = PAGE_DOWN
-menu_page_up          = PAGE_UP
-menu_page_down        = ^D
-menu_page_up          = ^U
+menu_first_item       = HOME
+menu_last_item        = END
 
-menu_first_item       = HOME 0
-menu_last_item        = END $
-
-#search_menu           = g /
-search_menu           = /
+search_menu           = g /
+#search_menu           = /
 
 toggle_read_tags      = f
 toggle_show_time      = ^t
@@ -78,10 +73,8 @@ reload                = r
 seek_forward          = l
 seek_backward         = h
 
-seek_forward_fast     = ]
-seek_backward_fast    = [
-seek_forward_fast     = L
-seek_backward_fast    = H
+seek_forward_fast     = L ]
+seek_backward_fast    = H [
 
 pause                 = p SPACE
 stop                  = s
@@ -117,7 +110,7 @@ go_to_music_directory = m
 go_to_fast_dir1       = !
 go_to_fast_dir2       = @
 go_to_fast_dir3       = #
-go_to_fast_dir4       = [
+go_to_fast_dir4       = $
 go_to_fast_dir5       = %
 go_to_fast_dir6       = ^
 go_to_fast_dir7       = &
@@ -145,13 +138,11 @@ enqueue_file          = z
 clear_queue           = Z
 
 # User interaction control:
-history_up            = UP
-history_down          = DOWN
-history_up            = k
-history_down          = j
+history_up            = UP k
+history_down          = DOWN j
 
-delete_to_start       = ^u
-delete_to_end         = ^k
+#delete_to_start       = ^u
+#delete_to_end         = ^k
 cancel                = ^x ESCAPE
 hide_message          = M
 
