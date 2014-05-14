@@ -26,6 +26,6 @@ if [ $TERM = "xterm" ]; then
   export TERM="xterm-256color"
 fi
 
-export PATH="$PATH:$STUFF/bin"
+export PATH="$PATH:$STUFF/bin:$HOME/.gem/ruby/current/bin"
 eval `dircolors $HOME/.dir_colors`
 stty -ixon

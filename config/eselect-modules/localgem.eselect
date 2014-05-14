@@ -1,0 +1,131 @@
+# Copyright 1999-2013 Gentoo Foundation
+# Distributed under the terms of the GNU General Public License v2
+# vim: set ft=sh:
+
+DESCRIPTION="Manage local Rubygem symlinks"
+MAINTAINER="l0th1.dd@gmail.com"
+SVN_DATE="20140514"
+VERSION="20140514"
+
+bindir=/usr/bin
+man1dir=/usr/share/man/man1
+gemdir=~/.gem/ruby
+
+find_targets() {
+	for t in "${EROOT}"${gemdir}/[[:digit:]]* ; do
+		[[ -d $t ]] || continue
+		echo "${t}"
+	done
+}
+
+check_target() {
+	local target=${1} targets
+	targets=( $(find_targets ) )
+
+	# number from the list
+	if is_number ${target} && [[ ${target} -ge 1 ]] ; then
+		if [[ ${target} -gt ${#targets[@]} ]] ; then
+			target="invalid"
+		elif [[ -e "${targets[$(( ${target} - 1 ))]}" ]] ; then
+			target=$(basename ${targets[$((${target} - 1 ))]} )
+		else
+			write_warning_msg ${targets[$((${target} - 1 ))]}
+			target="invalid"
+		fi
+		# `rubyXX' string
+	else
+		[[ -e "${EROOT}${gemdir}/${target}" ]] || \
+			target="invalid"
+	fi
+
+	echo ${target}
+}
+
+remove_symlinks() {
+	rm -f ${EROOT}${gemdir}/current
+}
+
+create_symlinks() {
+	local target=${1} version
+
+	version=${target##*ruby}
+
+	local path="${EROOT}${gemdir}/current"
+	ln -s "${gemdir}/${version}" "${path}" || die -q "Could not set gem symlink"
+
+	write_list_start "Successfully switched to profile:"
+	write_kv_list_entry "${target}" ""
+}
+
+### show action ###
+describe_show() {
+	echo "Prints the current configuration."
+}
+
+do_show() {
+	[[ -z "${@}" ]] || die -q "This function does not expect any arguments"
+
+	local rb=""
+
+	write_list_start "Current Ruby version:"
+	if [[ -L "${EROOT}${gemdir}/current" ]] ; then
+		rb=$(basename $(canonicalise ${EROOT}${gemdir}/current) )
+		write_kv_list_entry $rb ""
+	elif [[ -e "${EROOT}${gemdir}/current" ]] ; then
+		write_warning_msg "${gemdir}/current is a SLOT incompatible version."
+		write_kv_list_entry "$(basename $(canonicalise ${EROOT}${gemdir}/current ) )" ""
+	else
+		write_kv_list_entry "(none)"
+		return 1
+	fi
+}
+
+### list action ###
+describe_list() {
+	echo "Lists available local Rubygem profiles."
+}
+
+do_list() {
+	write_list_start "Available local rubygem profiles:"
+	local targets=( $(find_targets) )
+	local i line
+
+	for (( i = 0; i < ${#targets[@]}; i++ )) ; do
+		line=$(basename "${targets[i]}")
+
+		# find out the current version
+		if [[ ${targets[i]} = $(canonicalise "${EROOT}${gemdir}/current") ]] ; then
+			targets[i]=$(highlight_marker "${line}")
+		else
+			targets[i]=${line}
+		fi
+	done
+	write_numbered_list -m "(none found)" "${targets[@]}"
+}
+
+### set action ###
+describe_set() {
+	echo "Switches to a local rubygem profile."
+}
+
+describe_set_options() {
+	echo "target : Target name or number (from 'list' action)"
+}
+
+describe_set_parameters() {
+	echo "<target>"
+}
+
+do_set() {
+	[[ -z ${@} ]] && die -q "Parameter expected."
+
+	local target=$(check_target ${1})
+
+	[[ $target = "invalid" ]] && die -q "Can't use that profile. No suitable
+	local rubygem directory found."
+
+	remove_symlinks || \
+		die -q "Could not remove symlinks"
+
+	create_symlinks ${target}
+}
