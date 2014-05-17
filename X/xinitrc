@@ -13,11 +13,18 @@ fi
 
 xset -b
 xcompmgr -c &
-
+eval $(gnome-keyring-daemon --components=pkcs11,secrets,ssh,gpg)
+export GNOME_KEYRING_PID
+export GNOME_KEYRING_SOCKET
+export SSH_AUTH_SOCK
+export GPG_AGENT_INFO
 export _JAVA_AWT_WM_NONREPARENTING=1
+
+source ~/.linux_stuff
 xsetroot -cursor_name left_ptr
 #setxkbmap it us
 [[ -f ~/.Xresources ]] && xrdb -merge ~/.Xresources
+[[ -f $STUFF/X/Xmodmap ]] && xmodmap $STUFF/X/Xmodmap
 
 grep --quiet Gentoo /proc/version
 GENTOO=$?
@@ -36,5 +43,4 @@ else
   WM=$1
 fi
 
-source ~/.linux_stuff
 exec $PARAMS $WM
