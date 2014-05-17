@@ -2,8 +2,10 @@
 --
 
 import XMonad hiding ( (|||) )
+import qualified XMonad.StackSet as W
 import Data.Monoid
 import System.Exit
+import System.Directory
 import XMonad.Hooks.DynamicLog
 import XMonad.Hooks.ManageDocks
 import XMonad.Util.Run
@@ -61,7 +63,7 @@ myModMask       = mod4Mask
 --
 -- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
 --
-myWorkspaces    = ["1-main","2-win","3-code","4-test","5-web","6-social","7-sys","8-media","9"]
+myWorkspaces    = ["1-misc","2-vm","3-code","4-test","5-web","6-social","7-comm","8-sys","9-media"]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
@@ -271,7 +273,11 @@ myLayout = tiled ||| (Full *||* tiled) ||| Mirror tiled ||| Full
 myManageHook = composeAll
     [ className =? "MPlayer"        --> doFloat
     , className =? "mpv"            --> doFloat
+    , className =? "nm-connection-editor" --> doFloat
     , className =? "Xmessage"       --> doFloat
+    , className =? "Address Book"       --> doFloat
+    , className =? "Msgcompose"       --> doFloat
+    , resource  =? "thunderbird-bin" --> doF (W.shift "6-comm")
     , resource  =? "desktop_window" --> doIgnore
     , resource  =? "kdesktop"       --> doIgnore
     , resource  =? "Dialog"         --> doFloat
@@ -329,7 +335,15 @@ xmobarScreen1 xmproc =
 -- per-workspace layout choices.
 --
 -- By default, do nothing.
-myStartupHook = ewmhDesktopsStartup
+{-allFilesPresent :: [Char] -> IO Bool-}
+{-allFilesPresent files = mapM (doesFileExist files) >>= return . foldr (&&) True-}
+{-startupWorkspaceFilling = do-}
+  {-success <- allFilesPresent "/tmp/xmonad_first_start"-}
+  {-if success-}
+  {-then return mempty-}
+  {-else return mempty-}
+
+myStartupHook = ewmhDesktopsStartup -- <+> startupWorkspaceFilling
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
@@ -342,7 +356,7 @@ secondScreenAdjusting = do
       spawnPipe "/bin/true"
   else do
     spawn "xrandr --output DP1 --auto --right-of LVDS1"
-    spawnPipe "/usr/bin/xmobar ~/.xmonad/xmobarrc"
+    spawnPipe "/usr/bin/xmobar ~/.xmonad/xmobarrc_x1 -x 1"
 
 -- Run xmonad with the settings you specify. No need to modify this.
 --
