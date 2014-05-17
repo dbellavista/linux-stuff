@@ -105,8 +105,8 @@ if __name__ == "__main__":
     try:
         STUFF = os.environ['STUFF'];
     except:
-        if len(sys.argv) > 0:
-            STUFF = sys.argv[0]
+        if len(sys.argv) > 1:
+            STUFF = sys.argv[1]
         else:
             print(FAIL, " [#] Export $STUFF or supply <linux_stuff_directory>", ENDC)
             sys.exit(1)
