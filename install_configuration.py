@@ -1,7 +1,7 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 import os
 import sys
-import ConfigParser
+import configparser
 import shutil
 from os import path as p
 
@@ -57,7 +57,7 @@ def query_yes_no(question, default="no"):
 
     while True:
         sys.stdout.write(question + prompt)
-        choice = raw_input().lower()
+        choice = input().lower()
         if default is not None and choice == '':
             return valid[default]
         elif choice in valid:
@@ -67,7 +67,7 @@ def query_yes_no(question, default="no"):
                             "(or 'y' or 'n').\n")
 
 def install(src, dst):
-    print "\t[>]", src, "->", dst
+    print("\t[>]", src, "->", dst)
     doit = False
     if os.path.exists(src):
 
@@ -85,19 +85,19 @@ def install(src, dst):
                 if not os.path.isdir(dstdir):
                     os.makedirs(dstdir)
                 os.symlink(src, dst)
-                print OKGREEN, "\t[+] Installed", ENDC
+                print(OKGREEN, "\t[+] Installed", ENDC)
             except e:
-                print FAIL, "\t[-] ERROR:", e, ENDC
+                print(FAIL, "\t[-] ERROR:", e, ENDC)
         else:
-            print FAIL, "\t[-] Skipped", ENDC
+            print(FAIL, "\t[-] Skipped", ENDC)
     else:
-        print FAIL, "\t[#] ERROR:", src, "doesn't exists!", ENDC
-    print ""
+        print(FAIL, "\t[#] ERROR:", src, "doesn't exists!", ENDC)
+    print("")
 
 
 if __name__ == "__main__":
 
-    config = ConfigParser.ConfigParser()
+    config = configparser.ConfigParser()
     config.read("./install.cfg")
 
     HOME = os.environ['HOME'];
@@ -108,7 +108,7 @@ if __name__ == "__main__":
         if len(sys.argv) > 0:
             STUFF = sys.argv[0]
         else:
-            print FAIL, " [#] Export $STUFF or supply <linux_stuff_directory>", ENDC
+            print(FAIL, " [#] Export $STUFF or supply <linux_stuff_directory>", ENDC)
             sys.exit(1)
 
 
@@ -118,10 +118,10 @@ if __name__ == "__main__":
         dst = config.get(s, 'dst')
         files[s] = (p.join(STUFF, src), p.join(HOME, dst))
 
-    print HEADER + " ========================================="
-    print          "  LINUX STUFF INSTALL CONFIGURATION TOOL!"
-    print          " =========================================\n\n", ENDC
+    print(HEADER + " =========================================")
+    print(         "  LINUX STUFF INSTALL CONFIGURATION TOOL!")
+    print(         " =========================================\n\n", ENDC)
 
-    for k, (src,dst) in files.iteritems():
-        print OKBLUE, " [*] Installing", k, "configuration" , ENDC
+    for k, (src,dst) in files.items():
+        print(OKBLUE, " [*] Installing", k, "configuration" , ENDC)
         install(src, dst)
