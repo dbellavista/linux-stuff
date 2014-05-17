@@ -20,6 +20,12 @@ let rtpath = split(&runtimepath, ",")[0]
 
 " }}}
 
+" Section: youcompleteme {{{
+
+let g:ycm_filetype_specific_completion_to_disable = "javascript"
+
+" }}}
+
 " Section: latexsuite {{{
 let g:tex_flavor = "luatex"
 
