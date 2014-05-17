@@ -164,15 +164,16 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     ----- Applications
     -- Google Chrome
-    , ((modm              , xK_g     ), spawn "google-chrome-stable")
+    , ((modm              , xK_g     ), spawn "/usr/bin/google-chrome-stable")
     -- Firefox
-    , ((modm .|. shiftMask, xK_g     ), spawn "firefox")
+    , ((modm .|. shiftMask, xK_g     ), spawn "/usr/bin/firefox")
     -- VirtualBox
-    , ((modm              , xK_v     ), spawn "VirtualBox")
-    , ((modm .|. shiftMask, xK_v     ), spawn "wireshark")
-    , ((modm              , xK_y     ), spawn "spacefm")
+    , ((modm              , xK_v     ), spawn "/opt/bin/VirtualBox")
+    , ((modm .|. shiftMask, xK_v     ), spawn "/usr/bin/wireshark")
+    , ((modm              , xK_y     ), spawn "/usr/bin/spacefm")
+    , ((modm .|. shiftMask, xK_y     ), spawn "/usr/bin/thunderbird-bin")
     , ((modm              , xK_x     ), spawn (linuxStuff ++ "/scripts/blank.sh"))
-    , ((modm .|. shiftMask, xK_x     ), spawn "i3lock -c 000000 -d")
+    , ((modm .|. shiftMask, xK_x     ), spawn "/usr/bin/i3lock -c 000000 -d")
 
     ----- Multimedia
     , ((0, xF86XK_AudioMute), spawn (linuxStuff ++ "/scripts/mute_toggle"))
@@ -181,8 +182,8 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((0, xF86XK_AudioPlay), spawn (linuxStuff ++ "/scripts/media.sh play"))
     , ((0, xF86XK_AudioNext), spawn (linuxStuff ++ "/scripts/media.sh next"))
     , ((0, xF86XK_AudioPrev), spawn (linuxStuff ++ "/scripts/media.sh prev"))
-    , ((0, xK_Print), spawn "scrot -e 'mv $f ~/Pictures/'")
-    , ((controlMask, xK_Print), spawn "scrot -s -e 'mv $f ~/Pictures/'")
+    , ((0, xK_Print), spawn "/usr/bin/scrot -e 'mv $f ~/Pictures/'")
+    , ((controlMask, xK_Print), spawn "/usr/bin/scrot -s -e 'mv $f ~/Pictures/'")
     , ((0, 0x1008ffa9), spawn (linuxStuff ++ "/scripts/toggle_touchpad.sh"))
 
     -- Run xmessage with a summary of the default keybindings (useful for beginners)
