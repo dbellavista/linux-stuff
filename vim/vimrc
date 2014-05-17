@@ -73,6 +73,15 @@ set incsearch
 set hlsearch!
 " }}}
 
+" Section: Disable mouse scroll {{{
+map <ScrollWheelUp> <nop>
+map <S-ScrollWheelUp> <nop>
+map <C-ScrollWheelUp> <nop>
+map <ScrollWheelDown> <nop>
+map <S-ScrollWheelDown> <nop>
+map <C-ScrollWheelDown> <nop>
+" }}}
+
 " Section: Pathogen {{{
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
