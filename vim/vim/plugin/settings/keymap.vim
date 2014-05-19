@@ -53,7 +53,7 @@ nnoremap <down> gj
 " Section: Formatting {{{
 nnoremap Q gqq
 nmap <F1> mz:call TabToggle()<CR>'z
-nmap <S-Tab> <<
+" nmap <S-Tab> <<
 imap <S-Tab> <Esc><<i
 " }}}
 
@@ -78,7 +78,13 @@ noremap <up> :tabfirst<CR>
 noremap <down> :tablast<CR>
 noremap c :tabclose<CR>
 noremap t :tabnew %<CR>
-noremap <Tab> <C-w><C-w>
+"noremap <Tab> <C-w><C-w>
+noremap j <C-w><C-w>
+noremap k <C-w>W
+noremap J <C-w><C-R>
+noremap K <C-w>R
+noremap f <C-w>o
+noremap c <C-w>c
 " }}}
 
 " Section: italian {{{
