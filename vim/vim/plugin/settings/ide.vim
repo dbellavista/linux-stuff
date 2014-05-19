@@ -116,3 +116,40 @@ function TabToggle()
   endif
 endfunction
 " }}}
+
+" Section: CAPS mode {{{
+set imsearch=-1
+set keymap=insert-only_capslock
+set iminsert=0
+"set statusline^=%k
+" }}
+
+" Section: Status Lne {{{
+hi User1	ctermfg=111		cterm=none		guifg=#88b8f6	gui=none
+hi User2	ctermfg=173		cterm=none		guifg=#88b8f6	gui=none
+hi User3	ctermfg=192		cterm=none		guifg=#e5786d	gui=none
+hi User4	ctermfg=186		cterm=none		guifg=#e5786d	gui=none
+hi User5	ctermfg=230		cterm=none		guifg=#e5786d	gui=none
+hi User6	ctermfg=167		cterm=none		guifg=#e5786d	gui=none
+
+set statusline=
+set statusline+=%3*
+set statusline+=%m      "modified flag
+set statusline+=%4*
+set statusline+=%f\ 
+set statusline+=%1*
+set statusline+=[%{strlen(&fenc)?&fenc:'none'}, "file encoding
+set statusline+=%{&ff}] "file format
+set statusline+=%2*
+set statusline+=\ %y      "filetype
+set statusline+=%3*
+set statusline+=%h      "help file flag
+set statusline+=%r      "read only flag
+set statusline+=%=      "left/right separator
+set statusline+=%6*
+set statusline+=%k\     " Flag
+set statusline+=%5*
+set statusline+=%c,     "cursor column
+set statusline+=%l/%L   "cursor line/total lines
+set statusline+=\ %P    "percent through file
+" }}
