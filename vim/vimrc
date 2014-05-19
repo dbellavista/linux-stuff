@@ -61,6 +61,7 @@ set autoread
 
 " Section: Vim behavior {{{
 set visualbell
+set t_vb=
 set noerrorbells
 set history=1000
 set scrolloff=10
