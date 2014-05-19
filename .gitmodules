@@ -64,3 +64,6 @@
 [submodule "zsh/git-prompt"]
 	path = zsh/git-prompt
 	url = https://github.com/olivierverdier/zsh-git-prompt
+[submodule "vim/vim/bundle/vala-vim"]
+	path = vim/vim/bundle/vala-vim
+	url = https://github.com/dbellavista/vala-vim
