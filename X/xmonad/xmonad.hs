@@ -352,10 +352,10 @@ secondScreenAdjusting = do
   screencount <- countScreens
   if screencount == 1
     then do
-      spawn "xrandr --output DP1 --off"
+      spawn $ linuxStuff ++ "/scripts/monitor.sh 0"
       spawnPipe "/bin/true"
   else do
-    spawn "xrandr --output DP1 --auto --right-of LVDS1"
+    spawn $ linuxStuff ++ "/scripts/monitor.sh 1"
     spawnPipe "/usr/bin/xmobar ~/.xmonad/xmobarrc_x1 -x 1"
 
 -- Run xmonad with the settings you specify. No need to modify this.
