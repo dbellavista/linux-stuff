@@ -39,11 +39,11 @@ hi Underlined	ctermfg=252		ctermbg=234		cterm=underline	guifg=#e3e0d7	guibg=#242
 
 hi TabLineFill	ctermfg=241		ctermbg=232		cterm=none		guifg=#857b6f	guibg=#080808	gui=none
 hi TabLine		ctermfg=241		ctermbg=232		cterm=none		guifg=#857b6f	guibg=#080808	gui=none
-hi TabLineSel	ctermfg=230		ctermbg=238		cterm=none		guifg=#ffffd7	guibg=#444444	gui=italic
+hi TabLineSel	ctermfg=230		ctermbg=none	cterm=none		guifg=#ffffd7	guibg=none	gui=italic
 
 " Vim >= 7.0 specific colors
 if version >= 700
-hi CursorLine					ctermbg=236		cterm=none						guibg=#32322f
+hi CursorLine					ctermbg=234		cterm=none						guibg=#242424
 hi MatchParen	ctermfg=228		ctermbg=101		cterm=bold		guifg=#eae788	guibg=#857b6f	gui=bold
 hi Pmenu		ctermfg=230		ctermbg=238						guifg=#ffffd7	guibg=#444444
 hi PmenuSel		ctermfg=232		ctermbg=192						guifg=#080808	guibg=#cae982
