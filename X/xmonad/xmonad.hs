@@ -68,7 +68,8 @@ myWorkspaces    = ["1-misc","2-vm","3-code","4-test","5-web","6-social","7-comm"
 -- Border colors for unfocused and focused windows, respectively.
 --
 myNormalBorderColor  = "#000000"
-myFocusedBorderColor = "#535d6c"
+-- myFocusedBorderColor = "#535d6c"
+myFocusedBorderColor = "#8f4d0c"
 
 -- Some functions
 --
