@@ -82,7 +82,7 @@ def install(src, dst):
     if os.path.exists(src):
 
         if os.path.lexists(dst):
-            if os.readlink(dst) != src:
+            if not os.path.islink(dst) or os.readlink(dst) != src:
                 typef = str_filetype(dst)
                 if query_yes_no(WARNING+"\t[^] " + dst + " already exists (it's a "+typef+"), override?" + ENDC):
                     os.remove(dst)
@@ -116,7 +116,7 @@ if __name__ == "__main__":
     try:
         STUFF = os.environ['STUFF'];
     except:
-        STUFF = os.path.dirname(sys.argv[0])
+        STUFF = os.path.abspath(os.path.dirname(sys.argv[0]))
 
     files = {}
     for s in config.sections():
