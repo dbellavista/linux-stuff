@@ -8,6 +8,8 @@ if $(tty | grep --quiet tty) ; then
   # TTY!
   export IM_CONSOLE=1
   source $STUFF/scripts/console_autostart.sh
+  echo "Starting GPG agent"
+  eval $(/usr/bin/gpg-agent --daemon --enable-ssh-support)
   echo "Launching FBTERM"
 
   # fbterm-bi: a wrapper script to enable background image with fbterm
