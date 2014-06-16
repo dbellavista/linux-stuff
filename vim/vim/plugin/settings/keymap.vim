@@ -7,7 +7,6 @@
 " Section: Editing {{{
 noremap <leader>o <Esc>i<CR><Esc>
 noremap <leader>O <Esc>i<CR><Esc>-$
-noremap <leader>r :s/;/\r{\r\t<+type+> ret;\r\t<+body+>\r\treturn ret;\r}/<CR>4k
 " }}}
 
 " Section: Search settings {{{
@@ -51,7 +50,8 @@ nnoremap <down> gj
 " }}}
 
 " Section: Formatting {{{
-nnoremap Q gqq
+" Hack for astyle 2.04 bug
+nnoremap Q :Autoformat<CR><CR>:%s#\($\n\)\+\%$##<CR>''
 nmap <F1> mz:call TabToggle()<CR>'z
 " nmap <S-Tab> <<
 imap <S-Tab> <Esc><<i
