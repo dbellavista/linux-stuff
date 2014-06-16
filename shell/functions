@@ -1,5 +1,11 @@
 #!/bin/bash
 
+renappend() {
+  for p in ${@:2}; do
+    mv -i "$p" "$p$1"
+  done
+}
+
 git_push_all() {
   if [ $# -gt 0 ] ; then
     ARGS="$@"
