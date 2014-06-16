@@ -24,5 +24,9 @@ exec fbterm "$@"
 
 fi
 
+if [ -n "$SSH_CLIENT" ] || [ -n "$SSH_TTY" ]; then
+  export IM_SSH=1
+fi
+
 [[ -f ~/.bash_profile ]] && . ~/.bash_profile
 [[ -f ~/.zshrc ]] && . ~/.zshrc

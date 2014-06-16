@@ -36,6 +36,17 @@ source $STUFF/zsh/git-prompt/zshrc.sh
 
 # }}}
 
+# Launching TMUX fi console {{{
+if [ -n "$IM_CONSOLE" ] ; then
+
+  # Launching tmux
+  if [ -z "$TMUX" ]; then
+    tmux
+  fi
+
+fi
+#}}}
+
 # Completion {{{
 #zstyle -e ':completion::*:*:*:hosts' hosts 'reply=(${=${${(f)"$(cat {/etc/ssh_,~/.ssh/known_}hosts(|2)(N) /dev/null)"}%%[# ]*}//,/ })'
 fpath=($STUFF/zsh/zsh-completions/src $fpath)
@@ -105,7 +116,13 @@ prompt walters
 setopt PROMPT_SUBST
 #PROMPT='%(!.%F{red}.%F{yellow})%1~ %f%(!.%F{red}.%F{blue})%#%f '
 #PROMPT='$(git_super_status) %f%(!.%F{red}.%F{yellow})∞%f '
-PROMPT='$(git_super_status) %f%(!.%F{red}.%F{yellow})Ӄ%f '
+if [ -z "$IM_SSH" ] ; then
+  PROMPT='$(git_super_status) %f%(!.%F{red}.%F{yellow})Ӄ%f '
+else
+  PROMPT='$(git_super_status) %F{green}%n%F{yellow}@%F{red}%m %f%(!.%F{red}.%F{yellow})>%f '
+fi
+
+# }}}
 
 # CD HOOK {{{
 chpwd_functions=(save_dir)
@@ -137,16 +154,6 @@ termtitle() {
   esac
 }
 
-# Launching TMUX fi console
-if [ -n "$IM_CONSOLE" ] ; then
-
-  # Launching tmux
-  if [ -z "$TMUX" ]; then
-    tmux
-  fi
-
-fi
-
 precmd() {
   # Set terminal title.
   termtitle precmd
@@ -156,4 +163,5 @@ preexec() {
   # Set terminal title along with current executed command pass as second argument
   termtitle preexec "${(V)1}"
 }
-#}}}
+
+# }}}
