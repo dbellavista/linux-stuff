@@ -86,7 +86,7 @@ let g:syntastic_mode_map = { 'mode': 'active',
 let g:syntastic_c_checkers = ['ycm']
 let g:syntastic_cpp_checkers = ['ycm']
 let g:syntastic_cpp_check_header = 1
-let g:syntastic_python_checkers = ['pyflakes']
+let g:syntastic_python_checkers = ['pep8']
 let g:syntastic_html_checkers = ['tidy']
 " }}}
 
@@ -160,8 +160,13 @@ set statusline+=%5*
 set statusline+=%c,     "cursor column
 set statusline+=%l/%L   "cursor line/total lines
 set statusline+=\ %P    "percent through file
-" }}
+" }}}
 
 " Section: folding {{{
 set foldmethod=marker
 " }}}
+
+" Section: javascript {{{
+" javascript_enable_domhtmlcss
+" }}}
+
