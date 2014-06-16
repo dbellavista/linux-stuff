@@ -67,3 +67,18 @@
 [submodule "vim/vim/bundle/vala-vim"]
 	path = vim/vim/bundle/vala-vim
 	url = https://github.com/dbellavista/vala-vim
+[submodule "vim/vim/bundle/tabular"]
+	path = vim/vim/bundle/tabular
+	url = https://github.com/godlygeek/tabular
+[submodule "vim/vim/bundle/vim-csharp"]
+	path = vim/vim/bundle/vim-csharp
+	url = https://github.com/OrangeT/vim-csharp
+[submodule "vim/vim/bundle/tern_for_vim"]
+	path = vim/vim/bundle/tern_for_vim
+	url = https://github.com/marijnh/tern_for_vim
+[submodule "vim/vim/bundle/vim-javascript"]
+	path = vim/vim/bundle/vim-javascript
+	url = https://github.com/pangloss/vim-javascript
+[submodule "vim/vim/bundle/vim-autoformat"]
+	path = vim/vim/bundle/vim-autoformat
+	url = https://github.com/Chiel92/vim-autoformat
