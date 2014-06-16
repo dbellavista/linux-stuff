@@ -5,6 +5,14 @@
 "
 let rtpath = split(&runtimepath, ",")[0]
 
+" Section: Vim IDE mode {{{ 
+if argc() == 0
+  autocmd vimenter * NERDTree
+  autocmd vimenter * NERDTree
+  autocmd vimenter * Tagbar
+endif
+" }}}
+
 " Section: compiling {{{
 "function GuessCompiler(...)
   "let g:makeprg = "echo no make program setted"
