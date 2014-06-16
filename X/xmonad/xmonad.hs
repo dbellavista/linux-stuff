@@ -13,6 +13,7 @@ import Graphics.X11.ExtraTypes.XF86
 import XMonad.Layout.NoBorders
 import XMonad.Hooks.ManageHelpers
 import XMonad.Hooks.EwmhDesktops
+import XMonad.Hooks.SetWMName
 import XMonad.Layout.Maximize
 import XMonad.Layout.WindowNavigation
 import XMonad.Layout.LayoutCombinators
@@ -386,6 +387,6 @@ main = do
         layoutHook         = smartBorders . avoidStruts $ myLayout,
         manageHook         = myManageHook <+> manageDocks,
         handleEventHook    = myEventHook,
-        logHook            = ewmhDesktopsLogHook <+> myLogHook(xmproc) <+> xmobarScreen1(xmprocS1),
+        logHook            = ewmhDesktopsLogHook >> setWMName "LG3D"  <+> myLogHook(xmproc) <+> xmobarScreen1(xmprocS1),
         startupHook        = myStartupHook
       }
