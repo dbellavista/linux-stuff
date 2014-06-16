@@ -1,18 +1,23 @@
 #!/bin/bash
-echo -e "==== Doc backup ====="
-echo -e "\tSyncing Documents"
-rsync -ca --delete $HOME/Documents/ /mnt/hd/backup_doc/Documents
-echo -e "\tSyncing linux conf"
-rsync -ca --delete $STUFF/ /mnt/hd/backup_doc/linux-stuff
-echo -e "\tSyncing portage dir"
-rsync -ca --delete /etc/portage/ /mnt/hd/backup_doc/portage
-echo -e "\tSyncing Papers"
-rsync -ca --delete /mnt/shared/papers/ /mnt/hd/backup_doc/papers/
 
-echo -e "==== Doc backup ====="
-echo -e "\tSyncing Music"
-rsync -ca /mnt/media/Music/ /mnt/hd/media/Music/
-echo -e "\tSyncing Pictures"
-rsync -ca /mnt/media/Pictures/ /mnt/hd/media/Pictures
-echo -e "\tSyncing Videos"
-rsync -ca /mnt/media/Videos/ /mnt/hd/media/Videos
+BSTONE=$(mount | grep $(echo -E '^/dev/'$(readlink /dev/disk/by-uuid/8c30a3a1-3647-4e0d-a39f-e3697b13d180 | grep -oE 'sd\w[0-9]+')) | awk '{print $3}')
+
+echo $BSTONE
+
+echo -e "*** Doc backup ***"
+echo -e "\t[*] Syncing Documents"
+rsync --progress -ca --delete $HOME/Documents/ $BSTONE/Documents/Documents
+echo -e "\t[*] Syncing linux conf"
+rsync --progress -ca --delete $STUFF/ $BSTONE/Documents/linux-stuff
+echo -e "\t[*] Syncing portage dir"
+rsync --progress -ca --delete /etc/portage/ $BSTONE/Documents/portage
+echo -e "\t[*] Syncing Work"
+rsync --progress -ca $HOME/Work/ $BSTONE/Documents/Work
+
+echo -e "*** Media backup ***"
+echo -e "\t[*] Syncing Music"
+rsync --progress -ca $HOME/Music/ $BSTONE/Media/Music
+echo -e "\t[*] Syncing Pictures"
+rsync --progress -ca $HOME/Pictures/ $BSTONE/Media/Pictures
+echo -e "\t[*] Syncing Videos"
+rsync --progress -ca $HOME/Videos/ $BSTONE/Media/Videos
