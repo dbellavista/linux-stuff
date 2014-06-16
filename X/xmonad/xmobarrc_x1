@@ -1,0 +1,19 @@
+Config { font = "xft:Droid Sans Mono-8:Bold"
+    , bgColor = "black"
+    , fgColor = "grey"
+    , position = Top
+    , lowerOnStart = True
+    , commands = [ 
+        Run Cpu ["-L","3","-H","50","--normal","green","--high","red"] 10
+      , Run Com "/home/daniele/linux/scripts/getcoretemp.sh" [] "coreTemp" 10
+      , Run BatteryP ["BAT0"] [] 60
+      , Run Memory ["-t","Mem: <usedratio>%"] 10
+      , Run DiskIO [("/", "<read> <write>"), ("sda7", "<total>")] [] 10
+      , Run Date "%a %b %_d %l:%M" "date" 10
+      , Run StdinReader
+    ]
+    , sepChar = "%"
+    , alignSep = "}{"
+    , template = "%StdinReader% }{ %cpu% * %coreTemp% | %memory% * %diskio% | %battery%  <fc=#ee9a00>%date%</fc>"
+}
+
