@@ -91,10 +91,10 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
 
     -- launch dmenu
-    , ((modm,               xK_p     ), spawn "dmenu_run")
+    , ((modm,               xK_p     ), spawn "synapse")
 
     -- launch gmrun
-    , ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
+    , ((modm .|. shiftMask, xK_p     ), spawn "dmenu_run")
 
     -- close focused window
     , ((modm .|. shiftMask, xK_c     ), kill)
@@ -154,11 +154,12 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     --
     , ((modm              , xK_b     ), sendMessage ToggleStruts)
 
-    -- Quit xmonad
+    -- Recompile xmonad
     , ((modm .|. shiftMask, xK_q     ), exitFunc)
-
+    -- Quit xmonad
+    , ((modm .|. controlMask .|. shiftMask, xK_q), exitFunc)
     -- Restart xmonad
-    , ((modm              , xK_q     ), spawn "xmonad --recompile; xmonad --restart")
+    , ((modm              , xK_q     ), spawn "xmonad --restart")
 
     , ((modm .|. controlMask .|. shiftMask, xK_Right), sendMessage $ Move R)
     , ((modm .|. controlMask .|. shiftMask, xK_Left ), sendMessage $ Move L)
