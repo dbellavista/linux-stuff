@@ -3,7 +3,7 @@ using System.Text;
 
 namespace <+namespace+>
 {
-    internal class %FILE%
+    internal class %CAMELCASE%
     {
         %HERE
     }
