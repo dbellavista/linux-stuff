@@ -41,6 +41,7 @@ alias cd..="cd .."
 alias cd...="cd ../.."
 
 ## Utilities
+alias fuck='sudo $(fc -ln -1)'
 alias ungcc="gcc -z execstack -fno-stack-protector -fno-pie"
 alias ocvc="g++ \`pkg-config opencv --cflags --libs\`"
 alias runonce="$STUFF/scripts/run_once.sh"
