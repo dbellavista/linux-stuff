@@ -51,19 +51,20 @@ nnoremap <down> gj
 
 " Section: Formatting {{{
 " Hack for astyle 2.04 bug
-nnoremap Q :Autoformat<CR><CR>:%s#\($\n\)\+\%$##<CR>''
+nnoremap <C-Q> :Autoformat<CR><CR>:%s#\($\n\)\+\%$##<CR>''
 nmap <F1> mz:call TabToggle()<CR>'z
 " nmap <S-Tab> <<
 imap <S-Tab> <Esc><<i
 " }}}
 
 " Section: Compiling {{{
-inoremap <F7> <Esc>:w<CR>:silent make \|redraw!\|cw<CR>
-nnoremap <F7> :silent make \|redraw!\|cw<CR>
-inoremap <F5> <Esc>:w<CR>:silent make -- install\|redraw!\|cw<CR>
-nnoremap <F5> :silent make -- install\|redraw!\|cw<CR>
-inoremap <F6> <Esc>:w<CR>:CMake<CR>i
-nnoremap <F6> :CMake<CR>
+autocmd FileType c,cpp,cmake inoremap <F7> <Esc>:w<CR>:silent make \|redraw!\|cw<CR>
+autocmd FileType c,cpp,cmake nnoremap <F7> :silent make \|redraw!\|cw<CR>
+autocmd FileType c,cpp,cmake inoremap <F5> <Esc>:w<CR>:silent make -- install\|redraw!\|cw<CR>
+autocmd FileType c,cpp,cmake nnoremap <F5> :silent make -- install\|redraw!\|cw<CR>
+autocmd FileType c,cpp,cmake inoremap <F6> <Esc>:w<CR>:CMake<CR>i
+autocmd FileType c,cpp,cmake nnoremap <F6> :CMake<CR>
+autocmd FileType cs nnoremap <F5> :wa!<cr>:OmniSharpBuildAsync<cr>
 " }}}
 
 " Section: Tabs {{{
