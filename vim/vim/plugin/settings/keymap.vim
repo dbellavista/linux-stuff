@@ -89,4 +89,10 @@ noremap c <C-w>c
 
 " Section: italian {{{
 " This is a trick for latexvim
-inoremap <LocalLeader>d é
+autocmd FileType latex inoremap <LocalLeader>d é
+" }}}
+
+" Section: Ctrl P {{{
+let g:ctrlp_map = '<c-p>'
+let g:ctrlp_cmd = 'CtrlPMixed'
+" }}}

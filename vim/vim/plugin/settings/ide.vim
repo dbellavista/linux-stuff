@@ -170,3 +170,10 @@ set foldmethod=marker
 " javascript_enable_domhtmlcss
 " }}}
 
+" Section: CtrlP {{{
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/](frontend/libs|node_modules|target|dist|bin)|(\.(git|hg|svn))$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+" }}}

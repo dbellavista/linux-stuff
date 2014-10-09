@@ -82,3 +82,15 @@
 [submodule "vim/vim/bundle/vim-autoformat"]
 	path = vim/vim/bundle/vim-autoformat
 	url = https://github.com/Chiel92/vim-autoformat
+[submodule "vim/vim/bundle/ctrlp"]
+	path = vim/vim/bundle/ctrlp
+	url = https://github.com/kien/ctrlp.vim
+[submodule "vim/vim/bundle/vim-dispatch"]
+	path = vim/vim/bundle/vim-dispatch
+	url = https://github.com/tpope/vim-dispatch
+[submodule "vim/vim/bundle/Omnisharp"]
+	path = vim/vim/bundle/Omnisharp
+	url = https://github.com/nosami/Omnisharp
+[submodule "vim/vim/bundle/vim-ps1"]
+	path = vim/vim/bundle/vim-ps1
+	url = https://github.com/PProvost/vim-ps1
