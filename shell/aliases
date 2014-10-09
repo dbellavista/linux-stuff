@@ -94,3 +94,7 @@ alias grm="git ls-files -deleted | xargs git rm"
 ## Shell dependent
 
 [[ $SHELL =~ ".*zsh.*" ]] && alias gdb='SHELL=/bin/bash gdb'
+
+# Fun
+
+alias pray='clear; while read line; do echo $line ; sleep 1; done <~/Documents/pray.txt'
