@@ -43,7 +43,7 @@ hi TabLineSel	ctermfg=230		ctermbg=none	cterm=none		guifg=#ffffd7	guibg=none	gui
 
 " Vim >= 7.0 specific colors
 if version >= 700
-hi CursorLine					ctermbg=234		cterm=none						guibg=#242424
+hi CursorLine					ctermbg=none    cterm=none						guibg=none
 hi MatchParen	ctermfg=228		ctermbg=101		cterm=bold		guifg=#eae788	guibg=#857b6f	gui=bold
 hi Pmenu		ctermfg=230		ctermbg=238						guifg=#ffffd7	guibg=#444444
 hi PmenuSel		ctermfg=232		ctermbg=192						guifg=#080808	guibg=#cae982
