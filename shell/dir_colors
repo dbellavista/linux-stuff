@@ -212,9 +212,14 @@ EXEC 01;32
 
 # Source code
 .c 00;36
+.R 00;36
 .cpp 00;36
 .h 00;31
-.tex 00;31
+.tex 00;36
+.js 00;31
+.cs 00;36
+.html 00;36
+.json 00;36
 
 # audio formats
 .aac 00;36
