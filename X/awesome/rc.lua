@@ -75,7 +75,7 @@ mixer = 'pavucontrol'
 if distro == gentoo then
 browser1 = "google-chrome-stable"
 	browser2 = "firefox"
-  terminal = "urxvt"
+  terminal = "terminator"
   filemanager = "spacefm"
 elseif distro == arch then
 browser1 = "google-chrome"
@@ -89,8 +89,8 @@ else
 end
 
 power_c =	{
-  poweroff="poweroff", reboot= "reboot",
-  suspend= "suspend", hibernate, "hibernate",
+  poweroff="systemctl poweroff", reboot= "systemctl reboot",
+  suspend= "systemctl suspend", hibernate, "systemctl hibernate",
   lock= "i3lock -c 000000 -d", blank= script("blank.sh") }
 
   applications = {
