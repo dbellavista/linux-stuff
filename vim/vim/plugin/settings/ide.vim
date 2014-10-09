@@ -130,7 +130,7 @@ set imsearch=-1
 set keymap=insert-only_capslock
 set iminsert=0
 "set statusline^=%k
-" }}
+" }}}
 
 " Section: Status Lne {{{
 hi User1	ctermfg=111		cterm=none		guifg=#88b8f6	gui=none
