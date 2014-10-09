@@ -21,10 +21,10 @@ fi
 echo "Changing $1 mac address to $MAC"
 
 case ${1} in
-	'wlan0')
-    ip link set address $MAC dev wlan0;;
-	'eth0')
-    ip link set address $MAC dev eth0;;
+	'wlan')
+    ip link set address $MAC dev wlp3s0:;;
+	'eth')
+    ip link set address $MAC dev enp6s0;;
   *)
     echo "Sorry only eth0 and wlan0 are allowed"
     exit 1

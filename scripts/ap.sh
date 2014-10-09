@@ -9,11 +9,12 @@ fi
 case ${1} in
 	'start')
 		sysctl -w net.ipv4.ip_forward=1
+		ip addr add 192.168.66.1/24 dev wlp3s0
+		ip link set up dev wlp3s0
 		iptables -A FORWARD -j ap-router
 		iptables -t nat -A POSTROUTING -j ap-nat-post
-		ip addr add 192.168.1.1/24 dev wlan0
-		rc-service dnsmasq start
-		rc-service haveged start
+		systemctl start dnsmasq
+		systemctl start haveged
 		hostapd /etc/hostapd/hostapd.conf &;;
 
 	'stop')
@@ -21,9 +22,9 @@ case ${1} in
 		sysctl -w net.ipv4.ip_forward=0
 		iptables -D FORWARD -j ap-router
 		iptables -t nat -D POSTROUTING -j ap-nat-post
-		rc-service dnsmasq stop
-		rc-service haveged stop
-		ip addr del 192.168.1.1/24 dev wlan0;;
+		systemctl stop dnsmasq
+		systemctl stop haveged
+		ip addr del 192.168.66.1/24 dev wlp3s0;;
 	*)
 		echo "Usage: $0 (start|stop)"
 		exit 1;;
