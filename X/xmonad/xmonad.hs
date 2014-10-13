@@ -155,7 +155,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm              , xK_b     ), sendMessage ToggleStruts)
 
     -- Recompile xmonad
-    , ((modm .|. shiftMask, xK_q     ), exitFunc)
+    , ((modm .|. shiftMask, xK_q     ), spawn "xmonad --recompile && xmonad --restart")
     -- Quit xmonad
     , ((modm .|. controlMask .|. shiftMask, xK_q), exitFunc)
     -- Restart xmonad
@@ -311,6 +311,7 @@ myLogHook xmproc =
   dynamicLogWithPP xmobarPP
         { ppOutput = hPutStrLn xmproc
         , ppTitle = xmobarColor "green" "" . shorten 50
+        , ppCurrent = xmobarColor "yellow" "" . wrap "[" "]"
         , ppVisible = xmobarColor "red" "" . wrap "(" ")"
         , ppHiddenNoWindows = xmobarColor "#999999" ""
         , ppUrgent = xmobarColor "" "#eaa932"
@@ -320,8 +321,8 @@ xmobarScreen1 xmproc =
   dynamicLogWithPP xmobarPP
         { ppOutput = hPutStrLn xmproc
         , ppTitle = xmobarColor "green" ""
-        , ppVisible = xmobarColor "yellow" "" . wrap "(" ")"
-        , ppCurrent = xmobarColor "red" "" . wrap "[" "]"
+        , ppCurrent = xmobarColor "yellow" "" . wrap "[" "]"
+        , ppVisible = xmobarColor "red" "" . wrap "(" ")"
         , ppOrder = \(ws:_:t:_) -> [ws, t]
         , ppHiddenNoWindows = xmobarColor "#999999" ""
         , ppUrgent = xmobarColor "" "#eaa932"
