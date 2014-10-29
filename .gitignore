@@ -31,3 +31,4 @@ config/irssi/nicklistfifo
 config/irssi/default.theme
 config/irssi/scripts/autorun
 config/irssi/config
+config/irssi/irclogs
