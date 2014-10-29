@@ -8,7 +8,12 @@ if [ -z "$IM_CONSOLE" ] ; then
 fi
 
 # Killing redshift and waiting prevents the monitor to break
-if pgrep redshift; then
-  pkill redshift
-  sleep 3
+# Only if there are no other sessions
+
+sess=$(who | grep -v pts | wc -l)
+if [[ $sess -eq 1 ]]; then # :0.0 or ttys
+  if pgrep redshift; then
+    pkill redshift
+    sleep 3
+  fi
 fi
