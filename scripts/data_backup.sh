@@ -21,3 +21,5 @@ echo -e "\t[*] Syncing Pictures"
 rsync --progress -ca $HOME/Pictures/ $BSTONE/Media/Pictures
 echo -e "\t[*] Syncing Videos"
 rsync --progress -ca $HOME/Videos/ $BSTONE/Media/Videos
+echo -e "\t[*] Syncing Ebooks"
+rsync --progress -ca $HOME/Documents/Calibre\ Library/ $BSTONE/Media/Comix\ and\ Ebooks
