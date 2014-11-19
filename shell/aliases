@@ -67,7 +67,9 @@ alias uni='\cd ~/Dropbox/University'
 alias prj='\cd ~/Dropbox/Projects'
 alias sec='\cd ~/Dropbox/IT/Security'
 alias drp='\cd ~/Dropbox'
-alias gtd='\cd /mnt/shared/gtd/'
+alias gtd='$EDITOR ~/Documents/GTD/projects.markdown'
+alias bucket='$EDITOR ~/Documents/GTD/bucket.markdown'
+alias todo='$EDITOR ~/Documents/GTD/bucket.markdown'
 
 ## Git
 alias gc='git commit -m'
