@@ -13,8 +13,10 @@ vim/vim/.netrwhist
 vim/vim/.VimballRecord
 vim/vim/backups
 
-# Swaps
+# Garbage
 *.swp
+*.pyc
+__pycache__/
 
 # Personal files
 vim/vim/plugin/settings/user_specific_configuration.vim
