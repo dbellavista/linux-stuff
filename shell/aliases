@@ -55,8 +55,6 @@ alias pass="/bin/true"
 alias to_c_string="hexdump -v -e '\"\\\\\\x\" 1/1 \"%02x\"'"
 alias machete="sudo kill -9"
 
-#alias lsize="ls -lR | grep -e "^-" | awk '{sum+=\$5} END {if [ $A ] ; then if [ $A = \"K\" ] ; then print sum/1024 ; elif [ $A = \"M\" ] ; then print sum/1024/1024 ; elif [ $A = \"G\" ] ; then print sum/1024/1024/1024 ; else ; print sum ; fi ; else ; print sum ; fi'}"
-
 ## Mount
 alias dlist="udisks --enumerate-device-files"
 alias dmount="udisksctl mount -b"
