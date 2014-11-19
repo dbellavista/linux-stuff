@@ -1,0 +1,120 @@
+%
+% main.tex
+% -*- coding: utf-8 -*-
+% vim:fenc=utf-8
+%
+
+\documentclass{beamer}
+%\usetheme{Madrid}
+%\usetheme{Boadilla}
+%\usetheme{default}
+%\usetheme{Warsaw}
+%\usetheme{Frankfurt}
+\usetheme{Cesena}
+\usetheme{Bologna}
+%\usetheme{Bergen}
+%\usetheme{Hannover}
+%\usecolortheme{dolphin}
+%\usetheme{Darmstadt}
+%\setbeamertemplate{footline}[page number]
+\setbeamercovered{transparent}
+\setbeamercovered{invisible}
+\setbeamertemplate{navigation symbols}{}
+% To remove the navigation symbols from
+% the bottom of slides
+
+\newcommand{\xauth}{%PRJ_AUTHOR%}
+\newcommand{\xtitle}{%PRJ_NAME%}
+
+\usepackage[outline]{contour}
+\usepackage{pgf}
+\usepackage{graphicx}
+
+\usepackage{ifpdf,ifluatex}
+\ifluatex
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setdefaultlanguage{english}
+\setotherlanguage{italian}
+\else
+\usepackage[utf8x]{inputenc}
+\usepackage[italian,english]{babel}
+\fi
+
+\usepackage{listings}
+\usepackage{xcolor}
+
+\usepackage{url}
+\usepackage{multicol}
+
+%\usepackage[pdftex,bookmarks,colorlinks,%
+%pdfauthor={%PRJ_AUTHOR%},%
+%pdftitle={%PRJ_NAME%},%
+%pdftex]{hyperref}
+%\usepackage{bm}  % For typesetting bold math (not \mathbold)
+
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+\definecolor{mauve}{rgb}{0.58,0,0.82}
+
+\newcommand{\ccode}{
+	\lstset{ language=C, basicstyle=\footnotesize, numbers=none, numberstyle=\tiny\color{gray},backgroundcolor=\color{white},frame=single, captionpos=b, breaklines=true,title=\lstname, keywordstyle=\color{blue},commentstyle=\color{dkgreen}, showstringspaces=false, stringstyle=\color{mauve}, escapeinside={\%*}{*} }}
+
+\newcommand{\acode}{
+	\lstset{ language={[x86masm]Assembler}, basicstyle=\small, numbers=left, numberstyle=\tiny\color{gray},backgroundcolor=\color{white},frame=single, captionpos=b, breaklines=true,title=\lstname, keywordstyle=\color{blue},commentstyle=\color{dkgreen}, stringstyle=\color{mauve}, escapeinside={\%*}{*} }}
+
+\newcommand{\acodenonu}{
+	\lstset{ language={[x86masm]Assembler}, basicstyle=\small, numbers=none, backgroundcolor=\color{white},frame=single, captionpos=b, breaklines=true,title=\lstname, keywordstyle=\color{blue},commentstyle=\color{dkgreen}, stringstyle=\color{mauve}, escapeinside={\%*}{*} }}
+
+\newcommand{\acodesmall}{
+	\lstset{ language={[x86masm]Assembler}, basicstyle=\tiny, numbers=none, backgroundcolor=\color{white},frame=single, captionpos=b, breaklines=true,title=\lstname, keywordstyle=\color{blue},commentstyle=\color{dkgreen}, stringstyle=\color{mauve}, escapeinside={\%*}{*} }}
+
+\title[%PRJ_NAME%]{%PRJ_NAME%}
+
+\author[%PRJ_AUTHOR%]{%PRJ_AUTHOR%}
+
+%\institute[CeSeNA]
+%{%
+%\emph{University of Bologna, Scuola di Ingegneria ed Architettura}\\
+%\emph{Ingegneria Informatica}
+%\emph{Scienze e Tecnologie dell'Informazione}
+%\emph{Ingegneria e Scienze Informatiche}
+%}
+
+\logo{\pgfputat{\pgfxy(-1.5,7.8)}{\pgfbox[center,base]{%
+  \includegraphics[width=2.8cm]{./imgs/logo.png}}}
+}
+
+\contourlength{1pt}
+\contournumber{20}
+\begin{document}
+\selectlanguage{english}
+
+{%
+	\setbeamertemplate{footline}{}
+	\setbeamertemplate{navigation symbols}{}
+  %\definecolor{myblue}{HTML}{B8C3E2}
+  %\setbeamertemplate{title page}{%
+  %\begin{picture}(0,0)
+    %\put(-11,-157){%
+      %\includegraphics[height=\paperheight]{imgs/background2.jpg}
+    %}
+    %\put(25,-150){%
+      %\begin{minipage}[b][45mm][t]{100mm}
+        %\center
+        %\usebeamerfont{title}{\fontsize{0.8cm}{1em}\selectfont \textcolor{myblue}{%
+          %\contour{black}{%PRJ_NAME%}
+          %\contour{black}{%PRJ_DESCRIPTION%}
+        %}\par}
+      %\end{minipage}
+    %}
+  %\end{picture}
+
+  %}
+	\begin{frame}
+	  \titlepage
+	\end{frame}
+}
+%\input{file.tex}
+
+\end{document}

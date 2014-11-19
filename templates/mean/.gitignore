@@ -1,0 +1,7 @@
+## NodeJs gitignore
+
+# Ignoring node modules
+node_modules/
+
+# Ignoring tern
+.tern_project

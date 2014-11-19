@@ -1,0 +1,56 @@
+{
+  "name": "%PRJ_NAME%",
+  "version": "0.0.1",
+  "description": "%PRJ_DESCRIPTION%",
+  "private": true,
+  "main": "app.js",
+  "scripts": {
+    "test": "NODE_ENV=testing ./launch-nocturnal.sh",
+    "start": "./launch-nocturnal.sh"
+  },
+  "directories": {
+    "doc": "doc",
+    "test": "test"
+  },
+  "dependencies": {
+    "express": "*",
+    "mongoose": "*",
+    "async": "*",
+    "async-q": "*",
+    "moment": "*",
+    "method-override": "*",
+    "cookie-parser": "*",
+    "body-parser": "*",
+    "cookie-session": "*",
+    "morgan": "*",
+    "errorhandler": "*",
+    "compression": "*"
+  },
+  "devDependencies": {
+    "nodemon": "*",
+    "mocha": "*",
+    "chai": "*",
+    "grunt": "*",
+    "grunt-apidoc": "*",
+    "grunt-autoprefixer": "*",
+    "grunt-concurrent": "*",
+    "grunt-contrib-clean": "*",
+    "grunt-contrib-concat": "*",
+    "grunt-contrib-copy": "*",
+    "grunt-contrib-cssmin": "*",
+    "grunt-contrib-htmlmin": "*",
+    "grunt-contrib-imagemin": "*",
+    "grunt-contrib-uglify": "*",
+    "grunt-filerev": "*",
+    "grunt-plato": "*",
+    "grunt-rev": "*",
+    "grunt-svgmin": "*",
+    "grunt-usemin": "*",
+    "grunt-version": "*",
+    "load-grunt-tasks": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "<+PrjUrl+>"
+  }
+}

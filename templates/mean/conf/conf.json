@@ -1,0 +1,48 @@
+{
+  "environments": {
+    "testing": {
+        "https": false,
+        "frontend" : "frontend",
+        "_404": "frontend/404.html",
+        "debug": true,
+        "db_address": "127.0.0.1",
+        "db_dbname": "%PRJ_NAME%_db_test",
+        "db_user": "",
+        "db_passwd": "",
+        "listening_port": "3030",
+        "has_logger": false,
+        "logger": "none",
+        "cluster": false
+    },
+    "developement": {
+        "https": false,
+        "frontend" : "frontend",
+        "dnsCapture": false,
+        "_404": "frontend/404.html",
+        "debug": true,
+        "db_address": "127.0.0.1",
+        "db_dbname": "%PRJ_NAME%_db_dev",
+        "db_user": "",
+        "db_passwd": "",
+        "listening_port": "8080",
+        "has_logger": true,
+        "logger": "dev",
+        "cluster": false
+    },
+    "production": {
+        "https": true,
+        "frontend" : "frontend",
+        "dnsCapture": false,
+        "_404": "frontend/404.html",
+        "debug": false,
+        "db_address": "127.0.0.1",
+        "db_dbname": "%PRJ_NAME%_db",
+        "db_user": "",
+        "db_passwd": "",
+        "listening_port": "8443",
+        "has_logger": false,
+        "logger": "tiny",
+        "cluster": true
+    }
+  }
+}

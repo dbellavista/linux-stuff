@@ -27,7 +27,7 @@ flags = [
 'c',
 '-nostdinc',
 '-I',
-'/usr/i686-pc-mingw32/usr/include',
+'/usr/i686-w64-mingw32/usr/include',
 ]
 
 # Set this to the absolute path to the folder (NOT the file!) containing the

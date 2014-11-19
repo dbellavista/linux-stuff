@@ -1,0 +1,24 @@
+{
+  "name": "%PRJ_NAME%",
+  "version": "0.0.1",
+  "description": "%PRJ_DESCRIPTION%",
+  "private": true,
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js"
+  },
+  "directories": {
+    "doc": "doc",
+    "test": "test"
+  },
+  "dependencies": {
+  },
+  "devDependencies": {
+    "nodemon": "*"
+  },
+  "repository": {
+    "type": "git",
+    "url": "<+PrjUrl+>"
+  }
+
+}
