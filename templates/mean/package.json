@@ -5,8 +5,8 @@
   "private": true,
   "main": "app.js",
   "scripts": {
-    "test": "NODE_ENV=testing ./launch-nocturnal.sh",
-    "start": "./launch-nocturnal.sh"
+    "test": "NODE_ENV=testing ./launch.sh",
+    "start": "./launch.sh"
   },
   "directories": {
     "doc": "doc",
