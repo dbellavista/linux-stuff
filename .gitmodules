@@ -94,3 +94,12 @@
 [submodule "vim/vim/bundle/vim-ps1"]
 	path = vim/vim/bundle/vim-ps1
 	url = https://github.com/PProvost/vim-ps1
+[submodule "vim/vim/bundle/mediawiki.vim"]
+	path = vim/vim/bundle/mediawiki.vim
+	url = https://github.com/chikamichi/mediawiki.vim
+[submodule "vim/vim/bundle/vim-surround"]
+	path = vim/vim/bundle/vim-surround
+	url = https://github.com/tpope/vim-surround
+[submodule "vim/vim/bundle/vim-repeat"]
+	path = vim/vim/bundle/vim-repeat
+	url = https://github.com/tpope/vim-repeat
