@@ -38,6 +38,7 @@ alias ffind='find . -iname'
 ## Typo aliases
 alias s=ls
 alias cd..="cd .."
+alias cd-="cd -"
 alias cd...="cd ../.."
 
 ## Utilities
