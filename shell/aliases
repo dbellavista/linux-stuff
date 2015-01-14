@@ -60,6 +60,7 @@ alias machete="sudo kill -9"
 alias dlist="udisks --enumerate-device-files"
 alias dmount="udisksctl mount -b"
 alias dumount="udisksctl unmount -b"
+alias dunmount="udisksctl unmount -b"
 
 ## Folders
 alias uni='\cd ~/Dropbox/University'
