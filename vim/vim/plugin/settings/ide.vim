@@ -62,6 +62,7 @@ au BufNewFile,BufRead *.cpp set syntax=cpp11
 let g:templates_no_autocmd = 0
 let g:template_dir = rtpath . "/templates"
 " }}}
+
 " Section: NERDTree {{{
 nnoremap <leader>t :NERDTreeToggle<CR>
 " }}}
@@ -88,10 +89,6 @@ let g:syntastic_cpp_checkers = ['ycm']
 let g:syntastic_cpp_check_header = 1
 let g:syntastic_python_checkers = ['pep8']
 let g:syntastic_html_checkers = ['tidy']
-" }}}
-
-" Section: Viske {{{
-let g:ViskeDir="/mnt/shared/Schedule/"
 " }}}
 
 " Section: Underline section {{{

@@ -36,6 +36,7 @@ set title               " change the terminal's title
 set ruler " Coordinate bottom right
 set mouse -=a " Mouse managment
 set list listchars=tab:\ \ ,trail:~,extends:>,precedes:<
+set nowrap
 
 set cul
 augroup BgHighlight
