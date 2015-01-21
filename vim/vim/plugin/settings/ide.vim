@@ -60,7 +60,7 @@ au BufNewFile,BufRead *.cpp set syntax=cpp11
 
 " Section: VimTemplate {{{
 let g:templates_no_autocmd = 0
-let g:template_dir = rtpath . "/templates"
+let g:templates_directory = rtpath . "/templates"
 " }}}
 
 " Section: NERDTree {{{

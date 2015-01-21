@@ -28,15 +28,9 @@
 [submodule "vim/vim/bundle/c-vim"]
 	path = vim/vim/bundle/c-vim
 	url = https://github.com/dbellavista/c-vim
-[submodule "vim/vim/bundle/calendar-vim"]
-	path = vim/vim/bundle/calendar-vim
-	url = https://github.com/mattn/calendar-vim
 [submodule "vim/vim/bundle/viske"]
 	path = vim/vim/bundle/viske
 	url = https://github.com/vimyum/viske
-[submodule "vim/vim/bundle/screen"]
-	path = vim/vim/bundle/screen
-	url = https://github.com/ervandew/screen
 [submodule "zsh/zsh-syntax-highlighting"]
 	path = zsh/zsh-syntax-highlighting
 	url = https://github.com/nakamuray/zsh-syntax-highlighting
