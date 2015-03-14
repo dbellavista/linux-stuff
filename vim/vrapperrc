@@ -1,7 +1,0 @@
-
-set smartcase
-set autoindent
-set incsearch
-set tabstop=2
-set expandtab
-set shiftwidth=2
