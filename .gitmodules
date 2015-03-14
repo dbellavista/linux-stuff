@@ -13,3 +13,6 @@
 [submodule "zsh/git-prompt"]
 	path = zsh/git-prompt
 	url = https://github.com/olivierverdier/zsh-git-prompt
+[submodule "vim"]
+	path = vim
+	url = https://github.com/dbellavista/vim-stuff
