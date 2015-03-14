@@ -16,3 +16,6 @@
 [submodule "vim"]
 	path = vim
 	url = https://github.com/dbellavista/vim-stuff
+[submodule "scripts"]
+	path = scripts
+	url = https://github.com/dbellavista/script-stuff
