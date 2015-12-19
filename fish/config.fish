@@ -1,5 +1,5 @@
 # My Stuff
-set -x STUFF (cat ~/.macosx_stuff)
+set -x STUFF (cat ~/.linux_stuff)
 # Oh-my-fish
 set fish_path $STUFF/fish/oh-my-fish.git
 

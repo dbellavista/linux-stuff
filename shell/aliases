@@ -2,9 +2,10 @@
 # ALIASES
 
 ## Distro dependent aliases
+alias vim='nvim'
 
-grep --quiet Gentoo /proc/version
-GENTOO=$?
+#grep --quiet Gentoo /proc/version
+#GENTOO=$?
 
 # Power commands
 alias poweroff='sudo poweroff'
@@ -13,14 +14,14 @@ alias hibernate='systemctl hibernate'
 alias suspend='systemctl suspend'
 alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 
-if [ $GENTOO -eq 0 ]; then
-	alias markdown='markdown_py'
-	alias sdc='sudo dispatch-conf'
-# else
-	# alias wifi-menu='sudo wifi-menu'
-	# alias netcfg='sudo netcfg'
-	# alias netcfg-menu='sudo netcfg-menu'
-fi
+#if [ $GENTOO -eq 0 ]; then
+#	alias markdown='markdown_py'
+#	alias sdc='sudo dispatch-conf'
+## else
+#	# alias wifi-menu='sudo wifi-menu'
+#	# alias netcfg='sudo netcfg'
+#	# alias netcfg-menu='sudo netcfg-menu'
+#fi
 
 ## Linux commangs
 alias grep='grep --color=auto'
@@ -42,13 +43,13 @@ alias cd-="cd -"
 alias cd...="cd ../.."
 
 ## Utilities
-alias fuck='sudo $(fc -ln -1)'
+#alias fuck='sudo $(fc -ln -1)'
 alias ungcc="gcc -z execstack -fno-stack-protector -fno-pie"
 alias ocvc="g++ \`pkg-config opencv --cflags --libs\`"
 alias runonce="$STUFF/scripts/run_once.sh"
 alias nvidiaoff="sudo $STUFF/scripts/nvidiaoff.sh"
 alias fixjava="wmname LG3D"
-alias irc="(sleep 10 && bash $STUFF/scripts/run_once.sh notify-listener.py $STUFF/scripts/notify-listener.py > /dev/null 2>&1) & irssi"
+#alias irc="(sleep 10 && bash $STUFF/scripts/run_once.sh notify-listener.py $STUFF/scripts/notify-listener.py > /dev/null 2>&1) & irssi"
 alias mkd="$STUFF/scripts/mkd.sh"
 alias initlatex="mkdir tmp; mkdir bib; touch bib/bib.bib; cp $STUFF/templates/template.tex main.tex; touch main.tex.latexmain"
 alias initc="mkdir src; cp $STUFF/templates/Makefile.c ./Makefile"
@@ -95,8 +96,8 @@ alias grm="git ls-files -deleted | xargs git rm"
 
 ## Shell dependent
 
-[[ $SHELL =~ ".*zsh.*" ]] && alias gdb='SHELL=/bin/bash gdb'
+#[[ $SHELL =~ ".*zsh.*" ]] && alias gdb='SHELL=/bin/bash gdb'
 
 # Fun
 
-alias pray='clear; while read line; do echo $line ; sleep 1; done <~/Documents/pray.txt'
+#alias pray='clear; while read line; do echo $line ; sleep 1; done <~/Documents/pray.txt'
