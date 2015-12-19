@@ -19,3 +19,6 @@
 [submodule "scripts"]
 	path = scripts
 	url = https://github.com/dbellavista/script-stuff
+[submodule "fish/oh-my-fish"]
+	path = fish/oh-my-fish
+	url = https://github.com/oh-my-fish/oh-my-fish
