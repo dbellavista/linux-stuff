@@ -1,48 +1,6 @@
-[submodule "vim/vim/bundle/closetag"]
-	path = vim/vim/bundle/closetag
-	url = git://github.com/docunext/closetag.vim.git
-[submodule "vim/vim/bundle/nerdcommenter"]
-	path = vim/vim/bundle/nerdcommenter
-	url = git://github.com/scrooloose/nerdcommenter.git
-[submodule "vim/vim/bundle/tagbar"]
-	path = vim/vim/bundle/tagbar
-	url = git://github.com/majutsushi/tagbar.git
-[submodule "vim/vim/bundle/youCompleteMe"]
-	path = vim/vim/bundle/youCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe
-[submodule "vim/vim/bundle/vim-latex"]
-	path = vim/vim/bundle/vim-latex
-	url = git://github.com/jcf/vim-latex.git
-[submodule "vim/vim/bundle/vim-template"]
-	path = vim/vim/bundle/vim-template
-	url = https://github.com/aperezdc/vim-template
-[submodule "vim/vim/bundle/vim-cmake"]
-	path = vim/vim/bundle/vim-cmake
-	url = https://github.com/vhdirk/vim-cmake
-[submodule "vim/vim/bundle/syntastic"]
-	path = vim/vim/bundle/syntastic
-	url = https://github.com/scrooloose/syntastic
-[submodule "vim/vim/bundle/nerdtree"]
-	path = vim/vim/bundle/nerdtree
-	url = https://github.com/scrooloose/nerdtree
-[submodule "vim/vim/bundle/c-vim"]
-	path = vim/vim/bundle/c-vim
-	url = https://github.com/dbellavista/c-vim
-[submodule "vim/vim/bundle/viske"]
-	path = vim/vim/bundle/viske
-	url = https://github.com/vimyum/viske
 [submodule "zsh/zsh-syntax-highlighting"]
 	path = zsh/zsh-syntax-highlighting
 	url = https://github.com/nakamuray/zsh-syntax-highlighting
-[submodule "vim/vim/bundle/vim-fugitive"]
-	path = vim/vim/bundle/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive
-[submodule "vim/vim/bundle/YouCompleteMe"]
-	path = vim/vim/bundle/YouCompleteMe
-	url = https://github.com/Valloric/YouCompleteMe
-[submodule "vim/vim/bundle/vim-jade"]
-	path = vim/vim/bundle/vim-jade
-	url = https://github.com/digitaltoad/vim-jade
 [submodule "config/gdbinit"]
 	path = config/gdbinit
 	url = https://github.com/gdbinit/Gdbinit
@@ -52,51 +10,15 @@
 [submodule "zsh/zsh-completions"]
 	path = zsh/zsh-completions
 	url = git://github.com/zsh-users/zsh-completions.git
-[submodule "vim/vim/bundle/argtextobj.vim"]
-	path = vim/vim/bundle/argtextobj.vim
-	url = https://github.com/vim-scripts/argtextobj.vim
 [submodule "zsh/git-prompt"]
 	path = zsh/git-prompt
 	url = https://github.com/olivierverdier/zsh-git-prompt
-[submodule "vim/vim/bundle/vala-vim"]
-	path = vim/vim/bundle/vala-vim
-	url = https://github.com/dbellavista/vala-vim
-[submodule "vim/vim/bundle/tabular"]
-	path = vim/vim/bundle/tabular
-	url = https://github.com/godlygeek/tabular
-[submodule "vim/vim/bundle/vim-csharp"]
-	path = vim/vim/bundle/vim-csharp
-	url = https://github.com/OrangeT/vim-csharp
-[submodule "vim/vim/bundle/tern_for_vim"]
-	path = vim/vim/bundle/tern_for_vim
-	url = https://github.com/marijnh/tern_for_vim
-[submodule "vim/vim/bundle/vim-javascript"]
-	path = vim/vim/bundle/vim-javascript
-	url = https://github.com/pangloss/vim-javascript
-[submodule "vim/vim/bundle/vim-autoformat"]
-	path = vim/vim/bundle/vim-autoformat
-	url = https://github.com/Chiel92/vim-autoformat
-[submodule "vim/vim/bundle/ctrlp"]
-	path = vim/vim/bundle/ctrlp
-	url = https://github.com/kien/ctrlp.vim
-[submodule "vim/vim/bundle/vim-dispatch"]
-	path = vim/vim/bundle/vim-dispatch
-	url = https://github.com/tpope/vim-dispatch
-[submodule "vim/vim/bundle/Omnisharp"]
-	path = vim/vim/bundle/Omnisharp
-	url = https://github.com/nosami/Omnisharp
-[submodule "vim/vim/bundle/vim-ps1"]
-	path = vim/vim/bundle/vim-ps1
-	url = https://github.com/PProvost/vim-ps1
-[submodule "vim/vim/bundle/mediawiki.vim"]
-	path = vim/vim/bundle/mediawiki.vim
-	url = https://github.com/chikamichi/mediawiki.vim
-[submodule "vim/vim/bundle/vim-surround"]
-	path = vim/vim/bundle/vim-surround
-	url = https://github.com/tpope/vim-surround
-[submodule "vim/vim/bundle/vim-repeat"]
-	path = vim/vim/bundle/vim-repeat
-	url = https://github.com/tpope/vim-repeat
+[submodule "vim"]
+	path = vim
+	url = https://github.com/dbellavista/vim-stuff
+[submodule "scripts"]
+	path = scripts
+	url = https://github.com/dbellavista/script-stuff
 [submodule "fish/oh-my-fish"]
 	path = fish/oh-my-fish
 	url = https://github.com/oh-my-fish/oh-my-fish

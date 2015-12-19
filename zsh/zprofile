@@ -7,20 +7,20 @@ source $HOME/.linux_stuff
 if $(tty | grep --quiet tty) ; then
   # TTY!
   export IM_CONSOLE=1
-  source $STUFF/scripts/console_autostart.sh
-  echo "Starting GPG agent"
-  eval $(/usr/bin/gpg-agent --daemon --enable-ssh-support)
-  echo "Launching FBTERM"
+  [[ -f $STUFF/scripts/console_autostart.sh ]] && source $STUFF/scripts/console_autostart.sh
+  # echo "Starting GPG agent"
+  [[ -f /usr/bin/gpg-agent ]] && eval $(/usr/bin/gpg-agent --daemon --enable-ssh-support)
+  # echo "Launching FBTERM"
 
   # fbterm-bi: a wrapper script to enable background image with fbterm
   # usage: fbterm-bi /path/to/image fbterm-options
-echo -ne "\e[?25l" # hide cursor
-fbv -ciuker "$HOME/Pictures/wallpaper_term" << EOF
-q
-EOF
-#shift
-export FBTERM_BACKGROUND_IMAGE=1
-exec fbterm "$@"
+# echo -ne "\e[?25l" # hide cursor
+# fbv -ciuker "$HOME/Pictures/wallpaper_term" << EOF
+# q
+# EOF
+# #shift
+# export FBTERM_BACKGROUND_IMAGE=1
+# exec fbterm "$@"
 
 fi
 

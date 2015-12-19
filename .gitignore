@@ -23,6 +23,7 @@ vim/vim/plugin/settings/user_specific_configuration.vim
 vim/vim/plugin/settings/cmake_specific_settings.vim
 fish/config.private.fish
 scripts/secure_backup.sh
+shell/private-environment.sh
 
 # Xmonad compilation file
 X/xmonad/xmonad-x86_64-linux

@@ -16,10 +16,10 @@ alias update-grub='sudo grub-mkconfig -o /boot/grub/grub.cfg'
 if [ $GENTOO -eq 0 ]; then
 	alias markdown='markdown_py'
 	alias sdc='sudo dispatch-conf'
-else
-	alias wifi-menu='sudo wifi-menu'
-	alias netcfg='sudo netcfg'
-	alias netcfg-menu='sudo netcfg-menu'
+# else
+	# alias wifi-menu='sudo wifi-menu'
+	# alias netcfg='sudo netcfg'
+	# alias netcfg-menu='sudo netcfg-menu'
 fi
 
 ## Linux commangs
