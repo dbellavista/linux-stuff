@@ -97,3 +97,6 @@
 [submodule "vim/vim/bundle/vim-repeat"]
 	path = vim/vim/bundle/vim-repeat
 	url = https://github.com/tpope/vim-repeat
+[submodule "fish/oh-my-fish"]
+	path = fish/oh-my-fish
+	url = https://github.com/oh-my-fish/oh-my-fish

@@ -21,6 +21,7 @@ __pycache__/
 # Personal files
 vim/vim/plugin/settings/user_specific_configuration.vim
 vim/vim/plugin/settings/cmake_specific_settings.vim
+fish/config.private.fish
 scripts/secure_backup.sh
 
 # Xmonad compilation file
