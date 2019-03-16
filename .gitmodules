@@ -1,24 +1,6 @@
-[submodule "zsh/zsh-syntax-highlighting"]
-	path = zsh/zsh-syntax-highlighting
-	url = https://github.com/nakamuray/zsh-syntax-highlighting
-[submodule "config/gdbinit"]
-	path = config/gdbinit
-	url = https://github.com/gdbinit/Gdbinit
-[submodule "zsh/zsh-history-substring-search"]
-	path = zsh/zsh-history-substring-search
-	url = https://github.com/zsh-users/zsh-history-substring-search
-[submodule "zsh/zsh-completions"]
-	path = zsh/zsh-completions
-	url = git://github.com/zsh-users/zsh-completions.git
 [submodule "zsh/git-prompt"]
 	path = zsh/git-prompt
 	url = https://github.com/olivierverdier/zsh-git-prompt
-[submodule "vim"]
-	path = vim
-	url = https://github.com/dbellavista/vim-stuff
 [submodule "scripts"]
 	path = scripts
 	url = https://github.com/dbellavista/script-stuff
-[submodule "fish/oh-my-fish"]
-	path = fish/oh-my-fish
-	url = https://github.com/oh-my-fish/oh-my-fish
