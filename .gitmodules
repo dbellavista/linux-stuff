@@ -4,3 +4,6 @@
 [submodule "scripts"]
 	path = scripts
 	url = https://github.com/dbellavista/script-stuff
+[submodule "config/gdbinit"]
+	path = config/gdbinit
+	url = https://github.com/gdbinit/Gdbinit/tree/2c7955b4e5d6cd5a71c6c15f6386f385f8cbfbd5
